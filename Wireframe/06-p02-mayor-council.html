@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Mayor & City Council (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="05-p02-documents.html">Documents</a>
+        <a href="05-p03-visa-residency.html">Visa &amp; residency</a>
+        <a href="05-p04-transport-vehicles.html">Transport &amp; vehicles</a>
+        <a href="05-p05-fees-payments.html">Fees, payments &amp; fines</a>
+        <a href="05-p06-document-legalization.html">Document legalization &amp; vidimation</a>
+        <a href="05-p07-social-services-family.html">Social services &amp; family</a>
+        <a href="05-p08-environment-waste.html">Environment &amp; waste</a>
+        <a href="05-p09-city-hall-services.html">City hall services</a>
+        <a href="05-p10-construction-property.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
+        <a href="01-p05-how-to-start.html">How to start</a>
+        <a href="01-p06-accommodation.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p07-social-care.html">Social care</a>
+        <a href="01-p08-education.html">Education</a>
+        <a href="01-p09-speak-czech.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Work</a>
+        <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
+        <a href="02-p03-find-a-job.html">Find a job</a>
+        <a href="02-p04-employment-essentials.html">Employment essentials</a>
+        <a href="02-p05-become-self-employed.html">Become self-employed</a>
+        <a href="02-p06-start-a-company.html">Start a company</a>
+        <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="03-p02-study-in-brno.html">Study in Brno</a>
+        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
+        <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
+        <a href="04-p03-culture.html">Culture</a>
+        <a href="04-p04-sights-architecture.html">Sights &amp; architecture</a>
+        <a href="04-p05-events.html">Events</a>
+        <a href="04-p06-maps-guides.html">Maps &amp; Guides</a>
+        <a href="04-p07-food-drink.html">Food and Drink</a>
+        <a href="04-p08-communities.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
+        <a href="06-p03-brno-facts-vision.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- L3 Topic detail (T6) -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <a href="06-p01-about-brno.html">About Brno</a>
+        <span class="sep">›</span>
+        <span class="current">Mayor &amp; City Council</span>
+      </nav>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Who runs Brno — the elected mayor, deputy mayors, City Council and Assembly. Open meetings, decisions, voting records. Local democracy in action since the medieval city charter.</p>
+          </div>
+
+          <!-- Overview / About -->
+          <div class="detail-block">
+            <h3>About Brno’s governance</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Brno operates a two-tier elected system: an Assembly (55 members, legislative) and a Council (11 members, executive). The Mayor (Primátor) is elected by the Assembly, not directly. Elections happen every 4 years; the next is in autumn 2026.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>Assembly (Zastupitelstvo)</strong> — 55 elected members; legislative body; meets ~monthly.</li>
+              <li><strong>Council (Rada)</strong> — 11 members (Mayor + 10 deputies + members); executive body; meets weekly.</li>
+              <li><strong>Mayor (Primátor)</strong> — elected from Assembly; current term 2022–2026.</li>
+              <li><strong>Deputy Mayors</strong> — portfolios: transport, education, culture, economy, social, environment.</li>
+              <li><strong>Districts</strong> — Brno has 29 districts with their own mini-councils for local matters.</li>
+              <li><strong>Open meetings:</strong> Assembly meetings are public and livestreamed.</li>
+            </ul>
+          </div>
+
+          <!-- Thematic H2 sections -->
+          <div class="detail-block">
+            <h2>City leadership</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">The elected officials running the city day-to-day.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Mayor of Brno (Primátor)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Deputy Mayors &amp; their portfolios</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Hall organisational chart</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">District mayors &amp; councils</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Council &amp; Assembly</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">The two elected bodies that govern Brno.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Council (Rada) — 11 members</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Assembly (Zastupitelstvo) — 55 members</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Council meetings, agendas &amp; minutes</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Assembly voting records</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Political parties &amp; coalitions</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Transparency &amp; participation</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">How residents and foreigners can engage with city decisions.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Open data &amp; budget transparency</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Public consultations &amp; surveys</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Participatory budget (Damej Brno)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Petitions &amp; resident initiatives</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- City departments most relevant to foreigners -->
+          <div class="detail-block">
+            <h2>City departments for foreigners</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Specific Magistrát departments most foreigners interact with. Click any tile for the detail page with opening hours, agenda and contact persons.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Zahraniční oddělení (OZV)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Dominikánské nám. 196/1<br>Open today: 8:00–17:00 · EN, CZ</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Brno Expat Centre</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Radnická 8<br>Open today: 8:00–17:00 · EN, UK, RU, VI</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Odbor sociální péče (OSP)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Koliště 19<br>Open today: 8:00–17:00 · EN, UK, RU</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Civil Registry (Matrika)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Husova 3<br>Open today: 8:00–17:00 · EN, CZ</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Trade Office (Živnostenský úřad)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Malinovského nám. 3<br>Open today: 8:00–17:00 · EN, UK</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Transport Department (Odbor dopravy)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Kounicova 67<br>Open today: 8:00–17:00 · EN, CZ</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Odbor správních činností</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Anenská 10<br>Open today: 8:00–17:00 · CZ</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Odbor školství a mládeže</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Dominikánské nám. 3<br>Open today: 8:00–17:00 · EN, CZ</div>
+              </div>
+            </div>
+            <div style="margin-top:16px;">
+              <a href="#" style="font-weight:600;">Browse all Magistrát departments →</a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">brno.cz/zastupitelstvo — Assembly portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">rada.brno.cz — Council portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">data.brno.cz — city open data</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">damejto.cz/brno — participatory budget</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">volby.cz — election results &amp; data</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Brno City Hall</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Dominikánské nám. 196/1, 601 67 Brno</div><div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420542171111">+420 542 171 111</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Main city government building — Assembly meetings, public reception.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Mayor’s Press Office</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Media inquiries, official statements, English-language press releases.</p><a href="mailto:press@brno.cz" style="font-size:13px;font-weight:600;">press@brno.cz</a>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Want to participate?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">All Assembly meetings are public and livestreamed. Foreigners can submit petitions, contribute ideas to the participatory budget and join public consultations.</p><a href="01-p04-health-insurance.html" class="btn btn-secondary" style="font-size:13px;">Citizen engagement guide</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="sos.html">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

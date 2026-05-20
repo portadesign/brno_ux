@@ -17,17 +17,49 @@
   var TREE = [
     { label: 'Homepage', href: 'index.html', level: 1, tag: 'T1' },
     { label: 'Sitemap', href: 'sitemap.html', level: 1, tag: '—' },
+    { label: 'SOS · I need help now', href: 'sos.html', level: 1, tag: 'SOS' },
 
     { divider: 'Main sections' },
     { label: 'I need to arrange', href: '05-p01-life-admin.html', level: 2, tag: 'T3' },
+    { label: 'Documents', href: '05-p02-documents.html', level: 3, tag: 'T6' },
+    { label: 'Visa & residency', href: '05-p03-visa-residency.html', level: 3, tag: 'T6' },
+    { label: 'Transport & vehicles', href: '05-p04-transport-vehicles.html', level: 3, tag: 'T6' },
+    { label: 'Fees, payments & fines', href: '05-p05-fees-payments.html', level: 3, tag: 'T6' },
+    { label: 'Document legalization & vidimation', href: '05-p06-document-legalization.html', level: 3, tag: 'T6' },
+    { label: 'Social services & family', href: '05-p07-social-services-family.html', level: 3, tag: 'T6' },
+    { label: 'Environment & waste', href: '05-p08-environment-waste.html', level: 3, tag: 'T6' },
+    { label: 'City hall services', href: '05-p09-city-hall-services.html', level: 3, tag: 'T6' },
+    { label: 'Construction & city property', href: '05-p10-construction-property.html', level: 3, tag: 'T6' },
     { label: 'Live', href: '01-p01-live.html', level: 2, tag: 'T2' },
+    { label: 'How to start', href: '01-p05-how-to-start.html', level: 3, tag: 'T6' },
+    { label: 'Accommodation', href: '01-p06-accommodation.html', level: 3, tag: 'T6' },
     { label: 'Transport', href: '01-p02-transport.html', level: 3, tag: 'T6' },
     { label: 'Healthcare', href: '01-p03-healthcare.html', level: 3, tag: 'T6' },
     { label: 'Health insurance', href: '01-p04-health-insurance.html', level: 4, tag: 'T4' },
+    { label: 'Social care', href: '01-p07-social-care.html', level: 3, tag: 'T6' },
+    { label: 'Education', href: '01-p08-education.html', level: 3, tag: 'T6' },
+    { label: 'Speak Czech', href: '01-p09-speak-czech.html', level: 3, tag: 'T6' },
     { label: 'Work', href: '02-p01-work.html', level: 2, tag: 'T2' },
+    { label: 'Right to work in Czechia', href: '02-p02-right-to-work.html', level: 3, tag: 'T6' },
+    { label: 'Find a job', href: '02-p03-find-a-job.html', level: 3, tag: 'T6' },
+    { label: 'Employment essentials', href: '02-p04-employment-essentials.html', level: 3, tag: 'T6' },
+    { label: 'Become self-employed', href: '02-p05-become-self-employed.html', level: 3, tag: 'T6' },
+    { label: 'Start a company', href: '02-p06-start-a-company.html', level: 3, tag: 'T6' },
+    { label: 'Brno business ecosystem', href: '02-p07-brno-business-ecosystem.html', level: 3, tag: 'T6' },
     { label: 'Research & Study', href: '03-p01-research-study.html', level: 2, tag: 'T2' },
+    { label: 'Study in Brno', href: '03-p02-study-in-brno.html', level: 3, tag: 'T6' },
+    { label: 'Science & Innovation', href: '03-p03-science-innovation.html', level: 3, tag: 'T6' },
     { label: 'Enjoy', href: '04-p01-enjoy.html', level: 2, tag: 'T2' },
+    { label: 'Leisure & Sports', href: '04-p02-leisure-sports.html', level: 3, tag: 'T6' },
+    { label: 'Culture', href: '04-p03-culture.html', level: 3, tag: 'T6' },
+    { label: 'Sights & architecture', href: '04-p04-sights-architecture.html', level: 3, tag: 'T6' },
+    { label: 'Events', href: '04-p05-events.html', level: 3, tag: 'T6' },
+    { label: 'Maps & Guides', href: '04-p06-maps-guides.html', level: 3, tag: 'T6' },
+    { label: 'Food and Drink', href: '04-p07-food-drink.html', level: 3, tag: 'T6' },
+    { label: 'Communities & meeting people', href: '04-p08-communities.html', level: 3, tag: 'T6' },
     { label: 'About Brno', href: '06-p01-about-brno.html', level: 2, tag: 'T2' },
+    { label: 'Mayor & City Council', href: '06-p02-mayor-council.html', level: 3, tag: 'T6' },
+    { label: 'Brno facts & vision', href: '06-p03-brno-facts-vision.html', level: 3, tag: 'T6' },
     { label: 'Detail organizační jednotky', href: 'detail-organizacni-jednotky.html', level: 4, tag: 'T7' },
 
     { divider: 'Varianta 1 (T2 detail-block)' },
@@ -160,7 +192,9 @@
 
   function injectLastLinkLabel() {
     // Skip label injection on L2 section-landing pages — they keep their own H1 wording.
+    // Also skip the SOS page — its H1 is itself an action label and shouldn't be duplicated.
     var current = getCurrentFilename();
+    if (current === 'sos.html') return;
     var entry = null;
     for (var i = 0; i < TREE.length; i++) {
       if (TREE[i].href === current) { entry = TREE[i]; break; }

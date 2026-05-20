@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Culture (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="05-p02-documents.html">Documents</a>
+        <a href="05-p03-visa-residency.html">Visa &amp; residency</a>
+        <a href="05-p04-transport-vehicles.html">Transport &amp; vehicles</a>
+        <a href="05-p05-fees-payments.html">Fees, payments &amp; fines</a>
+        <a href="05-p06-document-legalization.html">Document legalization &amp; vidimation</a>
+        <a href="05-p07-social-services-family.html">Social services &amp; family</a>
+        <a href="05-p08-environment-waste.html">Environment &amp; waste</a>
+        <a href="05-p09-city-hall-services.html">City hall services</a>
+        <a href="05-p10-construction-property.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
+        <a href="01-p05-how-to-start.html">How to start</a>
+        <a href="01-p06-accommodation.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p07-social-care.html">Social care</a>
+        <a href="01-p08-education.html">Education</a>
+        <a href="01-p09-speak-czech.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Work</a>
+        <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
+        <a href="02-p03-find-a-job.html">Find a job</a>
+        <a href="02-p04-employment-essentials.html">Employment essentials</a>
+        <a href="02-p05-become-self-employed.html">Become self-employed</a>
+        <a href="02-p06-start-a-company.html">Start a company</a>
+        <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="03-p02-study-in-brno.html">Study in Brno</a>
+        <a href="01-p03-healthcare.html">Universities in Brno</a>
+        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        <a href="01-p03-healthcare.html">Research institutes</a>
+        <a href="01-p03-healthcare.html">Innovation ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
+        <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
+        <a href="04-p03-culture.html">Culture</a>
+        <a href="04-p04-sights-architecture.html">Sights &amp; architecture</a>
+        <a href="04-p05-events.html">Events</a>
+        <a href="04-p06-maps-guides.html">Maps &amp; Guides</a>
+        <a href="04-p07-food-drink.html">Food and Drink</a>
+        <a href="04-p08-communities.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
+        <a href="06-p03-brno-facts-vision.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- L3 Topic detail (T6) — Enjoy > Culture -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <a href="04-p01-enjoy.html">Enjoy</a>
+        <span class="sep">›</span>
+        <span class="current">Culture</span>
+      </nav>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Theatres, cinemas, museums, libraries and creative spaces — Brno's vibrant cultural scene for residents and visitors. Two state theatres, dozens of independent venues, and one of the strongest experimental scenes in Central Europe.</p>
+          </div>
+
+          <!-- Primary culture portal — featured red CTA -->
+          <div class="detail-block">
+            <a href="https://www.gotobrno.cz/en/" target="_blank" rel="noopener" class="quick-link" style="background:var(--red);border-color:var(--red);padding:24px 28px;">
+              <span class="quick-link-text" style="color:var(--white);text-decoration:none;font-size:18px;">
+                <span style="display:block;font-size:13px;text-transform:uppercase;letter-spacing:0.6px;opacity:0.9;font-weight:600;margin-bottom:4px;">Primary culture portal</span>
+                GoToBrno — Brno's official culture &amp; visitor guide
+              </span>
+              <span class="quick-link-arrow" style="color:var(--white);font-size:22px;">→</span>
+            </a>
+          </div>
+
+          <!-- Overview / About -->
+          <div class="detail-block">
+            <h3>About culture in Brno</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Brno's cultural identity blends Czech-language tradition with international audiences. State institutions cover opera, ballet, drama and orchestral music; the independent scene drives contemporary theatre, design and arts. Most venues offer English programmes or surtitles.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>State theatres:</strong> Janáček Theatre (opera/ballet), Mahen Theatre (drama), Reduta Theatre (chamber productions).</li>
+              <li><strong>Major museums:</strong> Moravian Gallery (5 buildings), Technical Museum, City Museum at Špilberk Castle.</li>
+              <li><strong>Music venues:</strong> Janáček Philharmonic, Sono Centrum, Fléda, Stará Pekárna, summer open-air festivals.</li>
+              <li><strong>Cinemas:</strong> Lucerna (oldest), Art Cinema, Scala, Cinema City multiplex.</li>
+              <li><strong>Libraries:</strong> Moravian Library (one of CZ's largest), Jiří Mahen Library (municipal), university libraries.</li>
+            </ul>
+          </div>
+
+          <!-- Thematic H2 sections (no duplication) -->
+          <div class="detail-block">
+            <h2>Stages &amp; performance venues</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Opera, drama, dance and concerts across the year. Use the official venues map to see what's nearby.</p>
+            <div class="quick-links">
+              <a href="https://experience.arcgis.com/experience/e7d41bab702e41dca5d086c9719f9318/page/HOME" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Culture venues map — Kam za kulturou</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">National Theatre Brno (Janáček, Mahen, Reduta)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno Philharmonic Orchestra</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Independent &amp; experimental theatres</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Live music venues (Fléda, Sono, Stará Pekárna)</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Museums &amp; galleries</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">From medieval Špilberk to contemporary art at Pražákův palác.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Moravian Gallery (5 buildings)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno City Museum at Špilberk Castle</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Technical Museum Brno</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Moravian Museum &amp; Mendel Anthropos</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Independent galleries &amp; design spaces</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Cinemas &amp; libraries</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Films, books and quiet study spaces.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Art-house cinemas (Art, Scala, Lucerna)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Multiplex (Cinema City Velký Špalíček)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Moravian Library — Brno's biggest</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Jiří Mahen Library &amp; branches</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="https://experience.arcgis.com/experience/e7d41bab702e41dca5d086c9719f9318/page/HOME" target="_blank" rel="noopener">Kam za kulturou — interactive culture venues map</a></li>
+                  <li><a href="https://kultura.brno.cz" target="_blank" rel="noopener">kultura.brno.cz — Brno Culture Department portal</a></li>
+                  <li><a href="https://kultura.brno.cz/brnenske-kulturni-forum" target="_blank" rel="noopener">Brno Cultural Forum (BKF) — recordings &amp; networking</a></li>
+                  <li><a href="https://kultura.brno.cz/mezinarodni-spoluprace-kultura" target="_blank" rel="noopener">International cultural cooperation — open calls, partner cities</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ndbrno.cz — National Theatre Brno</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">moravska-galerie.cz — Moravian Gallery</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">filharmonie-brno.cz — Brno Philharmonic</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mzk.cz — Moravian Library</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">gotobrno.cz/culture — cultural guide</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>TIC BRNO</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Box office for state venues plus the city event calendar.</p><a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">tic-brno.cz</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>GoToBrno (official)</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Curated English-language guide to Brno culture, events and visitor info.</p><a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">gotobrno.cz</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>International cultural cooperation</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">For artists, organisations and journalists seeking cultural exchange with Brno.</p>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div>
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Lukáš Pavlica</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);">Culture Department · International relations</div>
+              </div>
+              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Veronika Majíčková</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);">Culture Department · International programs</div>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:14px;"><a href="https://kultura.brno.cz/mezinarodni-spoluprace-kultura" target="_blank" rel="noopener" style="font-weight:600;">More on kultura.brno.cz</a></p>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Brno Cultural Card</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Annual pass for residents — discounts at state theatres, museums and libraries. Apply online with city ID.</p><a href="01-p04-health-insurance.html" class="btn btn-secondary" style="font-size:13px;">About the card</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="sos.html">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — SOS · Crisis &amp; emergency help (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="05-p02-documents.html">Documents</a>
+        <a href="05-p03-visa-residency.html">Visa &amp; residency</a>
+        <a href="05-p04-transport-vehicles.html">Transport &amp; vehicles</a>
+        <a href="05-p05-fees-payments.html">Fees, payments &amp; fines</a>
+        <a href="05-p06-document-legalization.html">Document legalization &amp; vidimation</a>
+        <a href="05-p07-social-services-family.html">Social services &amp; family</a>
+        <a href="05-p08-environment-waste.html">Environment &amp; waste</a>
+        <a href="05-p09-city-hall-services.html">City hall services</a>
+        <a href="05-p10-construction-property.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
+        <a href="01-p05-how-to-start.html">How to start</a>
+        <a href="01-p06-accommodation.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p07-social-care.html">Social care</a>
+        <a href="01-p08-education.html">Education</a>
+        <a href="01-p09-speak-czech.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Work</a>
+        <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
+        <a href="02-p03-find-a-job.html">Find a job</a>
+        <a href="02-p04-employment-essentials.html">Employment essentials</a>
+        <a href="02-p05-become-self-employed.html">Become self-employed</a>
+        <a href="02-p06-start-a-company.html">Start a company</a>
+        <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="03-p02-study-in-brno.html">Study in Brno</a>
+        <a href="01-p03-healthcare.html">Universities in Brno</a>
+        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        <a href="01-p03-healthcare.html">Research institutes</a>
+        <a href="01-p03-healthcare.html">Innovation ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
+        <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
+        <a href="04-p03-culture.html">Culture</a>
+        <a href="04-p04-sights-architecture.html">Sights &amp; architecture</a>
+        <a href="04-p05-events.html">Events</a>
+        <a href="04-p06-maps-guides.html">Maps &amp; Guides</a>
+        <a href="04-p07-food-drink.html">Food and Drink</a>
+        <a href="04-p08-communities.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
+        <a href="06-p03-brno-facts-vision.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- SOS — Crisis & emergency help -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">SOS</span>
+      </nav>
+      <h1 class="title-banner">SOS · I need help now</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">If you’re in immediate danger, call <strong>112</strong> — the free EU-wide emergency line works in any EU language. This page collects the most-needed crisis contacts in Brno: lost documents, accommodation, violence, mental health, addiction, financial trouble and embassy help.</p>
+          </div>
+
+          <!-- Emergency numbers — high-impact top block -->
+          <div class="detail-block" style="background:var(--warning-bg);border-left:4px solid var(--warning);padding:24px 28px;">
+            <h2 style="margin-bottom:6px;">Emergency phone numbers</h2>
+            <p style="color:var(--gray-700);line-height:1.6;margin-bottom:20px;font-size:14px;">112 is free and connects to an operator who speaks any major EU language. Other lines are Czech-only — try 112 first if you can’t communicate in Czech.</p>
+            <div class="dept-grid" style="grid-template-columns:repeat(5,1fr);gap:14px;">
+              <div class="dept-tile" style="display:block;align-items:initial;text-align:center;padding:18px 10px;">
+                <div style="font-size:34px;font-weight:800;color:var(--red);line-height:1;"><a href="tel:112" style="color:inherit;text-decoration:none;">112</a></div>
+                <div style="font-size:13px;font-weight:700;margin-top:8px;">EU emergency</div>
+                <div style="font-size:11px;color:var(--gray-700);margin-top:2px;">Any EU language</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;text-align:center;padding:18px 10px;">
+                <div style="font-size:34px;font-weight:800;color:var(--red);line-height:1;"><a href="tel:158" style="color:inherit;text-decoration:none;">158</a></div>
+                <div style="font-size:13px;font-weight:700;margin-top:8px;">Police</div>
+                <div style="font-size:11px;color:var(--gray-700);margin-top:2px;">Czech only</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;text-align:center;padding:18px 10px;">
+                <div style="font-size:34px;font-weight:800;color:var(--red);line-height:1;"><a href="tel:155" style="color:inherit;text-decoration:none;">155</a></div>
+                <div style="font-size:13px;font-weight:700;margin-top:8px;">Ambulance</div>
+                <div style="font-size:11px;color:var(--gray-700);margin-top:2px;">Czech only</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;text-align:center;padding:18px 10px;">
+                <div style="font-size:34px;font-weight:800;color:var(--red);line-height:1;"><a href="tel:150" style="color:inherit;text-decoration:none;">150</a></div>
+                <div style="font-size:13px;font-weight:700;margin-top:8px;">Fire</div>
+                <div style="font-size:11px;color:var(--gray-700);margin-top:2px;">Czech only</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;text-align:center;padding:18px 10px;">
+                <div style="font-size:34px;font-weight:800;color:var(--red);line-height:1;"><a href="tel:156" style="color:inherit;text-decoration:none;">156</a></div>
+                <div style="font-size:13px;font-weight:700;margin-top:8px;">Municipal Police</div>
+                <div style="font-size:11px;color:var(--gray-700);margin-top:2px;">Brno-specific</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured CTA: 24/7 free psychological hotline -->
+          <div class="detail-block">
+            <a href="tel:+420116123" class="quick-link" style="background:var(--red);border-color:var(--red);padding:24px 28px;">
+              <span class="quick-link-text" style="color:var(--white);text-decoration:none;font-size:18px;">
+                <span style="display:block;font-size:13px;text-transform:uppercase;letter-spacing:0.6px;opacity:0.9;font-weight:600;margin-bottom:4px;">24/7 free · psychological help</span>
+                Crisis line — 116 123 (RIAPS Brno)
+              </span>
+              <span class="quick-link-arrow" style="color:var(--white);font-size:22px;">→</span>
+            </a>
+          </div>
+
+          <!-- H2 1: Lost items & documents -->
+          <div class="detail-block">
+            <h2>Lost items &amp; documents</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Where to go if you lose something important — wallet, papers, residence card or passport. Foreigners often need to file with multiple offices.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Brno Lost &amp; Found</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Husova 5, 602 00 Brno<br>+420 542 173 333 · Mo–Fr 8:00–17:00</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Driver’s licence — lost / stolen</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Department of Transport · Kounicova 67<br>Apply for replacement within 5 days</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Lost passport — embassy contacts</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Most embassies in Prague<br>Foreign Police can issue emergency travel docs</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Lost residence permit / EU card</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Foreign Police · Cejl 62b, Brno<br>Report within 3 working days</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- H2 2: Crisis accommodation -->
+          <div class="detail-block">
+            <h2>Crisis accommodation</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Emergency housing options — for victims of violence, refugees and people in immediate housing crisis.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Salvation Army Brno</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Mlýnská 25, 602 00 Brno<br>+420 543 246 911 · Night shelter, day centre</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Domestic violence shelter</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Secret address (intervention centre)<br>+420 605 808 313 · 24/7 helpline</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Refugee assistance — KIC</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Mečová 5, 602 00 Brno<br>Counselling for refugees and Ukrainians</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Low-threshold day centres</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Multiple locations · OSP referral<br>Showers, meals, social work consultations</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- H2 3: Personal safety & violence -->
+          <div class="detail-block">
+            <h2>Personal safety &amp; violence</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Help for victims of crime, domestic abuse, sexual assault and hate crimes. All services listed offer free, confidential support.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Bílý kruh bezpečí Brno</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Slovinská 41, Brno<br>+420 257 317 100 · Victims of crime</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Domestic violence — Persefona</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Jiráskova 8, 602 00 Brno<br>+420 545 245 996 · Women &amp; children</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Hate crime — In IUSTITIA</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Račická 4, Brno<br>+420 773 177 636 · Discrimination, racism</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Sexual assault — proFem</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">National line · Brno consultations<br>+420 224 910 744 · Women &amp; girls</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- H2 4: Mental health & addiction -->
+          <div class="detail-block">
+            <h2>Mental health &amp; addiction</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Suicide prevention, depression, anxiety, substance abuse and gambling — free or low-cost support, much of it 24/7.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">RIAPS Brno — psychological help</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Hotline 116 123 · 24/7 · free<br>Counselling at Cejl 73, Brno</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Substance abuse — Podané ruce</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Hapalova 22, Brno<br>+420 545 247 535 · Counselling, syringe exchange</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Children &amp; teens — Linka bezpečí</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Hotline 116 111 · 24/7 · free<br>Help for under-18s in any crisis</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Gambling addiction</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Stop závislosti, o.s. · Brno<br>+420 778 444 855</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- H2 5: Financial & legal trouble -->
+          <div class="detail-block">
+            <h2>Financial &amp; legal trouble</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Debt counselling, free legal aid and labour rights — for situations that aren’t criminal but feel urgent.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Občanská poradna Brno — debt help</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Anenská 10, Brno<br>+420 545 241 828 · Mo, We 9:30–17:00</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Free legal aid — Czech Bar</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Through Občanská poradna or Czech Bar<br>Means-tested · book in advance</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Labour rights violations</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Regional Labour Inspectorate JmK<br>Milady Horákové 3, Brno · +420 545 321 285</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Human trafficking — La Strada</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">National hotline · +420 222 717 171<br>24/7 anonymous · Czech/EN/RU/UK</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- H2 6: Embassy & consular help -->
+          <div class="detail-block">
+            <h2>Embassy &amp; consular help (for foreigners)</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Most embassies are in Prague — Brno has a few honorary consuls. For passport emergencies, Foreign Police can issue temporary travel documents.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Foreign Police Brno</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Cejl 62b, 602 00 Brno<br>Mo, We 7:30–11:00, 12:00–14:30</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="https://www.mzv.cz/jnp/en/" target="_blank" rel="noopener" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Embassy directory (MZV)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">All embassies in CZ on mzv.cz<br>Most located in Prague</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="01-p04-health-insurance.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Emergency travel document</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Via your embassy or Foreign Police<br>For one-way travel home</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="06-p02-mayor-council.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Honorary consuls in Brno</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Few countries have consul offices in Brno<br>Check MZV for current list</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">mvcr.cz/clanek/sluzby-pro-verejnost-pomoc.aspx — MOI crisis assistance directory</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">policie.cz — Police of the Czech Republic</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">bkb.cz — Bílý kruh bezpečí (victim support)</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">riaps.cz — RIAPS psychological assistance</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">lastrada.cz — La Strada (anti-trafficking)</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">podane-ruce.cz — Podané ruce (addiction)</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">in-ius.cz — In IUSTITIA (hate crime support)</a></li>
+                  <li><a href="https://www.mzv.cz/jnp/en/" target="_blank" rel="noopener">mzv.cz/en — Ministry of Foreign Affairs (embassies)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4 style="margin-bottom:8px;">24/7 crisis line</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420116123"><strong>116 123</strong></a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:8px;">Free, anonymous psychological help — depression, suicidal thoughts, panic, anxiety. Czech &amp; some English support.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Children &amp; teens hotline</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420116111"><strong>116 111</strong></a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:8px;">Linka bezpečí · 24/7 free · for under-18s in any crisis. CZ, EN, RU, UK on selected times.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542171111">+420 542 171 111</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:expat@brno.cz">expat@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:8px;">English-speaking help — they’ll connect you to the right service or accompany you to an office.</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4 style="margin-bottom:8px;">Language barrier?</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">112 operates in any major EU language. For other lines, ask for an interpreter — police and ambulance have on-call services.</p>
+            <p style="font-size:13px;margin-bottom:12px;">Download a printable <strong>communication card</strong> (CZ-EN-UK-RU-VI-AR-ES-FR) to use when you can’t speak.</p>
+            <a href="#" class="btn btn-secondary" style="font-size:13px;">Communication card (PDF)</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="sos.html">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — Work (Wireframe POC)</title>
+<title>Brno EN — Brno business ecosystem (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -123,60 +123,110 @@
   </div>
 </header>
 
-<!-- Work section landing — EXPERIMENTAL minimal directory (dept-tile rozcestník) -->
+<!-- L3 Topic detail (T6) — Work > Brno business ecosystem -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">Work</span>
+        <a href="02-p01-work.html">Work</a>
+        <span class="sep">›</span>
+        <span class="current">Brno business ecosystem</span>
       </nav>
-      <h1 class="title-banner">Work in Brno</h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <!-- Perex -->
-      <p style="font-size:18px;line-height:1.6;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Working in Brno — for employees, freelancers and entrepreneurs. Visas and work permits, contracts and tax basics, freelance licences, company setup, and the local business ecosystem.</p>
-
-      <!-- C09b Dept-tile card grid: 6 topics in a 3-column rozcestník -->
-      <div class="dept-grid" style="grid-template-columns:repeat(3, 1fr);">
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
-          <div class="dept-tile__desc">Visas, work permits, recognition of qualifications. The critical first stop for non-EU citizens.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p03-find-a-job.html">Find a job</a>
-          <div class="dept-tile__desc">Major employers, job portals, recruitment agencies and Brno labour market overview.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p04-employment-essentials.html">Employment essentials</a>
-          <div class="dept-tile__desc">Contract types, salary &amp; taxes, leave entitlements, what to do if you lose your job.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p05-become-self-employed.html">Become self-employed</a>
-          <div class="dept-tile__desc">Set up as a freelancer (OSVČ) — trade licence types, taxes, social &amp; health insurance, bookkeeping.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p06-start-a-company.html">Start a company</a>
-          <div class="dept-tile__desc">Found a limited or joint-stock company — entity types, notarial deed, Commercial Register registration.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
-          <div class="dept-tile__desc">Regional hub for IT, R&amp;D, automotive and life sciences (Honeywell, Red Hat, Kyndryl, IBM) — plus JIC, accelerators, co-working, grants and freelancer communities.</div>
-        </div>
-      </div>
-
-      <!-- Single inline help strip below the grid -->
-      <div style="margin-top:40px;padding:20px 24px;background:var(--gray-100);border-left:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div class="layout-with-sidebar">
         <div>
-          <strong style="display:block;margin-bottom:4px;">Need help getting started?</strong>
-          <span style="color:var(--gray-700);">Brno Expat Centre offers free English-speaking help with work permits, contracts and trade licences.</span>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Brno is the Czech Republic's strongest regional tech and innovation hub — home to Honeywell, Red Hat, Kyndryl, IBM and AT&amp;T, plus deep R&amp;D ties through CEITEC and Masaryk University. JIC and an accelerator network actively support startups, freelancers and SMEs.</p>
+          </div>
+
+          <!-- Overview / About -->
+          <div class="detail-block">
+            <h3>About Brno as a business hub</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Five universities feed a constant talent pipeline. JIC (Brno Innovation Centre) coordinates incubators, mentoring and grant programs. The city offers investment incentives for R&amp;D and value-added manufacturing.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>Universities:</strong> MUNI, VUT, Mendelu, JAMU, VFU — 80,000+ students; 30%+ in STEM fields.</li>
+              <li><strong>Tech employers:</strong> 4,500+ IT companies; 6 major shared-services centres.</li>
+              <li><strong>Innovation backbone:</strong> JIC operates 4 incubators and 3 accelerator programs.</li>
+              <li><strong>Research collaboration:</strong> CEITEC, ICRC and IT4I open to industry partnerships.</li>
+              <li><strong>Co-working scene:</strong> KUMST, Impact Hub, Coworking JIC — dozens of independent spaces.</li>
+            </ul>
+          </div>
+
+          <!-- Thematic H2 sections (no duplication) -->
+          <div class="detail-block">
+            <h2>Why Brno</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno's competitive position as a Central European business hub.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Major employers &amp; sectors</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Universities &amp; talent pool</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City investment incentives</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Support network</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Where to plug in for funding, mentoring and physical space.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">JIC — Brno Innovation Centre</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Accelerators &amp; incubators</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Co-working spaces</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">SME &amp; freelancer communities</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Connect &amp; grow</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Tap into the active business community and city support.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">R&amp;D collaboration (CEITEC, ICRC)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Major events &amp; meetups</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City grants &amp; funding calendar</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno Business Centre</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">jic.cz — Brno Innovation Centre</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">brno.cz/business — city business support</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">czechinvest.org — national investment agency</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu — research collaboration</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">impacthub.cz — co-working &amp; community</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="#" style="font-weight:600;white-space:nowrap;">Contact Brno Expat Centre →</a>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Brno Business Centre</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">First contact point for foreign investors and businesses considering Brno.</p><a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">brnobusinesscentre.cz</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>JIC (Innovation Centre)</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Purkyňova 649/127, Brno</div><div class="sidebar-row"><span class="icon">✉</span><a href="mailto:info@jic.cz">info@jic.cz</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Mentoring, grants, accelerator cohorts, talent matching.</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Looking for grants?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">City Brno runs annual grant calls for R&amp;D, innovation and cultural projects. Calendar opens each January.</p><a href="#" class="btn btn-secondary" style="font-size:13px;">Grant calendar</a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

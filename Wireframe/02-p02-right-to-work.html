@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — Work (Wireframe POC)</title>
+<title>Brno EN — Right to work in Czechia (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -123,60 +123,109 @@
   </div>
 </header>
 
-<!-- Work section landing — EXPERIMENTAL minimal directory (dept-tile rozcestník) -->
+<!-- L3 Topic detail (T6) — Work > Right to work in Czechia -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">Work</span>
+        <a href="02-p01-work.html">Work</a>
+        <span class="sep">›</span>
+        <span class="current">Right to work in Czechia</span>
       </nav>
-      <h1 class="title-banner">Work in Brno</h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <!-- Perex -->
-      <p style="font-size:18px;line-height:1.6;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Working in Brno — for employees, freelancers and entrepreneurs. Visas and work permits, contracts and tax basics, freelance licences, company setup, and the local business ecosystem.</p>
-
-      <!-- C09b Dept-tile card grid: 6 topics in a 3-column rozcestník -->
-      <div class="dept-grid" style="grid-template-columns:repeat(3, 1fr);">
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
-          <div class="dept-tile__desc">Visas, work permits, recognition of qualifications. The critical first stop for non-EU citizens.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p03-find-a-job.html">Find a job</a>
-          <div class="dept-tile__desc">Major employers, job portals, recruitment agencies and Brno labour market overview.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p04-employment-essentials.html">Employment essentials</a>
-          <div class="dept-tile__desc">Contract types, salary &amp; taxes, leave entitlements, what to do if you lose your job.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p05-become-self-employed.html">Become self-employed</a>
-          <div class="dept-tile__desc">Set up as a freelancer (OSVČ) — trade licence types, taxes, social &amp; health insurance, bookkeeping.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p06-start-a-company.html">Start a company</a>
-          <div class="dept-tile__desc">Found a limited or joint-stock company — entity types, notarial deed, Commercial Register registration.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
-          <div class="dept-tile__desc">Regional hub for IT, R&amp;D, automotive and life sciences (Honeywell, Red Hat, Kyndryl, IBM) — plus JIC, accelerators, co-working, grants and freelancer communities.</div>
-        </div>
-      </div>
-
-      <!-- Single inline help strip below the grid -->
-      <div style="margin-top:40px;padding:20px 24px;background:var(--gray-100);border-left:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div class="layout-with-sidebar">
         <div>
-          <strong style="display:block;margin-bottom:4px;">Need help getting started?</strong>
-          <span style="color:var(--gray-700);">Brno Expat Centre offers free English-speaking help with work permits, contracts and trade licences.</span>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">EU and Schengen citizens can work in Czechia freely. Non-EU citizens need a residence permit plus a work permit — or one of the combined cards (Employee Card, EU Blue Card, ICT Card). Recognition of foreign professional qualifications is a separate process — start early.</p>
+          </div>
+
+          <!-- Overview / About -->
+          <div class="detail-block">
+            <h3>About working as a foreigner</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Your legal route depends on citizenship and intended duration. Most expats end up holding either an Employee Card (long-term work residence) or, if highly qualified, an EU Blue Card.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>EU/EEA &amp; Swiss citizens</strong> — no work permit needed, free movement applies.</li>
+              <li><strong>Long-term or permanent residents</strong> — already authorised to work; no additional permit.</li>
+              <li><strong>Employee Card</strong> — the standard combined work + residence permit for non-EU specialists.</li>
+              <li><strong>EU Blue Card</strong> — for highly qualified (university degree + salary ≥1.5× national average).</li>
+              <li><strong>ICT Card</strong> — intra-company transfers from non-EU branches.</li>
+            </ul>
+          </div>
+
+          <!-- Thematic H2 sections (no duplication) -->
+          <div class="detail-block">
+            <h2>Visa &amp; residence permits</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Your legal route depends on citizenship and how long you'll stay.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Short-term visa types (Schengen, business)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Long-term residence permit</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Permanent residence (after 5 years)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Foreign Police &amp; MOI contacts</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Combined work + residence cards</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Most common path for non-EU specialists working in Czechia.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Employee Card — standard work residence</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU Blue Card — highly qualified professionals</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">ICT Card — intra-company transfer</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Qualifications recognition</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Some professions need formal recognition before you can practise here.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Nostrification of foreign diploma (MŠMT)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Regulated professions (medicine, law, teaching)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Recognition through professional chambers</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">mvcr.cz — Ministry of Interior</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">foreignpolice.cz — Foreign Police</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">msmt.cz — Recognition of qualifications</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mzv.cz — Ministry of Foreign Affairs</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">eures.eu — EU jobs portal</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="#" style="font-weight:600;white-space:nowrap;">Contact Brno Expat Centre →</a>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420542171111">+420 542 171 111</a></div><div class="sidebar-row"><span class="icon">✉</span><a href="mailto:expat@brno.cz">expat@brno.cz</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Free English-speaking help with visas, work permits and qualifications.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Foreign Police Brno</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Cejl 62b, 602 00 Brno</div><div class="sidebar-row" style="margin-top:8px;"><span class="small">TODAY OPEN</span></div><div class="sidebar-row" style="padding-left:24px;">7:30–11:00, 12:00–14:30 <a href="#" style="margin-left:6px;">(other days)</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">For non-EU residence permit applications and renewals.</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4>Documents from abroad?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Most applications require apostilled foreign documents with certified Czech translations. Plan 4–6 weeks for translations alone.</p><a href="01-p04-health-insurance.html" class="btn btn-secondary" style="font-size:13px;">Document legalization guide</a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

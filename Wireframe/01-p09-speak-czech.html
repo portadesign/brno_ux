@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — About Brno · Varianta 1 (Wireframe POC)</title>
+<title>Brno EN — Speak Czech (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <a class="nav-link active" href="01-p01-live.html">Live <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
         <a href="01-p05-how-to-start.html">How to start</a>
@@ -112,7 +112,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link active" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
         <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
@@ -123,17 +123,18 @@
   </div>
 </header>
 
-<!-- About Brno section landing (T2 + T6 detail-block pattern) -->
+<!-- L3 Topic detail (T6) — Live > Speak Czech -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">About Brno</span>
+        <a href="01-p01-live.html">Live</a>
+        <span class="sep">›</span>
+        <span class="current">Speak Czech</span>
       </nav>
-      <h1 class="title-banner">About Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
@@ -143,95 +144,88 @@
         <div>
           <!-- Perex -->
           <div class="detail-block">
-            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Brno's story for newcomers, investors, researchers and curious visitors — what makes the city tick, what it offers, and how to plug into its ecosystem.</p>
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Most public services are in Czech. Free city-supported courses and paid private programmes help newcomers get started. From survival phrases to B2 fluency, Brno's language scene is welcoming and well-resourced.</p>
           </div>
 
-          <!-- Topic 1: Mayor & City Council -->
+          <!-- Overview / About -->
           <div class="detail-block">
-            <h2><a href="#">Mayor &amp; City Council</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Who runs Brno — the elected mayor, deputy mayors, City Council and Assembly. Open meetings, decisions, voting records.</p>
-            <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Mayor of Brno</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Deputy mayors &amp; their portfolios</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Council — 11 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Assembly — 55 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Council meetings, agendas &amp; minutes</span><span class="quick-link-arrow">›</span></a>
-            </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Mayor &amp; City Council →</a></div>
+            <h3>About learning Czech</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Czech is a Slavic language with rich inflection — challenging for English speakers but accessible with consistent practice. CEFR levels A1–A2 unlock basic conversation; B1–B2 enables permanent residence applications and most workplace integration.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>A1–A2 (beginner):</strong> Basic phrases, shopping, restaurants, small talk.</li>
+              <li><strong>A2 certificate</strong> required for permanent residence after 5 years of stay.</li>
+              <li><strong>B1–B2:</strong> Workplace conversations, administrative dealings, deeper integration.</li>
+              <li><strong>B1+ certificate</strong> often expected for Czech citizenship application.</li>
+              <li><strong>Free A1/A2 courses</strong> at Brno Expat Centre for working foreigners (capped by capacity).</li>
+            </ul>
           </div>
 
-          <!-- Topic 5: Brno facts & vision -->
+          <!-- Thematic H2 sections (no duplication) -->
           <div class="detail-block">
-            <h2><a href="#">Brno facts &amp; vision</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Key numbers, strategic priorities and Brno's place in the world — from #brno2050 to international partnerships.</p>
+            <h2>Free &amp; subsidised classes</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">City and community resources at no or low cost.</p>
             <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno in numbers (population, economy, foreign workforce, students, R&amp;D)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">#brno2050 — strategic vision</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Smart city &amp; sustainability initiatives</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Sister cities &amp; international cooperation — partner cities, reciprocity principles, joint projects (Ann Arbor, Charlotte, Kharkiv, Leeds, Leipzig, Poznań, Rennes, St. Pölten, Stuttgart, Utrecht, Vienna…)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno region context (Jihomoravský kraj, RIS3 strategy)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU programs &amp; funded projects</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno Expat Centre — free A1/A2 courses</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Municipal libraries — open classes</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Volunteer language tandems</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">University extension programmes</span><span class="quick-link-arrow">›</span></a>
             </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno facts &amp; vision →</a></div>
           </div>
 
-          <!-- C16 Accordion: Useful external links -->
+          <div class="detail-block">
+            <h2>Paid courses &amp; schools</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Structured programmes for faster, more intensive progress.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Language schools in Brno (Czech for foreigners)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Intensive Czech programmes (full-time)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Private tutoring &amp; conversation partners</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Online classes (italki, Preply, Lingoda)</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Self-study &amp; exams</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Resources to learn independently and certify your level.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Free online resources (Memrise, Duolingo)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Czech language exams (A2, B1, B2)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Citizenship language exam (CZE-B1)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Family language sharing — Czech with kids</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
           <div class="accordion open">
             <div class="accordion-item">
               <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
-                Useful external links <span class="chevron">▾</span>
+                Related links &amp; external resources <span class="chevron">▾</span>
               </div>
               <div class="accordion-body">
                 <ul class="link-list">
-                  <li><a href="https://gotobrno.cz" target="_blank" rel="noopener">gotobrno.cz — tourism portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">studyinbrno.cz — study portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">jic.cz — Brno Innovation Centre</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ris3jmk.cz — regional innovation strategy</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu, icrc.cz, it4i.cz — research institutes</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">brno-international.eu — sister cities</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">expatcentrum.brno.cz — free A1/A2 courses</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">caledonianschool.com — language school</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ujop.cuni.cz — Charles University Czech for Foreigners</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">czechclass101.com — online lessons</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mucanj.cz — Brno language community</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- C14 Sidebar (per CSV: International Relations · Press & media · Brno Expat Centre) -->
+        <!-- C14 Sidebar -->
         <aside>
           <div class="sidebar-card">
-            <h4>International Relations Office (OZV)</h4>
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <div>
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Tereza Chrástová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Projects Coordinator</div>
-                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:chrastova.tereza@brno.cz">chrastova.tereza@brno.cz</a>
-                </div>
-              </div>
-              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Pavlína Sukupová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Communication</div>
-                <div class="sidebar-row" style="font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:sukupova.pavlina@brno.cz">sukupova.pavlina@brno.cz</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sidebar-card">
-            <h4>Press &amp; media inquiries</h4>
-            <div class="sidebar-row">
-              <span class="icon">☎</span>
-              <a href="tel:+420542172000">+420 542 172 000</a>
-            </div>
-            <div class="sidebar-row">
-              <span class="icon">✉</span>
-              <a href="mailto:tisk@brno.cz">tisk@brno.cz</a>
-            </div>
-            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">City Marketing Office — press releases, interview requests, official statements.</p>
-          </div>
-          <div class="sidebar-card">
             <h4>Brno Expat Centre</h4>
-            <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Free service for newcomers — practical advice on living, working and studying in Brno.</p>
-            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary">Visit Brno Expat Centre</a>
+            <div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420542171111">+420 542 171 111</a></div><div class="sidebar-row"><span class="icon">✉</span><a href="mailto:expat@brno.cz">expat@brno.cz</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Free A1 &amp; A2 Czech courses for working foreigners. Signup opens twice a year.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Caledonian School Brno</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Joštova 4, 602 00 Brno</div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Group classes, intensive programmes, exam preparation.</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Need A2 certificate?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">A2 Czech certificate is <strong>required for permanent residence</strong> after 5 years of stay. Exam fee ~3,500 CZK; available at certified centres.</p><a href="01-p04-health-insurance.html" class="btn btn-secondary" style="font-size:13px;">A2 exam info</a>
           </div>
         </aside>
       </div>

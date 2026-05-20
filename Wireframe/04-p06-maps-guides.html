@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — About Brno · Varianta 1 (Wireframe POC)</title>
+<title>Brno EN — Maps & Guides (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -99,7 +99,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <a class="nav-link active" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
         <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
@@ -112,7 +112,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link active" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
         <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
@@ -123,17 +123,18 @@
   </div>
 </header>
 
-<!-- About Brno section landing (T2 + T6 detail-block pattern) -->
+<!-- L3 Topic detail (T6) — Enjoy > Maps & Guides -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">About Brno</span>
+        <a href="04-p01-enjoy.html">Enjoy</a>
+        <span class="sep">›</span>
+        <span class="current">Maps &amp; Guides</span>
       </nav>
-      <h1 class="title-banner">About Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
@@ -143,95 +144,92 @@
         <div>
           <!-- Perex -->
           <div class="detail-block">
-            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Brno's story for newcomers, investors, researchers and curious visitors — what makes the city tick, what it offers, and how to plug into its ecosystem.</p>
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Orient yourself — get around the city, find offices and explore accessible routes. From the public transport map to themed walking tours and the accessible Brno overlay, the city's open-data team publishes maps for nearly every situation.</p>
           </div>
 
-          <!-- Topic 1: Mayor & City Council -->
+          <!-- Overview / About -->
           <div class="detail-block">
-            <h2><a href="#">Mayor &amp; City Council</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Who runs Brno — the elected mayor, deputy mayors, City Council and Assembly. Open meetings, decisions, voting records.</p>
-            <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Mayor of Brno</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Deputy mayors &amp; their portfolios</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Council — 11 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Assembly — 55 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Council meetings, agendas &amp; minutes</span><span class="quick-link-arrow">›</span></a>
-            </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Mayor &amp; City Council →</a></div>
+            <h3>About city maps in Brno</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Brno publishes detailed open-data maps for transport, cycling, accessibility, parking zones and cultural sites. Apps like Mapy.cz and Google Maps cover all city services; printed walking maps are free at TIC BRNO.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>City portal map:</strong> brnomesto.cz/mapa — combine layers (transport, parking, services).</li>
+              <li><strong>Public transport:</strong> DPMB map + IDS JMK regional integrated network.</li>
+              <li><strong>Cycling:</strong> ~370 km of cycling routes, downloadable GPX tracks.</li>
+              <li><strong>Accessibility:</strong> &quot;Brno bez bariér&quot; map shows step-free routes, accessible toilets, entrances.</li>
+              <li><strong>Walking tours:</strong> 12+ themed routes — Functionalism, Communism, Underground Brno.</li>
+            </ul>
           </div>
 
-          <!-- Topic 5: Brno facts & vision -->
+          <!-- Thematic H2 sections (no duplication) -->
           <div class="detail-block">
-            <h2><a href="#">Brno facts &amp; vision</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Key numbers, strategic priorities and Brno's place in the world — from #brno2050 to international partnerships.</p>
+            <h2>City maps</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Reference maps for daily orientation.</p>
             <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno in numbers (population, economy, foreign workforce, students, R&amp;D)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">#brno2050 — strategic vision</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Smart city &amp; sustainability initiatives</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Sister cities &amp; international cooperation — partner cities, reciprocity principles, joint projects (Ann Arbor, Charlotte, Kharkiv, Leeds, Leipzig, Poznań, Rennes, St. Pölten, Stuttgart, Utrecht, Vienna…)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno region context (Jihomoravský kraj, RIS3 strategy)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU programs &amp; funded projects</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Public transport map (DPMB / IDS JMK)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">District &amp; postal code map</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Cycling routes &amp; bike-share map</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Parking zones overview</span><span class="quick-link-arrow">›</span></a>
+              <a href="https://experience.arcgis.com/experience/e7d41bab702e41dca5d086c9719f9318/page/HOME" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Kam za kulturou — culture venues map</span><span class="quick-link-arrow">›</span></a>
+              <a href="https://infogram.com/kultura-brno-a-svet-1hmr6g8goewnz2n" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Brno cultural cooperation map (Kultura Brno a svět)</span><span class="quick-link-arrow">›</span></a>
             </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno facts &amp; vision →</a></div>
           </div>
 
-          <!-- C16 Accordion: Useful external links -->
+          <div class="detail-block">
+            <h2>Walking &amp; sightseeing tours</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Themed tours led by TIC BRNO or audio-guided.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno Walking Tours (English)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Functionalism tour</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Communism &amp; underground Brno tour</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Self-guided audio tours via app</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Accessibility &amp; special routes</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Maps for special needs and unique routes.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Accessible Brno (Brno bez bariér)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Family-friendly map (playgrounds, baby rooms)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Greenway routes — Brno to Vienna</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Hiking &amp; nature trails near Brno</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
           <div class="accordion open">
             <div class="accordion-item">
               <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
-                Useful external links <span class="chevron">▾</span>
+                Related links &amp; external resources <span class="chevron">▾</span>
               </div>
               <div class="accordion-body">
                 <ul class="link-list">
-                  <li><a href="https://gotobrno.cz" target="_blank" rel="noopener">gotobrno.cz — tourism portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">studyinbrno.cz — study portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">jic.cz — Brno Innovation Centre</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ris3jmk.cz — regional innovation strategy</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu, icrc.cz, it4i.cz — research institutes</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">brno-international.eu — sister cities</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">brnomesto.cz/mapa — city portal map</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mapy.cz — Czech map service</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">dpmb.cz/mapa — public transport map</a></li>
+                  <li><a href="https://experience.arcgis.com/experience/e7d41bab702e41dca5d086c9719f9318/page/HOME" target="_blank" rel="noopener">Kam za kulturou — culture venues map</a></li>
+                  <li><a href="https://kultura.brno.cz/mezinarodni-spoluprace-kultura" target="_blank" rel="noopener">Brno cultural cooperation portal (open calls, partner cities)</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">brnobezbarier.cz — accessibility map</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">gotobrno.cz/itineraries — themed tours</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- C14 Sidebar (per CSV: International Relations · Press & media · Brno Expat Centre) -->
+        <!-- C14 Sidebar -->
         <aside>
           <div class="sidebar-card">
-            <h4>International Relations Office (OZV)</h4>
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <div>
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Tereza Chrástová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Projects Coordinator</div>
-                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:chrastova.tereza@brno.cz">chrastova.tereza@brno.cz</a>
-                </div>
-              </div>
-              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Pavlína Sukupová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Communication</div>
-                <div class="sidebar-row" style="font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:sukupova.pavlina@brno.cz">sukupova.pavlina@brno.cz</a>
-                </div>
-              </div>
-            </div>
+            <h4>TIC BRNO</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Radnická 8, 602 00 Brno</div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Pick up free printed maps and book guided walking tours here.</p>
           </div>
           <div class="sidebar-card">
-            <h4>Press &amp; media inquiries</h4>
-            <div class="sidebar-row">
-              <span class="icon">☎</span>
-              <a href="tel:+420542172000">+420 542 172 000</a>
-            </div>
-            <div class="sidebar-row">
-              <span class="icon">✉</span>
-              <a href="mailto:tisk@brno.cz">tisk@brno.cz</a>
-            </div>
-            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">City Marketing Office — press releases, interview requests, official statements.</p>
+            <h4>DPMB Customer Centre</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Novobranská 18, 602 00 Brno</div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Buy passes &amp; pick up the current transport network map.</p>
           </div>
-          <div class="sidebar-card">
-            <h4>Brno Expat Centre</h4>
-            <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Free service for newcomers — practical advice on living, working and studying in Brno.</p>
-            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary">Visit Brno Expat Centre</a>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Going accessible?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Brno bez bariér app shows accessible routes, restroom locations, low-floor transit and tactile sidewalks across the city.</p><a href="01-p04-health-insurance.html" class="btn btn-secondary" style="font-size:13px;">Accessibility guide</a>
           </div>
         </aside>
       </div>
