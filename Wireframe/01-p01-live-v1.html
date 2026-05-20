@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Live · Varianta 1 (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav + C11 Mega menu -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="01-p03-healthcare.html">Documents</a>
+        <a href="01-p03-healthcare.html">Visa &amp; residency</a>
+        <a href="01-p03-healthcare.html">Transport &amp; vehicles</a>
+        <a href="01-p03-healthcare.html">Fees, payments &amp; fines</a>
+        <a href="01-p03-healthcare.html">Document legalization &amp; vidimation</a>
+        <a href="01-p03-healthcare.html">Social services &amp; family</a>
+        <a href="01-p03-healthcare.html">Environment &amp; waste</a>
+        <a href="01-p03-healthcare.html">City hall services</a>
+        <a href="01-p03-healthcare.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
+        <a href="01-p03-healthcare.html">How to start</a>
+        <a href="01-p03-healthcare.html">Accommodation</a>
+        <a href="01-p03-healthcare.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p03-healthcare.html">Social care</a>
+        <a href="01-p03-healthcare.html">Education</a>
+        <a href="01-p03-healthcare.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Working in Brno</a>
+        <a href="01-p03-healthcare.html">Right to work in Czechia</a>
+        <a href="01-p03-healthcare.html">Find a job</a>
+        <a href="01-p03-healthcare.html">Employment essentials</a>
+        <a href="01-p03-healthcare.html">Become self-employed</a>
+        <a href="01-p03-healthcare.html">Start a company</a>
+        <a href="01-p03-healthcare.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="01-p03-healthcare.html">Study in Brno</a>
+        <a href="01-p03-healthcare.html">Universities in Brno</a>
+        <a href="01-p03-healthcare.html">Science &amp; Innovation</a>
+        <a href="01-p03-healthcare.html">Research institutes</a>
+        <a href="01-p03-healthcare.html">Innovation ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy Brno</a>
+        <a href="01-p03-healthcare.html">Leisure &amp; Sports</a>
+        <a href="01-p03-healthcare.html">Culture</a>
+        <a href="01-p03-healthcare.html">Sights &amp; architecture</a>
+        <a href="01-p03-healthcare.html">Events</a>
+        <a href="01-p03-healthcare.html">Maps &amp; Guides</a>
+        <a href="01-p03-healthcare.html">Food and Drink</a>
+        <a href="01-p03-healthcare.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="01-p03-healthcare.html">Mayor &amp; City Council</a>
+        <a href="01-p03-healthcare.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 01-P01 Live section landing (T2) -->
+<main>
+  <!-- C03 Page banner + breadcrumbs -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">Live</span>
+      </nav>
+      <h1 class="title-banner">Living in Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Practical guides for foreigners on first steps, accommodation, transport, healthcare, social care, schools and learning Czech. Whether you've just arrived or you've been here for years, this section covers the everyday topics that matter most.</p>
+          </div>
+
+          <!-- Topic 1: How to start (NEW) -->
+          <div class="detail-block" id="how-to-start">
+            <h2><a href="#how-to-start">How to start</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Quick checklist for your first weeks in Brno — register your address, get oriented, and connect with the right people.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Step-by-step guide</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Residency registration</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Useful contacts</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about How to start →</a></div>
+          </div>
+
+          <!-- Topic 2: Accommodation -->
+          <div class="detail-block">
+            <h2><a href="#">Accommodation</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Renting a flat, signing contracts, deposits and tenant rights — what you need to know to find a place in Brno.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Accommodation guide for newcomers</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Tenant rights &amp; responsibilities</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Municipal housing (startup, senior, accessible)</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Accommodation →</a></div>
+          </div>
+
+          <!-- Topic 3: Transport -->
+          <div class="detail-block">
+            <h2><a href="01-p02-transport.html">Transport</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno's integrated transport system (IDS JMK) covers trams, buses, trolleybuses and regional trains. Tickets and timetables are online.</p>
+            <div class="quick-links">
+              <a href="https://idos.cz" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">IDOS — national timetable</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">IDS JMK — Brno integrated system</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Resident parking permits</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Cycling routes &amp; bike and scooter sharing</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Transport →</a></div>
+          </div>
+
+          <!-- Topic 4: Healthcare -->
+          <div class="detail-block">
+            <h2><a href="01-p03-healthcare.html">Healthcare</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Czech public healthcare is universal for those with insurance. English-speaking doctors and international clinics are widely available in Brno.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Healthcare availability for foreigners</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Find a hospital or doctor</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Health insurance — public vs commercial</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p03-healthcare.html" style="font-weight:600;">All about Healthcare →</a></div>
+          </div>
+
+          <!-- Topic 5: Social care -->
+          <div class="detail-block">
+            <h2><a href="#">Social care</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Czech social system supports families, seniors and people in material need — through state benefits, allowances and assistance programmes.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">How it works</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">State Social Support and Assistance in Material Need</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Social care →</a></div>
+          </div>
+
+          <!-- Topic 6: Education -->
+          <div class="detail-block">
+            <h2><a href="#">Education</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Compulsory schooling for children aged 6–15. Brno has 70+ public nurseries, 80+ primary schools and English-language alternatives.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">How the Czech school system works</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Primary school enrollment</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Nursery enrollment</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Foreigner-friendly schools in Brno</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Schooling issues</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Education →</a></div>
+          </div>
+
+          <!-- Topic 7: Speak Czech -->
+          <div class="detail-block">
+            <h2><a href="#">Speak Czech</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Most public services are in Czech. Free city-supported courses and paid private programmes help newcomers get started.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Czech language courses</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Free city-supported programmes</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Online learning resources</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Translation &amp; interpreter services</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Speak Czech →</a></div>
+          </div>
+
+          <!-- C16 Accordion: Useful external links -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Useful external links <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="https://idos.cz" target="_blank" rel="noopener">IDOS — national journey planner</a></li>
+                  <li><a href="#">JMK regional portal</a></li>
+                  <li><a href="#">Brno Expat Centre — full guide</a></li>
+                  <li><a href="#">Czech Social Security Administration (ČSSZ)</a></li>
+                  <li><a href="#">Foreign Police — residence permits</a></li>
+                  <li><a href="#">Cosedeje.brno.cz — Brno events calendar</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542171111">+420 542 171 111</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:expat@brno.cz">expat@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Free service for newcomers — practical advice in English on living, working and studying in Brno.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Visit us</h4>
+            <div class="sidebar-row">
+              <span class="small">ADDRESS</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              Radnická 8, 602 00 Brno
+            </div>
+            <div class="sidebar-row" style="margin-top:8px;">
+              <span class="small">TODAY</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              8:00–17:00 <a href="#" style="margin-left:6px;">(other days)</a>
+            </div>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-50);">
+            <h4 style="margin-bottom:8px;">First time in Brno?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Start with the Upon arrival guide for the essentials in your first weeks.</p>
+            <a href="#" class="btn btn-secondary">Upon arrival guide →</a>
+          </div>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4 style="margin-bottom:8px;">Crisis or urgent issue?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Lost documents, stolen vehicle, urgent shelter need — go straight to SOS for fast contacts.</p>
+            <a href="#" class="btn btn-primary">SOS — I need help now</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Work · Varianta 1 (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav + C11 Mega menu -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="01-p03-healthcare.html">Documents</a>
+        <a href="01-p03-healthcare.html">Visa &amp; residency</a>
+        <a href="01-p03-healthcare.html">Transport &amp; vehicles</a>
+        <a href="01-p03-healthcare.html">Fees, payments &amp; fines</a>
+        <a href="01-p03-healthcare.html">Document legalization &amp; vidimation</a>
+        <a href="01-p03-healthcare.html">Social services &amp; family</a>
+        <a href="01-p03-healthcare.html">Environment &amp; waste</a>
+        <a href="01-p03-healthcare.html">City hall services</a>
+        <a href="01-p03-healthcare.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
+        <a href="01-p03-healthcare.html">How to start</a>
+        <a href="01-p03-healthcare.html">Accommodation</a>
+        <a href="01-p03-healthcare.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p03-healthcare.html">Social care</a>
+        <a href="01-p03-healthcare.html">Education</a>
+        <a href="01-p03-healthcare.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Working in Brno</a>
+        <a href="01-p03-healthcare.html">Right to work in Czechia</a>
+        <a href="01-p03-healthcare.html">Find a job</a>
+        <a href="01-p03-healthcare.html">Employment essentials</a>
+        <a href="01-p03-healthcare.html">Become self-employed</a>
+        <a href="01-p03-healthcare.html">Start a company</a>
+        <a href="01-p03-healthcare.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="01-p03-healthcare.html">Study in Brno</a>
+        <a href="01-p03-healthcare.html">Universities in Brno</a>
+        <a href="01-p03-healthcare.html">Science &amp; Innovation</a>
+        <a href="01-p03-healthcare.html">Research institutes</a>
+        <a href="01-p03-healthcare.html">Innovation ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy Brno</a>
+        <a href="01-p03-healthcare.html">Leisure &amp; Sports</a>
+        <a href="01-p03-healthcare.html">Culture</a>
+        <a href="01-p03-healthcare.html">Sights &amp; architecture</a>
+        <a href="01-p03-healthcare.html">Events</a>
+        <a href="01-p03-healthcare.html">Maps &amp; Guides</a>
+        <a href="01-p03-healthcare.html">Food and Drink</a>
+        <a href="01-p03-healthcare.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="01-p03-healthcare.html">Mayor &amp; City Council</a>
+        <a href="01-p03-healthcare.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Work section landing (T2 + T6 detail-block pattern) -->
+<main>
+  <!-- C03 Page banner + breadcrumbs -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">Work</span>
+      </nav>
+      <h1 class="title-banner">Working in Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Working in Brno — for employees, freelancers and entrepreneurs. Visas and work permits, contracts and tax basics, freelance licences, company setup, and the local business ecosystem.</p>
+          </div>
+
+          <!-- Topic 1: Right to work in Czechia -->
+          <div class="detail-block">
+            <h2><a href="#">Right to work in Czechia</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Visas, work permits and recognition of qualifications — for non-EU citizens this is the critical first stop.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Visa types &amp; residence permits for work</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Employee Card / Blue Card / ICT Card</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU Blue Card for highly qualified</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Recognition of foreign qualifications (regulated professions)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Foreign Police &amp; MOI contacts</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Right to work in Czechia →</a></div>
+          </div>
+
+          <!-- Topic 2: Find a job -->
+          <div class="detail-block">
+            <h2><a href="#">Find a job</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Where to look, who's hiring in Brno, and how to navigate the local labour market.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Major employers &amp; sectors in Brno (IT, R&amp;D, automotive, biotech)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Job portals &amp; expat-friendly listings</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno labour market overview</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Recruitment agencies &amp; headhunters</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Jobs at the City Hall</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Find a job →</a></div>
+          </div>
+
+          <!-- Topic 3: Employment essentials -->
+          <div class="detail-block">
+            <h2><a href="#">Employment essentials</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">What you need to know once hired — contract types, salary structure, leave entitlements, and what happens if you lose your job.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Employment contract types (HPP, DPP, DPČ)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Salary, taxes &amp; contributions (gross vs net)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Vacation, sick leave &amp; parental leave</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Termination &amp; severance</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Unemployment office (Úřad práce) — when you lose a job</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Employment essentials →</a></div>
+          </div>
+
+          <!-- Topic 4: Become self-employed -->
+          <div class="detail-block">
+            <h2><a href="#">Become self-employed</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Setting up as a freelancer / sole trader (OSVČ) — trade licence types, taxes and bookkeeping basics.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Establish a trade licence ★ priority-5</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Types of trades (free / bound / regulated / concession)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Suspend, modify or end a trade licence</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Trade Register extracts</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Taxes, social &amp; health insurance for OSVČ</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Bookkeeping &amp; invoicing basics</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Self-employment →</a></div>
+          </div>
+
+          <!-- Topic 5: Start a company -->
+          <div class="detail-block">
+            <h2><a href="#">Start a company</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Founding a limited liability or joint-stock company — entity types, notarial deed and Commercial Register registration.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Company types (s.r.o., a.s., družstvo)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Founding steps &amp; notarial deed</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Commercial Register registration</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Foreign founders &amp; shareholders</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Statutory bodies &amp; annual reporting</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Start a company →</a></div>
+          </div>
+
+          <!-- Topic 6: Brno business ecosystem (merged from Brno business ecosystem + Brno for Business) -->
+          <div class="detail-block">
+            <h2><a href="#">Brno business ecosystem</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno is a regional hub for IT, R&amp;D, automotive and life sciences — home to Honeywell, Red Hat, Kyndryl and IBM. Tap into innovation centres, accelerators, grants and freelancer communities to grow your business here.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Why Brno for business — talent pool, location, costs</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Major employers &amp; sectors (IT, R&amp;D, automotive, biotech)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">JIC — Brno Innovation Centre</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Co-working spaces &amp; accelerators</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City grants &amp; investment incentives</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">SME &amp; freelancer communities</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno Business Centre</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno business ecosystem →</a></div>
+          </div>
+
+          <!-- C16 Accordion: Useful external links -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Useful external links <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">MPSV — labour ministry portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Úřad práce ČR — unemployment office</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Czech POINT — business extracts</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Foreign Police — work permits</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">JIC.cz — Brno Innovation Centre</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Justice.cz — Commercial Register search</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542171111">+420 542 171 111</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:expat@brno.cz">expat@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Free help for foreigners — work permits, contracts, freelance licences. English-speaking staff.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Trade Office (Živnostenský úřad)</h4>
+            <div class="sidebar-row">
+              <span class="small">ADDRESS</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              Malinovského nám. 3, 602 00 Brno
+            </div>
+            <div class="sidebar-row" style="margin-top:8px;">
+              <span class="small">TODAY OPEN</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              8:00–17:00 <a href="#" style="margin-left:6px;">(other days)</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Walk-in counter for trade licence applications.</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4 style="margin-bottom:8px;">Lost your job?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Register with Úřad práce within 3 working days to keep your health insurance covered and apply for unemployment benefits.</p>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Úřad práce ČR</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="#">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

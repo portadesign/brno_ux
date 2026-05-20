@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — Live (Wireframe POC)</title>
+<title>Brno EN — Research &amp; Study · Varianta 1 (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link active" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
         <a href="01-p03-healthcare.html">How to start</a>
@@ -88,7 +88,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <a class="nav-link active" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
         <a href="01-p03-healthcare.html">Study in Brno</a>
@@ -123,64 +123,93 @@
   </div>
 </header>
 
-<!-- L2 Section landing — dept-tile--card rozcestník (v2 template) -->
+<!-- Research & Study section landing (T2 detail-block pattern) -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">Live</span>
+        <span class="current">Research &amp; Study</span>
       </nav>
-      <h1 class="title-banner">Living in Brno</h1>
+      <h1 class="title-banner">Research &amp; Study in Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <!-- Perex -->
-      <p style="font-size:18px;line-height:1.6;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Practical guides for foreigners on first steps, accommodation, transport, healthcare, social care, schools and learning Czech. Whether you've just arrived or you've been here for years, this section covers the everyday topics that matter most.</p>
-
-      <!-- C09b Dept-tile card grid: 7 topics in a 3-column rozcestník -->
-      <div class="dept-grid" style="grid-template-columns:repeat(3, 1fr);">
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">How to start</a>
-          <div class="dept-tile__desc">Quick checklist for your first weeks in Brno — register your address, get oriented, and connect with the right people.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Accommodation</a>
-          <div class="dept-tile__desc">Renting a flat, signing contracts, deposits and tenant rights — what you need to know to find a place in Brno.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Transport</a>
-          <div class="dept-tile__desc">Brno's integrated transport system (IDS JMK) — trams, buses, trolleybuses and regional trains. Tickets and timetables online.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Healthcare</a>
-          <div class="dept-tile__desc">Czech public healthcare is universal for those with insurance. English-speaking doctors and international clinics widely available.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Social care</a>
-          <div class="dept-tile__desc">Czech social system supports families, seniors and people in material need — state benefits, allowances and assistance programmes.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Education</a>
-          <div class="dept-tile__desc">Compulsory schooling for children aged 6–15. Brno has 70+ public nurseries, 80+ primary schools and English-language alternatives.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Speak Czech</a>
-          <div class="dept-tile__desc">Most public services are in Czech. Free city-supported courses and paid private programmes help newcomers get started.</div>
-        </div>
-      </div>
-
-      <!-- Help strip -->
-      <div style="margin-top:40px;padding:20px 24px;background:var(--gray-100);border-left:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div class="layout-with-sidebar">
         <div>
-          <strong style="display:block;margin-bottom:4px;">Need help settling in?</strong>
-          <span style="color:var(--gray-700);">Brno Expat Centre offers free English-speaking help with paperwork, housing and orientation.</span>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Brno is one of Central Europe's largest student cities and the second-largest research hub in the Czech Republic. Five universities, 80,000+ students, world-class institutes — and a vibrant international community.</p>
+          </div>
+
+          <!-- Topic 1: Study in Brno -->
+          <div class="detail-block">
+            <h2><a href="#">Study in Brno</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno is one of Central Europe's biggest student cities — five universities, 80,000+ students, English-language programmes and a vibrant international community.</p>
+            <div class="quick-links">
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Study in Brno — official study portal</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Universities in Brno — MUNI, VUT, Mendelu, JAMU, VFU</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Why study in Brno — costs, quality, student community, location</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Internships, student jobs &amp; after-graduation work</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Study in Brno →</a></div>
+          </div>
+
+          <!-- Topic 2: Science & Innovation -->
+          <div class="detail-block">
+            <h2><a href="#">Science &amp; Innovation</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno is the second-largest research hub in the Czech Republic — five universities, world-class research institutes and an active innovation ecosystem.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Universities in Brno (MUNI, VUT, Mendelu, JAMU, VFU)</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">CEITEC — Central European Institute of Technology</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">ICRC — International Clinical Research Center</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Innovation ecosystem (KUMST, accelerators)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">International conferences &amp; research events</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Science &amp; Innovation →</a></div>
+          </div>
+
+          <!-- C16 Accordion: Useful external links -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Useful external links <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">studyinbrno.cz — official study portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">muni.cz — Masaryk University</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">vut.cz — Brno University of Technology</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mendelu.cz — Mendel University</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu — Central European Institute of Technology</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">icrc.cz — International Clinical Research Center</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="#" style="font-weight:600;white-space:nowrap;">Contact Brno Expat Centre →</a>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>For new students</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Each university runs an International Office for visa, housing and admin help. Find yours via the official study portal.</p>
+            <a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">studyinbrno.cz</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>Researcher in Brno?</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">EURAXESS Brno helps incoming researchers with visas, accommodation, banking and family integration.</p>
+            <a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">euraxess.cz/brno</a>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4 style="margin-bottom:8px;">Looking for a programme?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">100+ English-taught Bachelor's, Master's and PhD programmes across Brno universities.</p>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;">Browse programmes</a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

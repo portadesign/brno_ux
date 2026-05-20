@@ -16,6 +16,7 @@
   // Tags: T1/T2/T4/T6 = template type; "soon" = not yet built (disabled)
   var TREE = [
     { label: 'Homepage', href: 'index.html', level: 1, tag: 'T1' },
+    { label: 'Sitemap', href: 'sitemap.html', level: 1, tag: '—' },
 
     { divider: 'Main sections' },
     { label: 'I need to arrange', href: '05-p01-life-admin.html', level: 2, tag: 'T3' },
@@ -24,14 +25,17 @@
     { label: 'Healthcare', href: '01-p03-healthcare.html', level: 3, tag: 'T6' },
     { label: 'Health insurance', href: '01-p04-health-insurance.html', level: 4, tag: 'T4' },
     { label: 'Work', href: '02-p01-work.html', level: 2, tag: 'T2' },
+    { label: 'Research & Study', href: '03-p01-research-study.html', level: 2, tag: 'T2' },
     { label: 'Enjoy', href: '04-p01-enjoy.html', level: 2, tag: 'T2' },
     { label: 'About Brno', href: '06-p01-about-brno.html', level: 2, tag: 'T2' },
+    { label: 'Detail organizační jednotky', href: 'detail-organizacni-jednotky.html', level: 4, tag: 'T7' },
 
-    { divider: 'Department templates (T7)' },
-    { label: 'Transport Department (Odbor dopravy)', href: '07-p01-odbor-dopravy.html', level: 4, tag: 'T7' },
-
-    { divider: 'Varianta 2' },
-    { label: 'Work (dept-tile rozcestník)', href: '02-p01-work-v2.html', level: 2, tag: 'T2' }
+    { divider: 'Varianta 1 (T2 detail-block)' },
+    { label: 'Live · V1', href: '01-p01-live-v1.html', level: 2, tag: 'T2' },
+    { label: 'Work · V1', href: '02-p01-work-v1.html', level: 2, tag: 'T2' },
+    { label: 'Research & Study · V1', href: '03-p01-research-study-v1.html', level: 2, tag: 'T2' },
+    { label: 'Enjoy · V1', href: '04-p01-enjoy-v1.html', level: 2, tag: 'T2' },
+    { label: 'About Brno · V1', href: '06-p01-about-brno-v1.html', level: 2, tag: 'T2' }
   ];
 
   var TOTAL_PLANNED = 24;
@@ -116,9 +120,21 @@
 
   function cleanLinkText(raw) {
     return (raw || '')
-      .replace(/[›→»›→]+\s*$/g, '') // strip trailing chevrons / arrows
+      .replace(/[›→»▾▴⌄⌃]+\s*$/g, '') // strip trailing chevrons / arrows / accordion carets
       .replace(/\s+/g, ' ')
       .trim();
+  }
+
+  // Walks up from the given element to find the nearest enclosing block heading
+  // (h2/h3/h4 that is a direct child of an ancestor). Returns null if none found.
+  function findEnclosingHeading(node) {
+    var container = node.parentElement;
+    while (container && container !== document.body) {
+      var h = container.querySelector(':scope > h2, :scope > h3, :scope > h4');
+      if (h && h.textContent.trim()) return h;
+      container = container.parentElement;
+    }
+    return null;
   }
 
   function trackLastLinkClick() {
@@ -131,6 +147,13 @@
       if (a.classList && a.classList.contains('lang-switch')) return;
       var text = cleanLinkText(a.textContent);
       if (!text) return;
+      // Generic CTAs ("Show more / less / all") carry no destination info on their own.
+      // Substitute the nearest enclosing heading so the next page's H1 reflects which
+      // block the user was reading rather than the literal button label.
+      if (/^show (more|less|all)$/i.test(text)) {
+        var heading = findEnclosingHeading(a);
+        if (heading) text = cleanLinkText(heading.textContent);
+      }
       try { sessionStorage.setItem(STORAGE_KEY, text); } catch (err) {}
     }, true);
   }
