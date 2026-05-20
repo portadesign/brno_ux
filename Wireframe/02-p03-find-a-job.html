@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — Work (Wireframe POC)</title>
+<title>Brno EN — Find a job (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -123,60 +123,110 @@
   </div>
 </header>
 
-<!-- Work section landing — EXPERIMENTAL minimal directory (dept-tile rozcestník) -->
+<!-- L3 Topic detail (T6) — Work > Find a job -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">Work</span>
+        <a href="02-p01-work.html">Work</a>
+        <span class="sep">›</span>
+        <span class="current">Find a job</span>
       </nav>
-      <h1 class="title-banner">Work in Brno</h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <!-- Perex -->
-      <p style="font-size:18px;line-height:1.6;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Working in Brno — for employees, freelancers and entrepreneurs. Visas and work permits, contracts and tax basics, freelance licences, company setup, and the local business ecosystem.</p>
-
-      <!-- C09b Dept-tile card grid: 6 topics in a 3-column rozcestník -->
-      <div class="dept-grid" style="grid-template-columns:repeat(3, 1fr);">
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
-          <div class="dept-tile__desc">Visas, work permits, recognition of qualifications. The critical first stop for non-EU citizens.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p03-find-a-job.html">Find a job</a>
-          <div class="dept-tile__desc">Major employers, job portals, recruitment agencies and Brno labour market overview.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p04-employment-essentials.html">Employment essentials</a>
-          <div class="dept-tile__desc">Contract types, salary &amp; taxes, leave entitlements, what to do if you lose your job.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p05-become-self-employed.html">Become self-employed</a>
-          <div class="dept-tile__desc">Set up as a freelancer (OSVČ) — trade licence types, taxes, social &amp; health insurance, bookkeeping.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p06-start-a-company.html">Start a company</a>
-          <div class="dept-tile__desc">Found a limited or joint-stock company — entity types, notarial deed, Commercial Register registration.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
-          <div class="dept-tile__desc">Regional hub for IT, R&amp;D, automotive and life sciences (Honeywell, Red Hat, Kyndryl, IBM) — plus JIC, accelerators, co-working, grants and freelancer communities.</div>
-        </div>
-      </div>
-
-      <!-- Single inline help strip below the grid -->
-      <div style="margin-top:40px;padding:20px 24px;background:var(--gray-100);border-left:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div class="layout-with-sidebar">
         <div>
-          <strong style="display:block;margin-bottom:4px;">Need help getting started?</strong>
-          <span style="color:var(--gray-700);">Brno Expat Centre offers free English-speaking help with work permits, contracts and trade licences.</span>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Brno's labour market is strong in IT, R&amp;D, biotech, automotive and shared-services. Major employers actively recruit English-speaking talent and unemployment for skilled workers stays under 4%.</p>
+          </div>
+
+          <!-- Overview / About -->
+          <div class="detail-block">
+            <h3>About Brno's labour market</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Brno hosts the second-largest concentration of IT and R&amp;D jobs in Czechia. International companies have English as a working language; smaller Czech firms typically prefer Czech speakers, though tech roles are increasingly an exception.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>Major employers:</strong> Honeywell, Red Hat, Kyndryl, IBM, AT&amp;T, Avast, Y Soft, FEI/Thermo Fisher.</li>
+              <li><strong>Strong sectors:</strong> IT &amp; R&amp;D, shared-services, biotech (CEITEC, ICRC), automotive, life sciences.</li>
+              <li><strong>Salary range (2025):</strong> Junior tech 50–70k CZK gross, senior 100–180k+, lead/architect 150–250k+.</li>
+              <li><strong>Mobility:</strong> Average tenure 3–4 years in tech; salary growth ~5–8% per year.</li>
+            </ul>
+          </div>
+
+          <!-- Thematic H2 sections (no duplication) -->
+          <div class="detail-block">
+            <h2>Where to look</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Best starting points by channel.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Major employers directory</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Job portals (jobs.cz, LinkedIn, StartupJobs)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Recruitment agencies &amp; headhunters</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Hall &amp; public sector jobs</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Brno's industries</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Sectors with strong, ongoing hiring demand.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">IT &amp; R&amp;D</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Shared-services &amp; finance</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Biotech &amp; life sciences</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Automotive &amp; manufacturing</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Career resources</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Tools to prepare, apply and grow.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Salary benchmarks by role</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">CV &amp; cover letter for Czech market</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Internships &amp; graduate programs</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Networking events &amp; meetups</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">jobs.cz — largest Czech job portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">linkedin.com — international network</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">startupjobs.cz — startup ecosystem</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">eures.eu — EU jobs portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">expats.cz/jobs — expat-friendly listings</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="#" style="font-weight:600;white-space:nowrap;">Contact Brno Expat Centre →</a>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420542171111">+420 542 171 111</a></div><div class="sidebar-row"><span class="icon">✉</span><a href="mailto:expat@brno.cz">expat@brno.cz</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Career counselling and employer connections for foreigners.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>JIC Career events</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Monthly meetups, tech talks and recruitment fairs at the Brno Innovation Centre.</p><a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">jic.cz/events</a>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Why Brno for work?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Strong English-friendliness, low unemployment, 15–25% lower cost of living than Prague, vibrant expat community.</p><a href="#" class="btn btn-secondary" style="font-size:13px;">Read the Brno work guide</a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — About Brno · Varianta 1 (Wireframe POC)</title>
+<title>Brno EN — Events (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -99,7 +99,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <a class="nav-link active" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
         <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
@@ -112,7 +112,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link active" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
         <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
@@ -123,17 +123,18 @@
   </div>
 </header>
 
-<!-- About Brno section landing (T2 + T6 detail-block pattern) -->
+<!-- L3 Topic detail (T6) — Enjoy > Events -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">About Brno</span>
+        <a href="04-p01-enjoy.html">Enjoy</a>
+        <span class="sep">›</span>
+        <span class="current">Events</span>
       </nav>
-      <h1 class="title-banner">About Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
@@ -143,95 +144,92 @@
         <div>
           <!-- Perex -->
           <div class="detail-block">
-            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Brno's story for newcomers, investors, researchers and curious visitors — what makes the city tick, what it offers, and how to plug into its ecosystem.</p>
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">What's happening in the city — calendars, festivals, trade fairs and community events. Brno has events nearly every weekend: from massive trade fairs at the BVV exhibition centre to intimate language meetups at the Expat Centre.</p>
           </div>
 
-          <!-- Topic 1: Mayor & City Council -->
+          <!-- Overview / About -->
           <div class="detail-block">
-            <h2><a href="#">Mayor &amp; City Council</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Who runs Brno — the elected mayor, deputy mayors, City Council and Assembly. Open meetings, decisions, voting records.</p>
-            <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Mayor of Brno</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Deputy mayors &amp; their portfolios</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Council — 11 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Assembly — 55 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Council meetings, agendas &amp; minutes</span><span class="quick-link-arrow">›</span></a>
-            </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Mayor &amp; City Council →</a></div>
+            <h3>About events in Brno</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">The city's event calendar mixes large-scale international fairs, music festivals, and a year-round expat-friendly meetup scene. Most major events are publicized in English; weekly highlights appear on TIC BRNO and the gotobrno.cz portal.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>Major venues:</strong> BVV exhibition centre (largest in CZ), Sono Centrum, Špilberk Castle outdoor stage.</li>
+              <li><strong>Year-round festivals:</strong> Janáček Brno (autumn), Easter &amp; Christmas markets, MotoGP weekend (August).</li>
+              <li><strong>Expat community:</strong> Monthly Friday Coffee, Internations meetup, language tandem nights.</li>
+              <li><strong>Family events:</strong> Children's Day at Špilberk, Brno Open Days, science weekends at VIDA!</li>
+              <li><strong>Free events:</strong> Open-air cinema (summer), Brno Music Marathon, public lectures at MUNI &amp; VUT.</li>
+            </ul>
           </div>
 
-          <!-- Topic 5: Brno facts & vision -->
+          <!-- Thematic H2 sections (no duplication) -->
           <div class="detail-block">
-            <h2><a href="#">Brno facts &amp; vision</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Key numbers, strategic priorities and Brno's place in the world — from #brno2050 to international partnerships.</p>
+            <h2>Festivals &amp; seasonal events</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Recurring annual events that define Brno's cultural calendar.</p>
             <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno in numbers (population, economy, foreign workforce, students, R&amp;D)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">#brno2050 — strategic vision</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Smart city &amp; sustainability initiatives</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Sister cities &amp; international cooperation — partner cities, reciprocity principles, joint projects (Ann Arbor, Charlotte, Kharkiv, Leeds, Leipzig, Poznań, Rennes, St. Pölten, Stuttgart, Utrecht, Vienna…)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno region context (Jihomoravský kraj, RIS3 strategy)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU programs &amp; funded projects</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Janáček Brno (opera festival, autumn)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Easter markets at Zelný trh</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Christmas markets &amp; Advent</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno Music Marathon (free, summer)</span><span class="quick-link-arrow">›</span></a>
+              <a href="https://kultura.brno.cz/brnenske-kulturni-forum" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Brno Cultural Forum (BKF) — recordings &amp; networking</span><span class="quick-link-arrow">›</span></a>
             </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno facts &amp; vision →</a></div>
           </div>
 
-          <!-- C16 Accordion: Useful external links -->
+          <div class="detail-block">
+            <h2>Trade fairs &amp; business events</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Major international fairs at the BVV exhibition centre.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">BVV exhibition centre — calendar</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Embedded World &amp; tech fairs</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Designblok at multiple venues</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">MotoGP weekend at Brno Circuit</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Community &amp; expat events</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Smaller, regular events for residents and newcomers.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno Expat Centre meetups</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Friday Coffee — weekly expat gathering</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Language tandem nights</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Open-air cinema &amp; summer concerts</span><span class="quick-link-arrow">›</span></a>
+              <a href="https://kultura.brno.cz/mezinarodni-spoluprace-kultura" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Open calls for international artists &amp; speakers</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
           <div class="accordion open">
             <div class="accordion-item">
               <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
-                Useful external links <span class="chevron">▾</span>
+                Related links &amp; external resources <span class="chevron">▾</span>
               </div>
               <div class="accordion-body">
                 <ul class="link-list">
-                  <li><a href="https://gotobrno.cz" target="_blank" rel="noopener">gotobrno.cz — tourism portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">studyinbrno.cz — study portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">jic.cz — Brno Innovation Centre</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ris3jmk.cz — regional innovation strategy</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu, icrc.cz, it4i.cz — research institutes</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">brno-international.eu — sister cities</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">gotobrno.cz/events — official event calendar</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">cosedeje.brno.cz — what's happening</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">bvv.cz — BVV exhibition centre</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">janacek-brno.cz — Janáček Festival</a></li>
+                  <li><a href="https://kultura.brno.cz" target="_blank" rel="noopener">kultura.brno.cz — Brno Culture Department</a></li>
+                  <li><a href="https://kultura.brno.cz/brnenske-kulturni-forum" target="_blank" rel="noopener">Brno Cultural Forum (BKF)</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">kudyznudy.cz — Czech event portal</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- C14 Sidebar (per CSV: International Relations · Press & media · Brno Expat Centre) -->
+        <!-- C14 Sidebar -->
         <aside>
           <div class="sidebar-card">
-            <h4>International Relations Office (OZV)</h4>
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <div>
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Tereza Chrástová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Projects Coordinator</div>
-                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:chrastova.tereza@brno.cz">chrastova.tereza@brno.cz</a>
-                </div>
-              </div>
-              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Pavlína Sukupová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Communication</div>
-                <div class="sidebar-row" style="font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:sukupova.pavlina@brno.cz">sukupova.pavlina@brno.cz</a>
-                </div>
-              </div>
-            </div>
+            <h4>TIC BRNO</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Tickets, schedules and event recommendations — the official tourist info point.</p><a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">tic-brno.cz</a>
           </div>
           <div class="sidebar-card">
-            <h4>Press &amp; media inquiries</h4>
-            <div class="sidebar-row">
-              <span class="icon">☎</span>
-              <a href="tel:+420542172000">+420 542 172 000</a>
-            </div>
-            <div class="sidebar-row">
-              <span class="icon">✉</span>
-              <a href="mailto:tisk@brno.cz">tisk@brno.cz</a>
-            </div>
-            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">City Marketing Office — press releases, interview requests, official statements.</p>
+            <h4>Brno Expat Centre events</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Monthly newcomer orientation, Friday Coffee meetups, language tandems and seasonal celebrations.</p><a href="#" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;">expatcentrum.brno.cz</a>
           </div>
-          <div class="sidebar-card">
-            <h4>Brno Expat Centre</h4>
-            <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Free service for newcomers — practical advice on living, working and studying in Brno.</p>
-            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary">Visit Brno Expat Centre</a>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Subscribe to weekly digest</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Get a free curated email of upcoming Brno events in English every Thursday — culture, sport, family, expat meetups.</p><a href="01-p04-health-insurance.html" class="btn btn-secondary" style="font-size:13px;">Subscribe</a>
           </div>
         </aside>
       </div>

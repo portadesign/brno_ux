@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — Work (Wireframe POC)</title>
+<title>Brno EN — Employment essentials (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -123,60 +123,110 @@
   </div>
 </header>
 
-<!-- Work section landing — EXPERIMENTAL minimal directory (dept-tile rozcestník) -->
+<!-- L3 Topic detail (T6) — Work > Employment essentials -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">Work</span>
+        <a href="02-p01-work.html">Work</a>
+        <span class="sep">›</span>
+        <span class="current">Employment essentials</span>
       </nav>
-      <h1 class="title-banner">Work in Brno</h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <!-- Perex -->
-      <p style="font-size:18px;line-height:1.6;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Working in Brno — for employees, freelancers and entrepreneurs. Visas and work permits, contracts and tax basics, freelance licences, company setup, and the local business ecosystem.</p>
-
-      <!-- C09b Dept-tile card grid: 6 topics in a 3-column rozcestník -->
-      <div class="dept-grid" style="grid-template-columns:repeat(3, 1fr);">
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
-          <div class="dept-tile__desc">Visas, work permits, recognition of qualifications. The critical first stop for non-EU citizens.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p03-find-a-job.html">Find a job</a>
-          <div class="dept-tile__desc">Major employers, job portals, recruitment agencies and Brno labour market overview.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p04-employment-essentials.html">Employment essentials</a>
-          <div class="dept-tile__desc">Contract types, salary &amp; taxes, leave entitlements, what to do if you lose your job.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p05-become-self-employed.html">Become self-employed</a>
-          <div class="dept-tile__desc">Set up as a freelancer (OSVČ) — trade licence types, taxes, social &amp; health insurance, bookkeeping.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p06-start-a-company.html">Start a company</a>
-          <div class="dept-tile__desc">Found a limited or joint-stock company — entity types, notarial deed, Commercial Register registration.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
-          <div class="dept-tile__desc">Regional hub for IT, R&amp;D, automotive and life sciences (Honeywell, Red Hat, Kyndryl, IBM) — plus JIC, accelerators, co-working, grants and freelancer communities.</div>
-        </div>
-      </div>
-
-      <!-- Single inline help strip below the grid -->
-      <div style="margin-top:40px;padding:20px 24px;background:var(--gray-100);border-left:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div class="layout-with-sidebar">
         <div>
-          <strong style="display:block;margin-bottom:4px;">Need help getting started?</strong>
-          <span style="color:var(--gray-700);">Brno Expat Centre offers free English-speaking help with work permits, contracts and trade licences.</span>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Once you sign an employment contract in Czechia, you're subject to Czech labour law — favourable to employees but with specific quirks around contract types, gross-net calculations and termination notice.</p>
+          </div>
+
+          <!-- Overview / About -->
+          <div class="detail-block">
+            <h3>About Czech employment law</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Czech labour law (Zákoník práce) heavily favours employees. Three contract types cover different work intensities, and the tax/insurance system runs through automatic deductions by the employer.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>HPP (hlavní pracovní poměr)</strong> — standard open-ended employment with full benefits.</li>
+              <li><strong>DPP (dohoda o provedení práce)</strong> — work agreement, max 300 hours/year per employer.</li>
+              <li><strong>DPČ (dohoda o pracovní činnosti)</strong> — work activity agreement, max 20 hours/week average.</li>
+              <li><strong>Net pay</strong> is about 73–77% of gross for typical incomes after tax, social and health insurance.</li>
+              <li><strong>Notice period:</strong> 2 months on HPP; severance 1–3 months if employer terminates without cause.</li>
+            </ul>
+          </div>
+
+          <!-- Thematic H2 sections (no duplication) -->
+          <div class="detail-block">
+            <h2>Your contract</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Three contract types under Czech labour law, plus core employee rights.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">HPP — open-ended employment</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">DPP — work agreement (up to 300h/year)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">DPČ — work activity agreement</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Workplace rights &amp; discrimination</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Pay &amp; benefits</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">What lands in your account, and what time off the law guarantees.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Salary, taxes &amp; contributions (gross vs net)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Vacation, public holidays &amp; bonuses</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Sick leave &amp; paid days</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Parental &amp; maternity leave</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>When things change</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Job transitions and what they trigger administratively.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Termination &amp; severance</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Unemployment benefits &amp; Úřad práce</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Annual tax return</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">mpsv.cz — Ministry of Labour &amp; Social Affairs</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">uradprace.cz — Unemployment Office</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">cssz.cz — Czech Social Security Authority</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">financnisprava.cz — Tax Authority</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">gov.cz — government portal</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="#" style="font-weight:600;white-space:nowrap;">Contact Brno Expat Centre →</a>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Úřad práce Brno</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Polní 37a, 602 00 Brno</div><div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420950104111">+420 950 104 111</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Unemployment registration, job placement, retraining.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Tax Office Brno</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Nám. Svobody 4, 602 00 Brno</div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Annual tax returns, individual income tax filing.</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4>Lost your job?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Register with Úřad práce within <strong>3 working days</strong> to keep your health insurance covered and apply for unemployment benefits.</p><a href="#" target="_blank" rel="noopener" class="btn btn-primary" style="color:var(--white);font-size:13px;">Úřad práce ČR</a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

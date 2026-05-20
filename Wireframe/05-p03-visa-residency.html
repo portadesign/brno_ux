@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — About Brno · Varianta 1 (Wireframe POC)</title>
+<title>Brno EN — Visa & residency (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
 </head>
 <body>
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<!-- Wireframe nav widget -->
 <button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
     <line x1="3" y1="6" x2="21" y2="6"/>
@@ -48,7 +48,7 @@
     </div>
     <nav class="main-nav">
       <div class="nav-item">
-        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <a class="nav-link active" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
         <a href="05-p02-documents.html">Documents</a>
@@ -112,7 +112,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link active" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
         <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
@@ -123,17 +123,18 @@
   </div>
 </header>
 
-<!-- About Brno section landing (T2 + T6 detail-block pattern) -->
+<!-- L3 Topic detail (T6) — I need to arrange > Visa & residency -->
 <main>
-  <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
     <div class="container">
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">About Brno</span>
+        <a href="05-p01-life-admin.html">I need to arrange</a>
+        <span class="sep">›</span>
+        <span class="current">Visa &amp; residency</span>
       </nav>
-      <h1 class="title-banner">About Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
     </div>
   </section>
 
@@ -143,95 +144,89 @@
         <div>
           <!-- Perex -->
           <div class="detail-block">
-            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Brno's story for newcomers, investors, researchers and curious visitors — what makes the city tick, what it offers, and how to plug into its ecosystem.</p>
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Visa and residence permits are issued by Foreign Police and the Ministry of Interior — not the city. Brno's role is address registration, citizen-register lookups and information services for foreigners settling here.</p>
           </div>
 
-          <!-- Topic 1: Mayor & City Council -->
+          <!-- Overview / About -->
           <div class="detail-block">
-            <h2><a href="#">Mayor &amp; City Council</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Who runs Brno — the elected mayor, deputy mayors, City Council and Assembly. Open meetings, decisions, voting records.</p>
-            <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Mayor of Brno</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Deputy mayors &amp; their portfolios</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Council — 11 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Assembly — 55 members</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Council meetings, agendas &amp; minutes</span><span class="quick-link-arrow">›</span></a>
-            </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Mayor &amp; City Council →</a></div>
+            <h3>About residence in Brno</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Long-term and permanent residence permits, employee/blue/ICT cards — all go through Foreign Police (Cejl 62b in Brno) and OAMP MOI. The city offers address registration for residents and end-of-residence reporting. For first arrivals, the Brno Expat Centre is the easiest contact.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>Foreign Police Brno</strong> — Cejl 62b · Mo, We 7:30–11:00 &amp; 12:00–14:30</li>
+              <li><strong>Long-term residence permit</strong> — for stays over 90 days; requires visa first.</li>
+              <li><strong>Permanent residence</strong> — after 5 years of continuous long-term stay.</li>
+              <li><strong>Address registration</strong> — your right; required for many other agendas.</li>
+              <li><strong>End-of-residence reporting</strong> — important when leaving Czechia permanently.</li>
+            </ul>
           </div>
 
-          <!-- Topic 5: Brno facts & vision -->
+          <!-- Thematic H2 sections -->
           <div class="detail-block">
-            <h2><a href="#">Brno facts &amp; vision</a></h2>
-            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Key numbers, strategic priorities and Brno's place in the world — from #brno2050 to international partnerships.</p>
+            <h2>Residence permits</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Where to apply for visa, long-term and permanent residence (Foreign Police domain).</p>
             <div class="quick-links">
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno in numbers (population, economy, foreign workforce, students, R&amp;D)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">#brno2050 — strategic vision</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Smart city &amp; sustainability initiatives</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Sister cities &amp; international cooperation — partner cities, reciprocity principles, joint projects (Ann Arbor, Charlotte, Kharkiv, Leeds, Leipzig, Poznań, Rennes, St. Pölten, Stuttgart, Utrecht, Vienna…)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno region context (Jihomoravský kraj, RIS3 strategy)</span><span class="quick-link-arrow">›</span></a>
-              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU programs &amp; funded projects</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Apply for long-term residence</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Apply for permanent residence (after 5 years)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Visa types overview (Schengen, employment, study)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU citizen registration (free, optional)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Emergency travel document</span><span class="quick-link-arrow">›</span></a>
             </div>
-            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno facts &amp; vision →</a></div>
           </div>
 
-          <!-- C16 Accordion: Useful external links -->
+          <div class="detail-block">
+            <h2>Address &amp; pobyt registration</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">City-handled aspects of your residence in Brno.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Address registration (přihlášení k pobytu)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Provide data from citizens-register</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Set up delivery address only</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">End permanent residence in CZ</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Documents from abroad</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Make your foreign documents usable in Czechia.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Document legalization &amp; apostille</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Certified Czech translation list</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Higher verification of marriage/birth certificates</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Recognition of foreign qualifications</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion -->
           <div class="accordion open">
             <div class="accordion-item">
               <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
-                Useful external links <span class="chevron">▾</span>
+                Related links &amp; external resources <span class="chevron">▾</span>
               </div>
               <div class="accordion-body">
                 <ul class="link-list">
-                  <li><a href="https://gotobrno.cz" target="_blank" rel="noopener">gotobrno.cz — tourism portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">studyinbrno.cz — study portal</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">jic.cz — Brno Innovation Centre</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ris3jmk.cz — regional innovation strategy</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu, icrc.cz, it4i.cz — research institutes</a></li>
-                  <li><a href="#" target="_blank" rel="noopener">brno-international.eu — sister cities</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mvcr.cz — Ministry of Interior</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">foreignpolice.cz — Foreign Police</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mzv.cz — Ministry of Foreign Affairs</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">frs.gov.cz — Foreigner Resident System</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">integracnicentra.cz — Integration Centres</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- C14 Sidebar (per CSV: International Relations · Press & media · Brno Expat Centre) -->
+        <!-- C14 Sidebar -->
         <aside>
           <div class="sidebar-card">
-            <h4>International Relations Office (OZV)</h4>
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <div>
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Tereza Chrástová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Projects Coordinator</div>
-                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:chrastova.tereza@brno.cz">chrastova.tereza@brno.cz</a>
-                </div>
-              </div>
-              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
-                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Pavlína Sukupová</a></h5>
-                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Communication</div>
-                <div class="sidebar-row" style="font-size:13px;">
-                  <span class="icon">✉</span><a href="mailto:sukupova.pavlina@brno.cz">sukupova.pavlina@brno.cz</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sidebar-card">
-            <h4>Press &amp; media inquiries</h4>
-            <div class="sidebar-row">
-              <span class="icon">☎</span>
-              <a href="tel:+420542172000">+420 542 172 000</a>
-            </div>
-            <div class="sidebar-row">
-              <span class="icon">✉</span>
-              <a href="mailto:tisk@brno.cz">tisk@brno.cz</a>
-            </div>
-            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">City Marketing Office — press releases, interview requests, official statements.</p>
+            <h4>Foreign Police Brno</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Cejl 62b, 602 00 Brno</div><div class="sidebar-row" style="margin-top:8px;"><span class="small">OPEN</span></div><div class="sidebar-row" style="padding-left:24px;">Mo, We 7:30–11:00, 12:00–14:30</div>
           </div>
           <div class="sidebar-card">
             <h4>Brno Expat Centre</h4>
-            <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Free service for newcomers — practical advice on living, working and studying in Brno.</p>
-            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary">Visit Brno Expat Centre</a>
+            <div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420542171111">+420 542 171 111</a></div><div class="sidebar-row"><span class="icon">✉</span><a href="mailto:expat@brno.cz">expat@brno.cz</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Free English-speaking help with paperwork and city offices.</p>
+          </div>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4>In a crisis?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Lost residence permit or visa expiring? Find embassy contacts and Foreign Police emergency info.</p><a href="sos.html" class="btn btn-primary" style="color:var(--white);font-size:13px;">SOS — I need help now</a>
           </div>
         </aside>
       </div>
