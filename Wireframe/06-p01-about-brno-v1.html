@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — About Brno (Wireframe POC)</title>
+<title>Brno EN — About Brno · Varianta 1 (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
@@ -123,7 +123,7 @@
   </div>
 </header>
 
-<!-- L2 Section landing — dept-tile--card rozcestník (v2 template) -->
+<!-- About Brno section landing (T2 + T6 detail-block pattern) -->
 <main>
   <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
@@ -133,34 +133,107 @@
         <span class="sep">›</span>
         <span class="current">About Brno</span>
       </nav>
-      <h1 class="title-banner">About Brno</h1>
+      <h1 class="title-banner">About Brno <span style="font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--gray-700);background:var(--gray-100);padding:4px 10px;border-radius:3px;vertical-align:middle;margin-left:12px;">VARIANTA 1</span></h1>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <!-- Perex -->
-      <p style="font-size:18px;line-height:1.6;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Brno's story for newcomers, investors, researchers and curious visitors — what makes the city tick, what it offers, and how to plug into its ecosystem.</p>
-
-      <!-- C09b Dept-tile card grid: 2 topics in a 3-column rozcestník -->
-      <div class="dept-grid" style="grid-template-columns:repeat(3, 1fr);">
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Mayor &amp; City Council</a>
-          <div class="dept-tile__desc">Who runs Brno — elected mayor, deputy mayors, City Council. Open meetings, decisions, voting records.</div>
-        </div>
-        <div class="dept-tile dept-tile--card">
-          <a href="01-p03-healthcare.html">Brno facts &amp; vision</a>
-          <div class="dept-tile__desc">Key numbers, strategic priorities and Brno's place in the world — from #brno2050 to international partnerships.</div>
-        </div>
-      </div>
-
-      <!-- Help strip -->
-      <div style="margin-top:40px;padding:20px 24px;background:var(--gray-100);border-left:3px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div class="layout-with-sidebar">
         <div>
-          <strong style="display:block;margin-bottom:4px;">Press & media inquiries?</strong>
-          <span style="color:var(--gray-700);">The Brno press office welcomes questions from journalists, partner cities and international organisations.</span>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Brno's story for newcomers, investors, researchers and curious visitors — what makes the city tick, what it offers, and how to plug into its ecosystem.</p>
+          </div>
+
+          <!-- Topic 1: Mayor & City Council -->
+          <div class="detail-block">
+            <h2><a href="#">Mayor &amp; City Council</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Who runs Brno — the elected mayor, deputy mayors, City Council and Assembly. Open meetings, decisions, voting records.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Mayor of Brno</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Deputy mayors &amp; their portfolios</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Council — 11 members</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Assembly — 55 members</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Council meetings, agendas &amp; minutes</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Mayor &amp; City Council →</a></div>
+          </div>
+
+          <!-- Topic 5: Brno facts & vision -->
+          <div class="detail-block">
+            <h2><a href="#">Brno facts &amp; vision</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Key numbers, strategic priorities and Brno's place in the world — from #brno2050 to international partnerships.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno in numbers (population, economy, foreign workforce, students, R&amp;D)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">#brno2050 — strategic vision</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Smart city &amp; sustainability initiatives</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Sister cities &amp; international cooperation — partner cities, reciprocity principles, joint projects (Ann Arbor, Charlotte, Kharkiv, Leeds, Leipzig, Poznań, Rennes, St. Pölten, Stuttgart, Utrecht, Vienna…)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno region context (Jihomoravský kraj, RIS3 strategy)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU programs &amp; funded projects</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno facts &amp; vision →</a></div>
+          </div>
+
+          <!-- C16 Accordion: Useful external links -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Useful external links <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="https://gotobrno.cz" target="_blank" rel="noopener">gotobrno.cz — tourism portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">studyinbrno.cz — study portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">jic.cz — Brno Innovation Centre</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ris3jmk.cz — regional innovation strategy</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu, icrc.cz, it4i.cz — research institutes</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">brno-international.eu — sister cities</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="#" style="font-weight:600;white-space:nowrap;">Contact press office →</a>
+
+        <!-- C14 Sidebar (per CSV: International Relations · Press & media · Brno Expat Centre) -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>International Relations Office (OZV)</h4>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div>
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Tereza Chrástová</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Projects Coordinator</div>
+                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:chrastova.tereza@brno.cz">chrastova.tereza@brno.cz</a>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Pavlína Sukupová</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Communication</div>
+                <div class="sidebar-row" style="font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:sukupova.pavlina@brno.cz">sukupova.pavlina@brno.cz</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Press &amp; media inquiries</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542172000">+420 542 172 000</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:tisk@brno.cz">tisk@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">City Marketing Office — press releases, interview requests, official statements.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Free service for newcomers — practical advice on living, working and studying in Brno.</p>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary">Visit Brno Expat Centre</a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

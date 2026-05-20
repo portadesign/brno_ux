@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Sitemap (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+<style>
+  body { background: var(--gray-50); }
+  .sitemap-wrap {
+    padding: 40px 24px 80px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .sitemap-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .sitemap-sub {
+    color: var(--gray-700);
+    margin-bottom: 36px;
+    max-width: 760px;
+    line-height: 1.6;
+  }
+  .legend {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    font-size: 13px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 2px; border: 1px solid var(--gray-300); }
+  .sw-l1 { background: var(--red); border-color: var(--red); }
+  .sw-l2 { background: var(--white); border-color: var(--gray-900); border-width: 2px; }
+  .sw-l3 { background: var(--gray-100); }
+  .sw-l4 { background: var(--gray-50); border-style: dashed; }
+  .sw-v1 { background: #FFF8EC; border-color: var(--warning); }
+
+  /* L1 Hero */
+  .lvl-l1 {
+    background: var(--red);
+    color: var(--white);
+    padding: 24px 28px;
+    border-radius: 4px;
+    margin-bottom: 36px;
+    box-shadow: var(--shadow-sm);
+  }
+  .lvl-l1 h2 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; margin-bottom: 6px; }
+  .lvl-l1 strong { font-size: 24px; font-weight: 800; display: block; margin-bottom: 8px; }
+  .lvl-l1 p { font-size: 14px; opacity: 0.9; line-height: 1.5; }
+
+  /* L2 grid */
+  .l2-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+  .l2-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .l2-card {
+    background: var(--white);
+    border: 2px solid var(--gray-900);
+    padding: 16px 18px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+  }
+  .l2-card .tag {
+    position: absolute;
+    top: -10px;
+    right: 12px;
+    background: var(--gray-900);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+  }
+  .l2-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .l2-card h3 a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .l2-card h3 a:hover { border-bottom-color: var(--red); color: var(--red); }
+  .l2-card .meta {
+    font-size: 11px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+  .l2-card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .l2-card li {
+    padding: 3px 0;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .l2-card li:last-child { border-bottom: none; }
+
+  /* L3/L4 child cards */
+  .child-card {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+  .child-card.lvl-l4 {
+    background: var(--gray-50);
+    border-style: dashed;
+    border-color: var(--gray-500);
+    margin-left: 18px;
+  }
+  .child-card .tag {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    background: var(--gray-700);
+    color: var(--white);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+  }
+  .child-card .tag.t-l4 { background: var(--gray-500); }
+  .child-card strong {
+    display: block;
+    font-weight: 700;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: var(--black);
+  }
+  .child-card strong a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .child-card strong a:hover { border-bottom-color: var(--red); color: var(--red); }
+  .child-card .desc { color: var(--gray-700); font-size: 12px; line-height: 1.4; }
+
+  /* Variant 1 archive */
+  .archive {
+    margin-top: 56px;
+    padding: 28px;
+    background: #FFF8EC;
+    border: 1px solid var(--warning);
+    border-radius: 4px;
+  }
+  .archive h2 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8B6B00;
+    margin-bottom: 6px;
+  }
+  .archive p {
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .archive-card {
+    background: var(--white);
+    border: 1px solid var(--warning);
+    padding: 12px 14px;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  .archive-card strong { display: block; font-weight: 700; font-size: 13px; margin-bottom: 2px; }
+  .archive-card .meta { font-size: 11px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Stats summary */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .stat {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    padding: 14px 16px;
+    border-radius: 4px;
+  }
+  .stat .num { font-size: 26px; font-weight: 800; color: var(--red); display: block; line-height: 1; }
+  .stat .lbl { font-size: 12px; color: var(--gray-700); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; display: block; }
+</style>
+</head>
+<body>
+
+<!-- Wireframe nav widget -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<main class="sitemap-wrap">
+  <h1 class="sitemap-title">Brno EN — Sitemap</h1>
+  <p class="sitemap-sub">Current information architecture of the English wireframe — primary L1–L4 hierarchy with the Variant 1 archive at the bottom.</p>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><span class="legend-swatch sw-l1"></span> L1 Homepage</div>
+    <div class="legend-item"><span class="legend-swatch sw-l2"></span> L2 Section landing</div>
+    <div class="legend-item"><span class="legend-swatch sw-l3"></span> L3 Topic detail / Service hub</div>
+    <div class="legend-item"><span class="legend-swatch sw-l4"></span> L4 Article / Department detail</div>
+    <div class="legend-item"><span class="legend-swatch sw-v1"></span> Variant 1 archive</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat"><span class="num">11</span><span class="lbl">Pages live</span></div>
+    <div class="stat"><span class="num">6</span><span class="lbl">L2 sections</span></div>
+    <div class="stat"><span class="num">4</span><span class="lbl">Template types</span></div>
+    <div class="stat"><span class="num">5</span><span class="lbl">V1 archives</span></div>
+  </div>
+
+  <!-- L1 -->
+  <div class="lvl-l1">
+    <h2>Level 1 · Homepage</h2>
+    <strong><a href="index.html" style="color:var(--white);">index.html</a></strong>
+    <p>Hero carousel · 3 quick-links (Interpreter services · Pay your waste fee · Brno Expat Centre↗) · "I need to handle" service tiles (New to Brno · Everyday matters · SOS) · News strip · Banner cards</p>
+  </div>
+
+  <!-- L2 grid -->
+  <div class="l2-grid">
+
+    <!-- I need to arrange -->
+    <div class="l2-col">
+      <div class="l2-card">
+        <span class="tag">L2 · T3</span>
+        <h3><a href="05-p01-life-admin.html">I need to arrange</a></h3>
+        <div class="meta">Service hub</div>
+        <ul>
+          <li><strong>Most-used services</strong></li>
+          <li>· Identity &amp; Documents</li>
+          <li>· Vehicle &amp; Transport</li>
+          <li>· Fees &amp; Payments</li>
+          <li><strong>Browse by category (9)</strong></li>
+          <li>· Documents · Visa · Transport</li>
+          <li>· Fees · Legalization · Social</li>
+          <li>· Environment · City hall · Construction</li>
+          <li><strong>Find your office (6)</strong></li>
+          <li>· Magistrát · OSP · OZV</li>
+          <li>· Expat Centre · Trade · Civil reg.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Live -->
+    <div class="l2-col">
+      <div class="l2-card">
+        <span class="tag">L2 · T2</span>
+        <h3><a href="01-p01-live.html">Live</a></h3>
+        <div class="meta">Section landing — 7 tiles</div>
+        <ul>
+          <li>· How to start</li>
+          <li>· Accommodation</li>
+          <li>· Transport</li>
+          <li>· Healthcare</li>
+          <li>· Social care</li>
+          <li>· Education</li>
+          <li>· Speak Czech</li>
+        </ul>
+      </div>
+      <div class="child-card">
+        <span class="tag">L3 · T6</span>
+        <strong><a href="01-p02-transport.html">Transport</a></strong>
+        <div class="desc">Detail tématu — public transit, parking, vehicle, taxi/cycling. 6 H2 detail-blocks + sidebar.</div>
+      </div>
+      <div class="child-card">
+        <span class="tag">L3 · T6</span>
+        <strong><a href="01-p03-healthcare.html">Healthcare</a></strong>
+        <div class="desc">Detail tématu — availability for foreigners, ER, hospitals, clinics. 6 H2 detail-blocks + sidebar.</div>
+      </div>
+      <div class="child-card lvl-l4">
+        <span class="tag t-l4">L4 · T4</span>
+        <strong><a href="01-p04-health-insurance.html">Health insurance</a></strong>
+        <div class="desc">Detail článku — public vs commercial, eligibility table, FAQ accordion.</div>
+      </div>
+    </div>
+
+    <!-- Work -->
+    <div class="l2-col">
+      <div class="l2-card">
+        <span class="tag">L2 · T2</span>
+        <h3><a href="02-p01-work.html">Work</a></h3>
+        <div class="meta">Section landing — 6 tiles</div>
+        <ul>
+          <li>· Right to work in Czechia</li>
+          <li>· Find a job</li>
+          <li>· Employment essentials</li>
+          <li>· Become self-employed</li>
+          <li>· Start a company</li>
+          <li>· Brno business ecosystem</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Research & Study -->
+    <div class="l2-col">
+      <div class="l2-card">
+        <span class="tag">L2 · T2</span>
+        <h3><a href="03-p01-research-study.html">Research &amp; Study</a></h3>
+        <div class="meta">Section landing — 2 tiles</div>
+        <ul>
+          <li>· Study in Brno</li>
+          <li>· Science &amp; Innovation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Enjoy -->
+    <div class="l2-col">
+      <div class="l2-card">
+        <span class="tag">L2 · T2</span>
+        <h3><a href="04-p01-enjoy.html">Enjoy</a></h3>
+        <div class="meta">Section landing — 7 tiles</div>
+        <ul>
+          <li>· Leisure &amp; Sports</li>
+          <li>· Culture</li>
+          <li>· Sights &amp; architecture</li>
+          <li>· Events</li>
+          <li>· Maps &amp; Guides</li>
+          <li>· Food and Drink</li>
+          <li>· Communities &amp; meeting people</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- About Brno -->
+    <div class="l2-col">
+      <div class="l2-card">
+        <span class="tag">L2 · T2</span>
+        <h3><a href="06-p01-about-brno.html">About Brno</a></h3>
+        <div class="meta">Section landing — 2 tiles</div>
+        <ul>
+          <li>· Mayor &amp; City Council</li>
+          <li>· Brno facts &amp; vision</li>
+        </ul>
+      </div>
+      <div class="child-card lvl-l4">
+        <span class="tag t-l4">L4 · T7</span>
+        <strong><a href="detail-organizacni-jednotky.html">Detail organizační jednotky</a></strong>
+        <div class="desc">Department detail (sample: Odbor dopravy) — address, opening hours, head of dept, agenda, 5 divisions, 3 staff cards.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Variant 1 archive -->
+  <div class="archive">
+    <h2>Varianta 1 · T2 detail-block archive</h2>
+    <p>The original heavy T2 landings — kept as reference for the dept-tile rozcestník vs. detail-block trade-off. Accessible only from the sidepanel tree, not linked from the main nav.</p>
+    <div class="archive-grid">
+      <div class="archive-card">
+        <strong><a href="01-p01-live-v1.html">Live · V1</a></strong>
+        <span class="meta">7 H2 + sidebar</span>
+      </div>
+      <div class="archive-card">
+        <strong><a href="02-p01-work-v1.html">Work · V1</a></strong>
+        <span class="meta">7 H2 + sidebar</span>
+      </div>
+      <div class="archive-card">
+        <strong><a href="03-p01-research-study-v1.html">Research &amp; Study · V1</a></strong>
+        <span class="meta">2 H2 + sidebar</span>
+      </div>
+      <div class="archive-card">
+        <strong><a href="04-p01-enjoy-v1.html">Enjoy · V1</a></strong>
+        <span class="meta">7 H2 + sidebar</span>
+      </div>
+      <div class="archive-card">
+        <strong><a href="06-p01-about-brno-v1.html">About Brno · V1</a></strong>
+        <span class="meta">2 H2 + sidebar</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
