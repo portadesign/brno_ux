@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Health insurance (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="../src_img/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="01-p02-transport.html">Documents</a>
+        <a href="01-p02-transport.html">Visa &amp; residency</a>
+        <a href="01-p02-transport.html">Transport &amp; vehicles</a>
+        <a href="01-p02-transport.html">Fees, payments &amp; fines</a>
+        <a href="01-p02-transport.html">Document legalization &amp; vidimation</a>
+        <a href="01-p02-transport.html">Social services &amp; family</a>
+        <a href="01-p02-transport.html">Environment &amp; waste</a>
+        <a href="01-p02-transport.html">City hall services</a>
+        <a href="01-p02-transport.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
+        <a href="01-p02-transport.html">How to start</a>
+        <a href="01-p02-transport.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p02-transport.html">Social care</a>
+        <a href="01-p02-transport.html">Education</a>
+        <a href="01-p02-transport.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Working in Brno</a>
+        <a href="01-p02-transport.html">Right to work in Czechia</a>
+        <a href="01-p02-transport.html">Find a job</a>
+        <a href="01-p02-transport.html">Employment essentials</a>
+        <a href="01-p02-transport.html">Become self-employed</a>
+        <a href="01-p02-transport.html">Start a company</a>
+        <a href="01-p02-transport.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy Brno</a>
+        <a href="01-p02-transport.html">Leisure &amp; Sports</a>
+        <a href="01-p02-transport.html">Culture</a>
+        <a href="01-p02-transport.html">Sights &amp; architecture</a>
+        <a href="01-p02-transport.html">Events</a>
+        <a href="01-p02-transport.html">Maps &amp; Guides</a>
+        <a href="01-p02-transport.html">Food and Drink</a>
+        <a href="01-p02-transport.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="01-p02-transport.html">Study in Brno</a>
+        <a href="01-p02-transport.html">Brno for Business</a>
+        <a href="01-p02-transport.html">Science &amp; Innovation</a>
+        <a href="01-p02-transport.html">Mayor &amp; City Council</a>
+        <a href="01-p02-transport.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Health insurance article (level 4, T4-style) -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <a href="01-p01-live.html">Live</a>
+        <span class="sep">›</span>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <span class="sep">›</span>
+        <span class="current">Health insurance</span>
+      </nav>
+      <h1 class="title-banner">Detail článku (L4)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div class="article-body">
+          <!-- Perex -->
+          <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Health insurance is mandatory for everyone living in the Czech Republic. There are two systems — public (state-run) and commercial. Which one you need depends on your residence status, employment situation, and family ties.</p>
+
+          <h3>How does health insurance work for foreigners in CZ?</h3>
+          <p>Czech health insurance covers most medical needs — from GP visits to hospital stays, prescriptions, and emergency care. There are two parallel systems:</p>
+          <ul>
+            <li><strong>Public health insurance (veřejné zdravotní pojištění)</strong> — managed by 7 state-recognized insurance funds. Covers everyone with employment, self-employment, EU family ties, or certain protected statuses.</li>
+            <li><strong>Commercial health insurance (komerční zdravotní pojištění)</strong> — private insurance products, mandatory for long-term visa holders and dependents who don't qualify for the public system.</li>
+          </ul>
+
+          <h3>What it covers</h3>
+          <ul>
+            <li>GP visits and basic care</li>
+            <li>Specialist consultations</li>
+            <li>Hospital admissions and surgery</li>
+            <li>Prescription co-pays</li>
+            <li>Dental basics (extractions, basic restorations)</li>
+            <li>Pregnancy &amp; birth</li>
+            <li>Child healthcare</li>
+          </ul>
+
+          <h3>Who is eligible?</h3>
+          <p>Your residence status determines which system you fall under:</p>
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Your situation</th><th>Insurance type</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Employed by a Czech employer</td><td>Public (handled by employer)</td></tr>
+              <tr><td>Self-employed (OSVČ / živnost)</td><td>Public (you register &amp; pay yourself)</td></tr>
+              <tr><td>Family member of an EU citizen</td><td>Public</td></tr>
+              <tr><td>Long-term student programme (Czech university)</td><td>Public (via S1/E106)</td></tr>
+              <tr><td>Employee Card / Blue Card holder</td><td>Public via employer</td></tr>
+              <tr><td>Temporary protection (Ukrainian refugee)</td><td>Public (special regime)</td></tr>
+              <tr><td>Long-term visa without employment</td><td>Commercial</td></tr>
+              <tr><td>Child of a non-EU foreigner</td><td>⚠ Check carefully — no auto-coverage</td></tr>
+              <tr><td>Tourist / short-stay</td><td>Travel insurance</td></tr>
+            </tbody>
+          </table>
+
+          <h3>How to get covered</h3>
+          <ol style="margin:16px 0;padding-left:24px;">
+            <li style="padding:4px 0;">Choose a provider (see list below)</li>
+            <li style="padding:4px 0;">Submit registration (employer handles for employees)</li>
+            <li style="padding:4px 0;">Get your insurance card</li>
+            <li style="padding:4px 0;">Register with a GP near you</li>
+          </ol>
+
+          <h3>Public vs Commercial — comparison</h3>
+          <p>The two systems differ in cost, coverage breadth, and bureaucratic flexibility.</p>
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Parameter</th><th>Public</th><th>Commercial</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Monthly cost (employee)</td><td>~13.5 % of salary (split with employer)</td><td>500–3 000 CZK</td></tr>
+              <tr><td>Coverage scope</td><td>Comprehensive</td><td>Varies by package</td></tr>
+              <tr><td>Pre-existing conditions</td><td>Covered</td><td>Often excluded</td></tr>
+              <tr><td>Pregnancy &amp; birth</td><td>Fully covered</td><td>Limited (extra premium often needed)</td></tr>
+              <tr><td>Choice of doctor</td><td>Any provider in network</td><td>Often restricted</td></tr>
+              <tr><td>Switch provider</td><td>Twice a year (1 Jan or 1 Jul)</td><td>By contract terms</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Czech public insurers</h3>
+          <p>You can choose any of the seven state-recognized public health insurance funds:</p>
+          <ul>
+            <li><a href="#">VZP — Všeobecná zdravotní pojišťovna</a> (largest, default)</li>
+            <li><a href="#">VoZP — Vojenská zdravotní pojišťovna</a></li>
+            <li><a href="#">ČPZP — Česká průmyslová zdravotní pojišťovna</a></li>
+            <li><a href="#">OZP — Oborová zdravotní pojišťovna</a></li>
+            <li><a href="#">ZPMV — Zdravotní pojišťovna Ministerstva vnitra</a></li>
+            <li><a href="#">RBP — RBP zdravotní pojišťovna</a></li>
+            <li><a href="#">ZP Škoda — for Škoda employees</a></li>
+          </ul>
+
+          <h3>Commercial health insurance</h3>
+          <p>Most commonly used by long-term visa holders and dependents who don't qualify for the public system. Compare offers carefully — coverage scope and exclusions vary significantly:</p>
+          <ul>
+            <li><a href="#">PVZP — Pojišťovna VZP</a> (foreigner-friendly, broad coverage)</li>
+            <li><a href="#">Maxima</a></li>
+            <li><a href="#">Slavia</a></li>
+            <li><a href="#">Uniqa</a></li>
+            <li><a href="#">Ergo</a></li>
+          </ul>
+
+          <!-- C16 Accordion: Required documents -->
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Required documents <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <p>To register for public insurance, you'll typically need:</p>
+                <ul>
+                  <li>Passport or national ID</li>
+                  <li>Residence permit (visa, biometric card)</li>
+                  <li>Employment contract or trade licence</li>
+                  <li>Birth certificate (for children)</li>
+                  <li>Marriage certificate (for family-tied coverage)</li>
+                  <li>S1 / E106 form (EU students)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: FAQ (open by default) -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Frequently asked questions <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <p style="margin-bottom:12px;font-weight:700;">I lost my job — what happens to my insurance?</p>
+                <p style="margin-bottom:16px;">You have a grace period to register with a new employer or as a job seeker (Úřad práce). Without this, you must pay public insurance yourself or risk being uninsured.</p>
+
+                <p style="margin-bottom:12px;font-weight:700;">Can I keep my home country insurance?</p>
+                <p style="margin-bottom:16px;">Generally no — Czech residents must have Czech-recognized insurance. EU citizens can use EHIC for temporary coverage, but long-term stay requires switching.</p>
+
+                <p style="margin-bottom:12px;font-weight:700;">My partner has Czech insurance, am I covered?</p>
+                <p style="margin-bottom:16px;">Only if you're an EU family member, dependent child, or in specific protected categories. Otherwise, you need your own insurance.</p>
+
+                <p style="margin-bottom:12px;font-weight:700;">I'm pregnant — does my insurance cover birth?</p>
+                <p style="margin-bottom:16px;">Public insurance: fully. Commercial: depends on package — many treat pregnancy as add-on or exclude it. Check before pregnancy if possible.</p>
+
+                <p style="margin-bottom:12px;font-weight:700;">I came on a tourist visa and got injured — what now?</p>
+                <p style="margin-bottom:16px;">Emergency care is provided regardless. You'll receive a bill. Your travel insurance should cover it; check with your provider.</p>
+
+                <p style="margin-bottom:12px;font-weight:700;">Can I switch insurance providers? When?</p>
+                <p style="margin-bottom:16px;">Yes — public insurance allows switches twice a year (1 January or 1 July), with 3 months notice.</p>
+
+                <p style="margin-bottom:12px;font-weight:700;">Why is my dental work not fully covered?</p>
+                <p>Public insurance covers basic dental (extractions, basic restorations) but not aesthetic or advanced procedures. Many people add commercial dental insurance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4 style="margin-bottom:8px;">Uninsured emergency?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Call <strong>112</strong> first. Hospitals must provide life-saving care regardless of insurance status. Costs may be billed later.</p>
+            <a href="#" class="btn btn-primary" style="color:var(--white);">What if I can't pay?</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Need help understanding your case?</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420541234567">+420 541 234 567</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:help@brno.cz">help@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Social Services Dept — free escort &amp; interpretation to insurance offices.</p>
+          </div>
+
+          <div class="sidebar-card" style="background:var(--gray-50);">
+            <h4>Where to go next in this topic</h4>
+            <ul style="list-style:none;padding:0;margin-top:8px;">
+              <li style="padding:6px 0;"><a href="01-p03-healthcare.html">↑ Healthcare overview</a></li>
+              <li style="padding:6px 0;"><a href="01-p03-healthcare.html">Find a doctor</a></li>
+              <li style="padding:6px 0;"><a href="05-p01-life-admin.html">Visa &amp; residency (I need to arrange)</a></li>
+              <li style="padding:6px 0;"><a href="05-p01-life-admin.html">Czech POINT — extracts</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

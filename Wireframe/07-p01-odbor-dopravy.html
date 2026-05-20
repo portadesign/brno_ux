@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Odbor dopravy (Wireframe POC, T7)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="../src_img/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link active" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="01-p02-transport.html">Documents</a>
+        <a href="01-p02-transport.html">Visa &amp; residency</a>
+        <a href="01-p02-transport.html">Transport &amp; vehicles</a>
+        <a href="01-p02-transport.html">Fees, payments &amp; fines</a>
+        <a href="01-p02-transport.html">Document legalization &amp; vidimation</a>
+        <a href="01-p02-transport.html">Social services &amp; family</a>
+        <a href="01-p02-transport.html">Environment &amp; waste</a>
+        <a href="01-p02-transport.html">City hall services</a>
+        <a href="01-p02-transport.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
+        <a href="01-p02-transport.html">How to start</a>
+        <a href="01-p02-transport.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p02-transport.html">Social care</a>
+        <a href="01-p02-transport.html">Education</a>
+        <a href="01-p02-transport.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Working in Brno</a>
+        <a href="01-p02-transport.html">Right to work in Czechia</a>
+        <a href="01-p02-transport.html">Find a job</a>
+        <a href="01-p02-transport.html">Employment essentials</a>
+        <a href="01-p02-transport.html">Become self-employed</a>
+        <a href="01-p02-transport.html">Start a company</a>
+        <a href="01-p02-transport.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy Brno</a>
+        <a href="01-p02-transport.html">Leisure &amp; Sports</a>
+        <a href="01-p02-transport.html">Culture</a>
+        <a href="01-p02-transport.html">Sights &amp; architecture</a>
+        <a href="01-p02-transport.html">Events</a>
+        <a href="01-p02-transport.html">Maps &amp; Guides</a>
+        <a href="01-p02-transport.html">Food and Drink</a>
+        <a href="01-p02-transport.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="01-p02-transport.html">Study in Brno</a>
+        <a href="01-p02-transport.html">Brno for Business</a>
+        <a href="01-p02-transport.html">Science &amp; Innovation</a>
+        <a href="01-p02-transport.html">Mayor &amp; City Council</a>
+        <a href="01-p02-transport.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- T7 Department detail — Odbor dopravy (sample) -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <a href="05-p01-life-admin.html">I need to arrange</a>
+        <span class="sep">›</span>
+        <a href="#">All departments</a>
+        <span class="sep">›</span>
+        <span class="current">Transport Department</span>
+      </nav>
+      <h1 class="title-banner">Transport Department (OD)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- C18 Department identity block: address + opening hours -->
+      <div class="dept-identity">
+        <div class="dept-meta">
+          <h3>Address &amp; contact</h3>
+          <p>The Transport Department (Odbor dopravy) handles road network management, traffic regulation, parking permits, taxi licensing and transport infrastructure planning for the City of Brno.</p>
+          <div class="dept-contact-row">
+            <strong>Kounicova 67</strong>, 602 00 Brno
+            <a href="https://maps.google.com/?q=Kounicova+67+Brno" target="_blank" rel="noopener" style="margin-left:8px;font-size:13px;">Show on map</a>
+          </div>
+          <div class="dept-contact-row">
+            <span style="color:var(--gray-700);">Switchboard:</span>
+            <a href="tel:+420542174201">+420 542 174 201</a>
+          </div>
+          <div class="dept-contact-row">
+            <span style="color:var(--gray-700);">Data box (ID):</span>
+            <span style="font-family:monospace;">a7kbrrn</span>
+          </div>
+        </div>
+        <div class="opening-hours">
+          <h3>Opening hours</h3>
+          <table>
+            <tr><th>Monday</th><td>8:00–17:00</td></tr>
+            <tr><th>Tuesday</th><td class="closed">By appointment only</td></tr>
+            <tr><th>Wednesday</th><td>8:00–17:00</td></tr>
+            <tr><th>Thursday</th><td class="closed">By appointment only</td></tr>
+            <tr><th>Friday</th><td>8:00–12:00</td></tr>
+            <tr><th>Saturday &amp; Sunday</th><td class="closed">Closed</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- C19 Head of department card (single, prominent) -->
+      <div class="staff-card staff-card--lead" style="margin-bottom:48px;">
+        <div class="avatar">PP</div>
+        <div>
+          <span class="staff-name">Ing. Bc. Pavel Pospíšek</span>
+          <span class="staff-title">Head of Transport Department · Vedoucí odboru</span>
+          <div class="staff-contact">
+            <a href="tel:+420542174201">+420 542 174 201</a> ·
+            <a href="mailto:pospisek.pavel@brno.cz">pospisek.pavel@brno.cz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-with-sidebar">
+        <div>
+
+          <!-- What can we help with? — service grid -->
+          <div class="detail-block">
+            <h2>What can we help with?</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Top services this department handles. Click any item to start the agenda.</p>
+            <div class="dept-grid" style="grid-template-columns:repeat(2, 1fr);">
+              <div class="dept-tile dept-tile--card">
+                <a href="01-p04-health-insurance.html">Resident parking permit</a>
+                <div class="dept-tile__desc">Apply for a parking permit in your zone of residence.</div>
+              </div>
+              <div class="dept-tile dept-tile--card">
+                <a href="01-p04-health-insurance.html">Historic centre entry permit</a>
+                <div class="dept-tile__desc">Permission to drive into Brno's pedestrian zone.</div>
+              </div>
+              <div class="dept-tile dept-tile--card">
+                <a href="01-p04-health-insurance.html">Reserved parking — disabled drivers</a>
+                <div class="dept-tile__desc">Dedicated parking space for ZTP/P card holders.</div>
+              </div>
+              <div class="dept-tile dept-tile--card">
+                <a href="01-p04-health-insurance.html">Special-use road permits</a>
+                <div class="dept-tile__desc">Construction site signage, public events, filming on roads.</div>
+              </div>
+              <div class="dept-tile dept-tile--card">
+                <a href="01-p04-health-insurance.html">Local road network changes</a>
+                <div class="dept-tile__desc">Permits for road closures, detours, traffic-light timing.</div>
+              </div>
+              <div class="dept-tile dept-tile--card">
+                <a href="01-p04-health-insurance.html">Taxi service licence</a>
+                <div class="dept-tile__desc">Driver registration and dispatch operator approval.</div>
+              </div>
+            </div>
+            <div style="margin-top:20px;"><a href="#" style="font-weight:600;">Show all 14 services →</a></div>
+          </div>
+
+          <!-- Agenda — department responsibilities -->
+          <div class="detail-block">
+            <h2>Department agenda</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">What this department is responsible for in the city's administrative structure.</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>Local road network</strong> — strategic planning, maintenance and investment for streets and infrastructure owned by the city.</li>
+              <li><strong>Traffic organisation</strong> — placement of road signs, signals, parking zones, pedestrian crossings and cycling lanes.</li>
+              <li><strong>Parking management</strong> — resident parking, paid zones, reserved spots and special permits for historic centre.</li>
+              <li><strong>Public &amp; commercial transport</strong> — coordination with DPMB (city transport operator), taxi licensing, road haulage permits.</li>
+            </ul>
+          </div>
+
+          <!-- Subordinate divisions -->
+          <div class="detail-block">
+            <h2>Subordinate divisions</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Five teams that make up the department. Each handles a specific area of responsibility.</p>
+            <div class="dept-grid" style="grid-template-columns:repeat(2, 1fr);">
+              <div class="dept-tile"><a href="#">Strategy &amp; planning division</a></div>
+              <div class="dept-tile"><a href="#">Legal &amp; property division</a></div>
+              <div class="dept-tile"><a href="#">Traffic regulation division</a></div>
+              <div class="dept-tile"><a href="#">Road network division</a></div>
+              <div class="dept-tile"><a href="#">Finance &amp; budget unit</a></div>
+            </div>
+          </div>
+
+          <!-- External resources — accordion (C16) -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#" target="_blank" rel="noopener">Resident parking portal — apply &amp; pay online</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Brno in Motion — city transport vision</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">DPMB — public transport operator</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Brněnské komunikace — road maintenance</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Brno cycling infrastructure map</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Traffic incident reporting</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Drivers' permit transport grants</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Road closure announcements</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key contacts -->
+          <div class="detail-block">
+            <h2>Key contacts</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Front-office staff you'll most often deal with.</p>
+            <div class="staff-grid">
+              <div class="staff-card">
+                <div class="avatar">DH</div>
+                <div>
+                  <span class="staff-name">Dana Hercegová</span>
+                  <span class="staff-title">Secretary &amp; reception</span>
+                  <div class="staff-contact">
+                    <a href="tel:+420542174202">+420 542 174 202</a><br>
+                    <a href="mailto:hercegova.dana@brno.cz">hercegova.dana@brno.cz</a>
+                  </div>
+                </div>
+              </div>
+              <div class="staff-card">
+                <div class="avatar">ED</div>
+                <div>
+                  <span class="staff-name">PhDr. Eva Duřpektová</span>
+                  <span class="staff-title">Expert referent — permits</span>
+                  <div class="staff-contact">
+                    <a href="tel:+420542174215">+420 542 174 215</a><br>
+                    <a href="mailto:durpektova.eva@brno.cz">durpektova.eva@brno.cz</a>
+                  </div>
+                </div>
+              </div>
+              <div class="staff-card">
+                <div class="avatar">JN</div>
+                <div>
+                  <span class="staff-name">Jan Novák</span>
+                  <span class="staff-title">Parking permits desk</span>
+                  <div class="staff-contact">
+                    <a href="tel:+420542174224">+420 542 174 224</a><br>
+                    <a href="mailto:novak.jan@brno.cz">novak.jan@brno.cz</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Position in city structure</h4>
+            <ul style="list-style:none;padding:0;font-size:14px;line-height:1.7;">
+              <li>City of Brno</li>
+              <li style="padding-left:14px;">→ Section 4 (Strategy)</li>
+              <li style="padding-left:28px;"><strong>→ Transport Department (OD)</strong></li>
+            </ul>
+            <a href="#" style="font-size:13px;display:inline-block;margin-top:8px;font-weight:600;">All city departments →</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>Forms &amp; downloads</h4>
+            <ul style="list-style:none;padding:0;font-size:14px;line-height:1.7;">
+              <li><a href="#">Resident parking application (PDF)</a></li>
+              <li><a href="#">Reserved parking — disabled (PDF)</a></li>
+              <li><a href="#">Historic centre entry permit (PDF)</a></li>
+              <li><a href="#">Special-use permit form (DOCX)</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Need to visit?</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:10px;">Most agendas can be done online — visiting in person is only required for ID verification or document handover.</p>
+            <a href="#" class="btn btn-secondary" style="font-size:13px;">Check what you need first</a>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

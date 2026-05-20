@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — IA Prototype</title>
+<style>
+  /* =========================================================
+     DESIGN TOKENS — extracted from brno.cz screenshots
+     ========================================================= */
+  :root {
+    --red: #E2231A;
+    --red-dark: #C41A12;
+    --red-light: #FCE8E6;
+    --black: #1A1A1A;
+    --gray-900: #2C2C2C;
+    --gray-700: #4D4D4D;
+    --gray-500: #8C8C8C;
+    --gray-300: #D9D9D9;
+    --gray-200: #E5E5E5;
+    --gray-100: #F2F2F2;
+    --gray-50:  #F8F8F8;
+    --white: #FFFFFF;
+    --warning: #FFB800;
+    --warning-bg: #FFF4D6;
+
+    --font-sans: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Source Sans 3', 'Source Sans Pro', -apple-system, sans-serif;
+
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+
+    --container: 1200px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--black);
+    line-height: 1.5;
+    background: var(--white);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--red-dark); }
+
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* =========================================================
+     C01: Header
+     ========================================================= */
+  .top-bar {
+    height: 4px;
+    background: var(--red);
+  }
+
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--black);
+  }
+  .logo-letter {
+    padding: 0 6px;
+    border-right: 1px solid var(--gray-300);
+  }
+  .logo-letter:last-child {
+    border-right: none;
+    background: var(--red);
+    color: var(--white);
+    padding: 2px 8px;
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .icon-btn, .lang-switch {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--black);
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color .15s;
+  }
+  .icon-btn:hover, .lang-switch:hover { border-color: var(--red); }
+
+  .lang-switch { width: 48px; font-weight: 600; letter-spacing: 0.5px; }
+
+  /* C02: Main nav */
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 0 16px;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .15s;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--red); }
+  .nav-link .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--red);
+    margin-top: 2px;
+  }
+
+  /* Mega menu (C11) */
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 32px;
+    min-width: 720px;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    z-index: 50;
+  }
+  .nav-item:hover .mega-menu { display: grid; }
+  .mega-col h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gray-700);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .mega-col ul { list-style: none; }
+  .mega-col li { margin-bottom: 8px; }
+  .mega-col a {
+    color: var(--red);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .mega-col a:hover { text-decoration: underline; }
+  .mega-footer-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--red);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  /* =========================================================
+     C03: Page title banner — signature red block
+     ========================================================= */
+  .page-header {
+    background: var(--gray-100);
+    padding: 48px 0 64px;
+  }
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 32px;
+    font-size: 14px;
+    color: var(--gray-700);
+  }
+  .breadcrumbs a {
+    color: var(--gray-700);
+    text-decoration: underline;
+  }
+  .breadcrumbs .sep {
+    color: var(--gray-500);
+    margin: 0 4px;
+  }
+  .breadcrumbs .current { color: var(--gray-900); }
+
+  .title-banner {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1.1;
+    padding: 16px 28px;
+    letter-spacing: -0.5px;
+  }
+
+  /* =========================================================
+     C04: Hero carousel
+     ========================================================= */
+  .hero-section {
+    padding: 32px 0;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .hero-main {
+    position: relative;
+    background: linear-gradient(135deg, #6b7c5a 0%, #455a3d 100%);
+    min-height: 360px;
+    display: flex;
+    align-items: flex-start;
+    padding: 32px;
+    overflow: hidden;
+  }
+  .hero-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 60%;
+  }
+  .hero-title {
+    background: var(--red);
+    color: var(--white);
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--red);
+    padding: 10px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 2px solid var(--white);
+  }
+  .hero-cta:hover { background: transparent; color: var(--white); }
+  .hero-dots {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+  }
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+  }
+  .hero-dot.active { background: var(--white); }
+
+  /* C05: Sidebar quick links */
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    text-decoration: none;
+    color: var(--black);
+    transition: all .15s;
+  }
+  .quick-link:hover {
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .quick-link-text {
+    font-weight: 700;
+    color: var(--red);
+    text-decoration: underline;
+    font-size: 16px;
+  }
+  .quick-link-arrow {
+    color: var(--red);
+    font-size: 18px;
+  }
+
+  /* Hero footer strip */
+  .hero-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 16px;
+    border-top: 1px solid var(--gray-200);
+    padding-top: 16px;
+  }
+  .hero-footer a {
+    color: var(--red);
+    text-decoration: underline;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-align: center;
+  }
+
+  /* =========================================================
+     C06: Service tile group ("I need to handle")
+     ========================================================= */
+  .section {
+    padding: 64px 0;
+  }
+  .section-gray {
+    background: var(--gray-100);
+  }
+  .section-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--black);
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .service-tile {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-tile h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .service-tile ul { list-style: none; flex: 1; }
+  .service-tile li { margin-bottom: 12px; }
+  .service-tile a {
+    color: var(--red);
+    text-decoration: underline;
+    font-size: 15px;
+  }
+  .service-tile .btn {
+    margin-top: 20px;
+    align-self: flex-start;
+  }
+
+  /* =========================================================
+     Buttons
+     ========================================================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: none;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid var(--red);
+    transition: all .15s;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+  }
+  .btn-primary:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+    color: var(--white);
+  }
+  .btn-secondary {
+    background: var(--white);
+    color: var(--red);
+  }
+  .btn-secondary:hover {
+    background: var(--red);
+    color: var(--white);
+  }
+  .btn-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* =========================================================
+     C07: News card list
+     ========================================================= */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+  }
+  .news-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 130px;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .news-date {
+    background: var(--red);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    align-self: flex-start;
+    height: fit-content;
+  }
+  .news-content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .news-content h4 a { color: var(--red); text-decoration: underline; }
+  .news-content p {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+  .news-thumb {
+    width: 130px;
+    height: 100px;
+    background: var(--gray-300);
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* =========================================================
+     C08: Banner cards (large solid-color tiles)
+     ========================================================= */
+  .banner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .banner-card {
+    aspect-ratio: 16/9;
+    background: var(--red);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 32px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    padding: 20px;
+    transition: opacity .15s;
+  }
+  .banner-card:hover { opacity: 0.85; color: var(--white); }
+  .banner-card-label {
+    text-align: center;
+    margin-top: 12px;
+  }
+  .banner-card-label a {
+    color: var(--red);
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  /* =========================================================
+     C09: Department tile grid
+     ========================================================= */
+  .dept-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .dept-tile {
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    padding: 24px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    transition: border-color .15s;
+  }
+  .dept-tile:hover { border-color: var(--red); }
+  .dept-tile a {
+    color: var(--red);
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  /* =========================================================
+     C10: Person card
+     ========================================================= */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .person-card {
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .person-photo {
+    width: 80px;
+    height: 100px;
+    background: var(--gray-300);
+    background-size: cover;
+    background-position: center;
+  }
+  .person-info h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .person-info h5 a { color: var(--red); text-decoration: underline; }
+  .person-info .role {
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-bottom: 4px;
+  }
+  .person-info .party {
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-bottom: 12px;
+  }
+  .person-info .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .person-info .contact-line .icon { color: var(--red); width: 14px; display: inline-block; }
+  .person-info .contact-line a { color: var(--red); text-decoration: underline; }
+
+  /* =========================================================
+     C12: Search bar (page-level, not header)
+     ========================================================= */
+  .search-bar {
+    display: flex;
+    gap: 0;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .search-input {
+    flex: 1;
+    border: 1px solid var(--gray-300);
+    padding: 14px 20px 14px 48px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23E2231A' stroke-width='2' viewBox='0 0 24 24'><circle cx='11' cy='11' r='7'/><path d='m20 20-4-4'/></svg>") no-repeat 16px center;
+    background-size: 18px;
+  }
+  .search-input:focus { outline: 1px solid var(--red); outline-offset: -1px; }
+  .search-btn {
+    background: var(--white);
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 14px 32px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .search-btn:hover { background: var(--red); color: var(--white); }
+
+  /* =========================================================
+     C13: Process steps (chevron breadcrumb)
+     ========================================================= */
+  .steps {
+    display: flex;
+    gap: 0;
+    margin: 32px 0;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+  }
+  .step {
+    flex: 1;
+    padding: 16px 32px;
+    position: relative;
+    color: var(--gray-500);
+    font-weight: 600;
+    background: var(--white);
+  }
+  .step::after {
+    content: '';
+    position: absolute;
+    right: -14px;
+    top: 0;
+    width: 28px;
+    height: 100%;
+    background: var(--white);
+    transform: skewX(20deg);
+    border-right: 1px solid var(--gray-200);
+    z-index: 2;
+  }
+  .step:last-child::after { display: none; }
+  .step.active { color: var(--red); }
+  .step.done { color: var(--gray-700); }
+  .step.done a { color: var(--gray-700); }
+
+  /* =========================================================
+     C14: Help sidebar card
+     ========================================================= */
+  .layout-with-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 48px;
+    align-items: start;
+  }
+  .sidebar-card {
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .sidebar-card h4 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .sidebar-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .sidebar-row .icon { color: var(--red); flex-shrink: 0; width: 16px; margin-top: 2px; }
+  .sidebar-row a { color: var(--red); text-decoration: underline; }
+  .sidebar-row .small { font-size: 12px; color: var(--gray-700); text-transform: uppercase; letter-spacing: 0.4px; }
+  .sidebar-warning {
+    background: var(--warning-bg);
+    border-left: 3px solid var(--warning);
+    padding: 12px 16px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .sidebar-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Article body */
+  .article-body p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .article-body h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 32px 0 16px;
+  }
+  .article-body ul {
+    margin: 16px 0 16px 0;
+    list-style: none;
+  }
+  .article-body ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .article-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  /* C16: Accordion */
+  .accordion {
+    border-top: 1px solid var(--gray-200);
+    margin-top: 32px;
+  }
+  .accordion-item {
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .accordion-header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .accordion-header .chevron {
+    color: var(--red);
+    font-size: 16px;
+    transition: transform .2s;
+  }
+  .accordion.open .chevron { transform: rotate(180deg); }
+  .accordion-body {
+    padding: 0 0 20px;
+    display: none;
+  }
+  .accordion.open .accordion-body { display: block; }
+  .doc-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+  .doc-icon {
+    width: 24px;
+    height: 28px;
+    background: var(--red);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .doc-link a { color: var(--red); text-decoration: underline; }
+  .doc-link .meta { color: var(--gray-700); }
+
+  /* =========================================================
+     C15: Form fields & radio list
+     ========================================================= */
+  .form-group {
+    margin-bottom: 24px;
+  }
+  .form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .form-input {
+    width: 100%;
+    border: 1px solid var(--gray-300);
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+  }
+  .form-input:focus { outline: 1px solid var(--red); outline-offset: -1px; border-color: var(--red); }
+  .radio-list { list-style: none; max-width: 480px; margin: 0 auto; }
+  .radio-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color .15s;
+  }
+  .radio-row:hover { border-color: var(--red); }
+  .radio-row.selected { border-color: var(--red); background: var(--red-light); }
+  .radio-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gray-300);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .radio-row.selected .radio-circle { border-color: var(--red); }
+  .radio-row.selected .radio-circle::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+
+  /* Person profile hero */
+  .profile-hero {
+    background: var(--gray-100);
+    padding: 48px 0;
+  }
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .profile-photo {
+    width: 200px;
+    height: 240px;
+    background: var(--gray-300);
+    background-size: cover;
+    background-position: center;
+  }
+  .profile-info {
+    padding-top: 16px;
+  }
+  .profile-name {
+    background: var(--red);
+    color: var(--white);
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .profile-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .profile-tag {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+  .profile-tag.outline { background: transparent; }
+
+  /* Detail rows */
+  .detail-block {
+    margin-bottom: 32px;
+  }
+  .detail-block h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  /* Contact card */
+  .contact-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .contact-card {
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-700);
+  }
+  .contact-card-info h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .contact-card-info h5 a { color: var(--red); text-decoration: underline; }
+  .contact-card-info .row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .contact-card-info .row .icon { color: var(--red); width: 14px; }
+  .contact-card-info a { color: var(--red); text-decoration: underline; }
+
+  /* Map placeholder */
+  .map-placeholder {
+    height: 360px;
+    background:
+      linear-gradient(45deg, transparent 49%, var(--gray-200) 49%, var(--gray-200) 51%, transparent 51%) 0 0/60px 60px,
+      linear-gradient(-45deg, transparent 49%, var(--gray-200) 49%, var(--gray-200) 51%, transparent 51%) 0 0/60px 60px,
+      var(--gray-50);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    font-style: italic;
+  }
+  .map-pin {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--red);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 2px solid var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  /* Award/laureate grid */
+  .laureate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .laureate-card {
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .laureate-photo {
+    width: 100px;
+    height: 130px;
+    background: var(--gray-300);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+  }
+  .laureate-info h5 {
+    margin-bottom: 6px;
+  }
+  .laureate-info h5 a {
+    color: var(--red);
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .laureate-info .field {
+    color: var(--gray-700);
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .laureate-info .bio {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+
+  /* Year selector */
+  .year-select {
+    border: 1px solid var(--gray-300);
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+    min-width: 200px;
+    cursor: pointer;
+  }
+
+  /* Inline link list */
+  .link-list {
+    list-style: none;
+    margin: 24px 0;
+  }
+  .link-list li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+  .link-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 700;
+  }
+  .link-list a { color: var(--red); text-decoration: underline; }
+
+  /* =========================================================
+     C17: Footer
+     ========================================================= */
+  .footer {
+    background: var(--gray-100);
+    padding: 48px 0 32px;
+    margin-top: 64px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 2fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li {
+    padding: 6px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+  .footer-col li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+  }
+  .footer-col a {
+    color: var(--red);
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  .footer-address {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .footer-address strong { display: block; margin-bottom: 8px; }
+  .footer-social {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .footer-bottom {
+    border-top: 1px solid var(--gray-200);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  /* =========================================================
+     Page switcher (prototype only)
+     ========================================================= */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .proto-bar {
+    background: var(--black);
+    color: var(--white);
+    padding: 8px 16px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  .proto-bar strong { color: var(--red); margin-right: 8px; }
+  .proto-bar select {
+    background: var(--gray-900);
+    color: var(--white);
+    border: 1px solid var(--gray-700);
+    padding: 4px 8px;
+    font-family: inherit;
+    font-size: 12px;
+  }
+  .proto-bar a { color: #aaa; text-decoration: none; padding: 2px 6px; }
+  .proto-bar a:hover { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .hero-grid, .layout-with-sidebar, .news-grid, .contact-cards-grid,
+    .service-grid, .dept-grid, .people-grid, .banner-grid, .laureate-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .main-nav { flex-wrap: wrap; }
+    .title-banner { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     PROTOTYPE NAVIGATION BAR
+     ========================================================= -->
+<div class="proto-bar">
+  <strong>BRNO EN — IA PROTOTYPE</strong>
+  <span>Page templates:</span>
+  <a href="#home" data-page="home">T1 Home</a>
+  <a href="#section" data-page="section">T2 Section</a>
+  <a href="#catalog" data-page="catalog">T3 Catalog</a>
+  <a href="#service" data-page="service">T4 Service detail</a>
+  <a href="#departments" data-page="departments">T5 Department list</a>
+  <a href="#department-detail" data-page="department-detail">T6 Department detail</a>
+  <a href="#person" data-page="person">T7 Person profile</a>
+  <a href="#contacts" data-page="contacts">T8 Contacts</a>
+  <a href="#booking" data-page="booking">T9 Booking form</a>
+</div>
+
+<!-- =========================================================
+     HEADER (shared across all pages)
+     ========================================================= -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="#home" class="logo" data-page="home">
+        <span class="logo-letter">B</span>
+        <span class="logo-letter">R</span>
+        <span class="logo-letter">N</span>
+        <span class="logo-letter">O</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="#section" data-page="section">Living in Brno</a>
+        <div class="mega-menu">
+          <div class="mega-col">
+            <h4>Newcomers</h4>
+            <ul>
+              <li><a href="#service" data-page="service">Residence permit</a></li>
+              <li><a href="#service" data-page="service">Health insurance</a></li>
+              <li><a href="#service" data-page="service">Registering with the city</a></li>
+              <li><a href="#service" data-page="service">ID documents</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <h4>Daily life</h4>
+            <ul>
+              <li><a href="#">Housing &amp; renting</a></li>
+              <li><a href="#">Public transport</a></li>
+              <li><a href="#">Schools &amp; childcare</a></li>
+              <li><a href="#">Healthcare</a></li>
+            </ul>
+            <a class="mega-footer-link" href="#section" data-page="section">All Living topics →</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="#section" data-page="section">Work &amp; Study</a></div>
+      <div class="nav-item"><a class="nav-link" href="#section" data-page="section">Business &amp; Science</a></div>
+      <div class="nav-item"><a class="nav-link" href="#section" data-page="section">Visit &amp; Enjoy</a></div>
+      <div class="nav-item"><a class="nav-link" href="#departments" data-page="departments">City Hall <span class="caret"></span></a></div>
+      <div class="nav-item"><a class="nav-link" href="#contacts" data-page="contacts">Contacts</a></div>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================
+     T1: HOMEPAGE
+     ========================================================= -->
+<main class="page active" id="home">
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="hero-content">
+            <h1 class="hero-title">Welcome to Brno —<br>your new home</h1>
+            <a href="#section" class="hero-cta" data-page="section">Get started →</a>
+          </div>
+          <div class="hero-dots">
+            <span class="hero-dot active"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+          </div>
+        </div>
+        <div class="quick-links">
+          <a href="#" class="quick-link">
+            <span class="quick-link-text">Visit Brno (tourism)</span>
+            <span class="quick-link-arrow">›</span>
+          </a>
+          <a href="#" class="quick-link">
+            <span class="quick-link-text">#brnoregion</span>
+            <span class="quick-link-arrow">›</span>
+          </a>
+          <a href="#" class="quick-link">
+            <span class="quick-link-text">Study in Brno</span>
+            <span class="quick-link-arrow">›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">I need to handle</h2>
+      <div class="service-grid">
+        <div class="service-tile">
+          <h3>Residence &amp; ID</h3>
+          <ul>
+            <li><a href="#service" data-page="service">Apply for a residence permit</a></li>
+            <li><a href="#service" data-page="service">Register your address</a></li>
+            <li><a href="#service" data-page="service">Lost or stolen documents</a></li>
+            <li><a href="#service" data-page="service">Citizenship application</a></li>
+          </ul>
+          <a href="#catalog" data-page="catalog" class="btn btn-secondary">Show more</a>
+        </div>
+        <div class="service-tile">
+          <h3>Transport &amp; parking</h3>
+          <ul>
+            <li><a href="#service" data-page="service">Resident parking permit</a></li>
+            <li><a href="#service" data-page="service">Driver's licence exchange</a></li>
+            <li><a href="#service" data-page="service">Vehicle registration</a></li>
+            <li><a href="#service" data-page="service">Disabled parking spaces</a></li>
+          </ul>
+          <a href="#catalog" data-page="catalog" class="btn btn-secondary">Show more</a>
+        </div>
+        <div class="service-tile">
+          <h3>Family &amp; housing</h3>
+          <ul>
+            <li><a href="#service" data-page="service">Birth certificate</a></li>
+            <li><a href="#service" data-page="service">Marriage in Brno</a></li>
+            <li><a href="#service" data-page="service">Municipal housing</a></li>
+            <li><a href="#service" data-page="service">Waste fee payment</a></li>
+          </ul>
+          <a href="#catalog" data-page="catalog" class="btn btn-secondary">Show more</a>
+        </div>
+      </div>
+      <div class="btn-center">
+        <a href="#catalog" data-page="catalog" class="btn btn-primary">All city services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-gray">
+    <div class="container">
+      <h2 class="section-title">What's happening in Brno</h2>
+      <div class="news-grid">
+        <article class="news-item">
+          <span class="news-date">25. 4. 2026</span>
+          <div class="news-content">
+            <h4><a href="#">Resident parking expanded to two new districts</a></h4>
+            <p>Blue zones are growing again. From Monday 27 April, areas 18-01 and 18-02 will require permits…</p>
+          </div>
+          <div class="news-thumb"></div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">24. 4. 2026</span>
+          <div class="news-content">
+            <h4><a href="#">Volunteering, art and nature: weekend events</a></h4>
+            <p>Volunteering Days, Earth Day events and a week-long art festival are coming to the city…</p>
+          </div>
+          <div class="news-thumb"></div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">20. 4. 2026</span>
+          <div class="news-content">
+            <h4><a href="#">Kino Art gets new sound system and HVAC upgrade</a></h4>
+            <p>The main hall will be modernised with a new sound system and ventilation. Work begins 24 April…</p>
+          </div>
+          <div class="news-thumb"></div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">20. 4. 2026</span>
+          <div class="news-content">
+            <h4><a href="#">Bio-waste bins five years on: less mixed waste</a></h4>
+            <p>From 166 tonnes in year one to 2,381 tonnes in year five — Brno residents have embraced bio-waste…</p>
+          </div>
+          <div class="news-thumb"></div>
+        </article>
+      </div>
+      <div class="btn-center" style="margin-top:40px;">
+        <a href="#" class="btn btn-secondary">All news</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="banner-grid">
+        <div>
+          <a href="#" class="banner-card">Brno<br>iD</a>
+          <div class="banner-card-label"><a href="#">Brno iD</a></div>
+        </div>
+        <div>
+          <a href="#" class="banner-card" style="background:#1A1A1A;">Expat<br>Centre</a>
+          <div class="banner-card-label"><a href="#">Expat Centre</a></div>
+        </div>
+        <div>
+          <a href="#" class="banner-card" style="background:#E2231A;">#brno<br>2050</a>
+          <div class="banner-card-label"><a href="#">Strategy 2050</a></div>
+        </div>
+        <div>
+          <a href="#" class="banner-card" style="background:#444;">Parking</a>
+          <div class="banner-card-label"><a href="#">Parking in Brno</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T2: SECTION LANDING (e.g. "Living in Brno")
+     ========================================================= -->
+<main class="page" id="section">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">Living in Brno</span>
+      </nav>
+      <h1 class="title-banner">Living in Brno</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <div class="article-body">
+            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Practical guides for new and long-term residents of Brno — from registration and ID, to housing, healthcare, schools, and getting around the city.</p>
+          </div>
+          <div class="dept-grid" style="margin-top:32px;grid-template-columns:1fr 1fr;">
+            <div class="dept-tile"><a href="#service" data-page="service">Residence permits &amp; registration</a></div>
+            <div class="dept-tile"><a href="#service" data-page="service">Housing &amp; rental contracts</a></div>
+            <div class="dept-tile"><a href="#service" data-page="service">Healthcare &amp; insurance</a></div>
+            <div class="dept-tile"><a href="#service" data-page="service">Public transport &amp; parking</a></div>
+            <div class="dept-tile"><a href="#service" data-page="service">Schools, kindergartens &amp; childcare</a></div>
+            <div class="dept-tile"><a href="#service" data-page="service">Family services &amp; civic events</a></div>
+            <div class="dept-tile"><a href="#service" data-page="service">Waste, recycling &amp; utilities</a></div>
+            <div class="dept-tile"><a href="#service" data-page="service">Safety &amp; emergency services</a></div>
+          </div>
+        </div>
+        <aside>
+          <div class="sidebar-card">
+            <h4>Need help?</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542171111">+420 542 171 111</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:expat@brno.cz">expat@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Brno Expat Centre helps newcomers settle in. Free service, English-speaking staff.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Visit us</h4>
+            <div class="sidebar-row">
+              <span class="small">ADDRESS</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              Radnická 8, 602 00 Brno
+            </div>
+            <div class="sidebar-row" style="margin-top:8px;">
+              <span class="small">TODAY</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              8:00–17:00 <a href="#" style="margin-left:6px;">(other days)</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T3: SERVICE CATALOG (mega menu style)
+     ========================================================= -->
+<main class="page" id="catalog">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">I need to handle</span>
+      </nav>
+      <h1 class="title-banner">I need to handle</h1>
+      <div style="margin-top:32px;">
+        <div class="search-bar">
+          <input type="text" class="search-input" placeholder="Search…">
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:280px 280px 1fr;gap:0;border:1px solid var(--gray-200);background:var(--white);min-height:520px;">
+        <!-- Level 1 -->
+        <ul style="list-style:none;border-right:1px solid var(--gray-200);">
+          <li style="background:var(--red);color:var(--white);padding:18px 24px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">Most searched <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Documents <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Business &amp; trades <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Housing &amp; residence <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Transport <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Fees &amp; fines <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Construction &amp; property <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Environment &amp; agriculture <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Education <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Social services &amp; family <span>›</span></li>
+          <li style="padding:18px 24px;display:flex;justify-content:space-between;align-items:center;color:var(--red);font-weight:600;border-top:1px solid var(--gray-200);">Other <span>›</span></li>
+        </ul>
+        <!-- Level 2 -->
+        <ul style="list-style:none;border-right:1px solid var(--gray-200);background:var(--white);">
+          <li style="padding:18px 24px;font-weight:700;font-size:18px;">Most searched</li>
+          <li style="background:var(--red);color:var(--white);padding:18px 24px;font-weight:600;display:flex;justify-content:space-between;align-items:center;">ID card <span>›</span></li>
+          <li style="padding:18px 24px;color:var(--red);font-weight:500;border-top:1px solid var(--gray-200);">Driver's licence</li>
+          <li style="padding:18px 24px;color:var(--red);font-weight:500;border-top:1px solid var(--gray-200);">Vehicle registration</li>
+          <li style="padding:18px 24px;color:var(--red);font-weight:500;border-top:1px solid var(--gray-200);">Waste fee payment</li>
+        </ul>
+        <!-- Level 3 -->
+        <div style="padding:32px;">
+          <h3 style="font-size:24px;font-weight:800;margin-bottom:24px;">ID card</h3>
+          <ul class="link-list" style="margin:0;">
+            <li><a href="#service" data-page="service">Apply for an ID card</a></li>
+            <li><a href="#service" data-page="service">Report lost, stolen, damaged or destroyed ID</a></li>
+            <li><a href="#service" data-page="service">Pick up a finished ID card</a></li>
+            <li><a href="#service" data-page="service">ID card status check</a></li>
+            <li><a href="#service" data-page="service">ID card for mobility-impaired applicants</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T4: SERVICE DETAIL (article)
+     ========================================================= -->
+<main class="page" id="service">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <a href="#catalog" data-page="catalog">I need to handle</a>
+        <span class="sep">›</span>
+        <span class="current">Apply for an ID card</span>
+      </nav>
+      <h1 class="title-banner">Apply for an ID card</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div class="article-body">
+          <p>A valid Czech ID card (občanský průkaz, OP) must be held by every Czech citizen aged 15 or older with permanent residence in the Czech Republic.</p>
+          <p>An ID card may also be issued to citizens under 15, or to citizens without permanent residence in the country.</p>
+          <p>An ID card may be issued to a citizen whose legal capacity has been restricted.</p>
+
+          <p><strong>An ID card is most often requested due to:</strong></p>
+          <ul>
+            <li>issuing an <a href="#">ID card for a child under 15</a></li>
+            <li>turning 15 (first ID card)</li>
+            <li>expiry of the existing ID card</li>
+            <li>changes in personal data, especially permanent address, surname, or marital status</li>
+          </ul>
+
+          <p>When applying, you do not fill out a paper form — the clerk records all details on-site, takes your photo and fingerprints.</p>
+
+          <h3>What you need to bring</h3>
+          <ul>
+            <li>For first ID at 15: birth certificate and the legal guardian's ID</li>
+            <li>Renewal: existing ID card</li>
+            <li>Change of details: existing ID and supporting documents</li>
+          </ul>
+
+          <h3>Fees</h3>
+          <ul>
+            <li>Standard issue (30 days), age 15+: free of charge</li>
+            <li>Standard issue (30 days), under 15: CZK 100</li>
+            <li>Express issue (5 working days), age 15+: CZK 500</li>
+            <li>24-hour express: CZK 1,000</li>
+          </ul>
+
+          <h3>Legislation</h3>
+          <p>Sections 8 to 21 of Act No. 269/2021 Coll., on ID cards.</p>
+
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Documents <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <div class="doc-link">
+                  <span class="doc-icon">PDF</span>
+                  <a href="#">My ID is about to expire</a>
+                  <span class="meta">(PDF, 759 KB)</span>
+                </div>
+                <div class="doc-link">
+                  <span class="doc-icon">PDF</span>
+                  <a href="#">Administrative fees</a>
+                  <span class="meta">(PDF, 569 KB)</span>
+                </div>
+                <div class="doc-link">
+                  <span class="doc-icon">PDF</span>
+                  <a href="#">Temporary ID card</a>
+                  <span class="meta">(PDF, 807 KB)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside>
+          <div class="sidebar-card">
+            <h4>How can we help?</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542175119">+420 542 175 119</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:idcard@brno.cz">idcard@brno.cz</a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Visit us</h4>
+            <div class="sidebar-warning">Walk-ins are welcome during office hours, even without a booking. Tuesdays, Thursdays, and Fridays are usually less busy.</div>
+            <div class="sidebar-row">
+              <span class="small">ADDRESS</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              Husova 5, 602 00 Brno (<a href="#">map</a>)
+            </div>
+            <div class="sidebar-row" style="margin-top:8px;">
+              <span class="small">TODAY OPEN</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              8:00–17:00 <a href="#" style="margin-left:6px;">(other days)</a>
+            </div>
+            <a href="#booking" data-page="booking" class="btn btn-primary" style="margin-top:16px;">Book online</a>
+          </div>
+          <div class="sidebar-card" style="background:var(--gray-50);">
+            <h4 style="margin-bottom:8px;">For mobility-impaired applicants</h4>
+            <a href="#booking" data-page="booking" class="btn btn-primary">Book online</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T5: DEPARTMENT LIST
+     ========================================================= -->
+<main class="page" id="departments">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <a href="#" >City Hall</a>
+        <span class="sep">›</span>
+        <span class="current">All departments</span>
+      </nav>
+      <h1 class="title-banner">All departments</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="dept-grid">
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Brno City Archive (AMB)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Housing Department (BO)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Marketing &amp; Tourism Office (KMCR)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Mayor's Office (KPMB)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Property Department (MO)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Transport Department (OD)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">EU Funds Implementation (OIEF)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Internal Audit &amp; Control (OKO)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Investment Department (OI)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Culture Department (OK)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">City IT Department (OMI)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Defence Department (OOBR)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Heritage Care (OPP)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Citizen Participation (PARO)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Traffic Offences (OPD)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Vehicle Registry (ORVŘ)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Budget &amp; Finance (ORF)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Social Care (OSP)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Sports Department (OS)</a></div>
+        <div class="dept-tile"><a href="#department-detail" data-page="department-detail">Administrative Affairs (OSČ)</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T6: DEPARTMENT DETAIL
+     ========================================================= -->
+<main class="page" id="department-detail">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <a href="#" >City Hall</a>
+        <span class="sep">›</span>
+        <a href="#departments" data-page="departments">All departments</a>
+        <span class="sep">›</span>
+        <span class="current">Transport Department (OD)</span>
+      </nav>
+      <h1 class="title-banner">Transport Department (OD)</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <div class="detail-block">
+            <h3>What we can help you with</h3>
+            <div class="quick-links">
+              <a href="#service" data-page="service" class="quick-link">
+                <span class="quick-link-text">Resident parking permit</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#service" data-page="service" class="quick-link">
+                <span class="quick-link-text">Subscriber parking permit</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#service" data-page="service" class="quick-link">
+                <span class="quick-link-text">Taxi driver licence &amp; vehicle registration</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#service" data-page="service" class="quick-link">
+                <span class="quick-link-text">Disabled parking spaces</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#service" data-page="service" class="quick-link">
+                <span class="quick-link-text">Permit to enter the historic centre</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+            </div>
+            <div style="margin-top:16px;">
+              <a href="#" class="btn btn-secondary">Show more ▾</a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h3>Agenda</h3>
+            <ul>
+              <li>Manages the operation and development of road infrastructure on Brno territory.</li>
+              <li>Prepares <a href="#">investment plans</a> for transport projects.</li>
+              <li>Coordinates individual transport, public transport, and parking in line with urban plans.</li>
+              <li>Oversees the management of <a href="#">road inventories</a>.</li>
+              <li>Handles administrative agendas for road management, traffic signage, parking permits, taxi services, and road authority decisions.</li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h3>Sub-units</h3>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile"><a href="#">Concept &amp; Strategy Unit</a></div>
+              <div class="dept-tile"><a href="#">Property &amp; Legal Unit</a></div>
+              <div class="dept-tile"><a href="#">Local Traffic Regulation Unit</a></div>
+              <div class="dept-tile"><a href="#">Road Authority Unit</a></div>
+              <div class="dept-tile"><a href="#">Economic Section</a></div>
+            </div>
+          </div>
+
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#">Resident parking &amp; entry to centre</a></li>
+                  <li><a href="#">Map of traffic signage in Brno</a></li>
+                  <li><a href="#">BrnoinMotion</a></li>
+                  <li><a href="#">Local road administration</a></li>
+                  <li><a href="#">Transport grants</a></li>
+                  <li><a href="#">Cycling in Brno</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside>
+          <div class="sidebar-card">
+            <h4>How can we help?</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542174201">+420 542 174 201</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:od@brno.cz">od@brno.cz</a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Visit us</h4>
+            <div class="sidebar-row">
+              <span class="small">ADDRESS</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              Kounicova 67, 602 00 Brno (<a href="#">map</a>)
+            </div>
+            <div class="sidebar-row" style="margin-top:8px;">
+              <span class="small">TODAY OPEN</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              8:00–17:00 <a href="#" style="margin-left:6px;">(other days)</a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Contacts</h4>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div>
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#person" data-page="person">Ing. Bc. Pavel Pospíšek</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">Head of department</div>
+                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
+                  <span class="icon">☎</span><a href="tel:+420542174200">+420 542 174 200</a>
+                </div>
+                <div class="sidebar-row" style="font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:pospisek.pavel@brno.cz">pospisek.pavel@brno.cz</a>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#person" data-page="person">Dana Hercegová</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">Secretary</div>
+                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
+                  <span class="icon">☎</span><a href="tel:+420542174201">+420 542 174 201</a>
+                </div>
+                <div class="sidebar-row" style="font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:hercegova.dana@brno.cz">hercegova.dana@brno.cz</a>
+                </div>
+              </div>
+              <a href="#" style="font-size:14px;font-weight:700;">All staff →</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T7: PERSON PROFILE
+     ========================================================= -->
+<main class="page" id="person">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <a href="#contacts" data-page="contacts">Contacts</a>
+        <span class="sep">›</span>
+        <span class="current">RNDr. Filip Chvátal, Ph.D.</span>
+      </nav>
+      <div class="profile-grid">
+        <div class="profile-photo" style="background-image:linear-gradient(135deg,#888 0%,#555 100%);"></div>
+        <div class="profile-info">
+          <h1 class="profile-name">RNDr. Filip Chvátal, Ph.D.</h1>
+          <div class="profile-tags">
+            <span class="profile-tag">Deputy Mayor</span>
+            <span class="profile-tag">Christian and Democratic Union — Czechoslovak People's Party</span>
+          </div>
+          <div class="profile-tags">
+            <span class="profile-tag outline">2nd Deputy Mayor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="max-width:900px;margin-left:240px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:48px;">
+        <div>
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:16px;">Contact</h3>
+          <div class="sidebar-row" style="margin-bottom:8px;">
+            <span class="icon">☎</span>
+            <a href="tel:+420542172030">+420 542 172 030</a>
+          </div>
+          <div class="sidebar-row">
+            <span class="icon">✉</span>
+            <a href="mailto:chvatal.filip@brno.cz">chvatal.filip@brno.cz</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:16px;">Address</h3>
+          <div class="sidebar-row" style="margin-bottom:8px;">
+            <span class="icon">📍</span>
+            <span>Husova 196/12, 601 67 Brno</span>
+          </div>
+          <div style="font-size:14px;color:var(--gray-700);padding-left:24px;">Office 214</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:22px;font-weight:800;margin-bottom:16px;">Agenda</h3>
+      <p style="font-size:15px;line-height:1.7;color:var(--gray-700);">The City Council has entrusted him with the agenda of environment, water and forest management, agriculture, and pro-family policy. He also oversees accessibility and the Brno – Healthy City project.</p>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T8: CONTACTS
+     ========================================================= -->
+<main class="page" id="contacts">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">Contacts</span>
+      </nav>
+      <h1 class="title-banner">Contacts</h1>
+      <div style="margin-top:32px;">
+        <div class="search-bar">
+          <input type="text" class="search-input" placeholder="Search…">
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h3 style="font-size:24px;font-weight:800;margin-bottom:24px;">Most searched</h3>
+      <div class="contact-cards-grid">
+        <div class="contact-card">
+          <div class="contact-icon">@</div>
+          <div class="contact-card-info">
+            <h5><a href="#">Switchboard MMB</a></h5>
+            <div class="row"><span class="icon">☎</span><a href="tel:+420542171111">+420 542 171 111</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">@</div>
+          <div class="contact-card-info">
+            <h5><a href="#">Records office MMB</a></h5>
+            <div class="row"><span class="icon">☎</span><a href="tel:+420542173013">+420 542 173 013</a></div>
+            <div class="row"><span class="icon">✉</span><a href="mailto:posta@brno.cz">posta@brno.cz</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">@</div>
+          <div class="contact-card-info">
+            <h5><a href="#">Information centre</a></h5>
+            <div class="row"><span class="icon">☎</span><a href="tel:+420542173590">+420 542 173 590</a></div>
+            <div class="row"><span class="icon">✉</span><a href="mailto:informace@brno.cz">informace@brno.cz</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">@</div>
+          <div class="contact-card-info">
+            <h5><a href="#">Press office (TIS)</a></h5>
+            <div class="row"><span class="icon">☎</span><a href="tel:+420542172026">+420 542 172 026</a></div>
+            <div class="row"><span class="icon">✉</span><a href="mailto:tis@brno.cz">tis@brno.cz</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">@</div>
+          <div class="contact-card-info">
+            <h5><a href="#">Lost &amp; found</a></h5>
+            <div class="row"><span class="icon">☎</span><a href="tel:+420542173012">+420 542 173 012</a></div>
+            <div class="row"><span class="icon">✉</span><a href="mailto:ztratyanalezy@brno.cz">ztratyanalezy@brno.cz</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:32px;">
+        <div>
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:16px;">Postal address</h3>
+          <p style="line-height:1.7;font-size:14px;">
+            Statutory City of Brno<br>
+            Brno City Hall<br>
+            Dominikánské nám. 1<br>
+            601 67 Brno
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:16px;">Invoicing details</h3>
+          <p style="line-height:1.8;font-size:14px;">
+            <strong>Registered office:</strong> Dominikánské náměstí 196/1, 602 00 Brno<br>
+            <strong>Company ID:</strong> 44992785<br>
+            <strong>Tax ID:</strong> CZ44992785<br>
+            <strong>Data box ID:</strong> a7kbrrn
+          </p>
+        </div>
+      </div>
+
+      <h3 style="font-size:22px;font-weight:800;margin-bottom:16px;">Office hours</h3>
+      <p style="font-size:15px;color:var(--gray-700);margin-bottom:32px;">Office hours vary across departments. Please look up the specific <a href="#">site</a> or <a href="#">service</a>.</p>
+    </div>
+    <div class="map-placeholder">
+      <span>Interactive map (Esri)</span>
+      <div class="map-pin" style="top:40%;left:48%;"></div>
+      <div class="map-pin" style="top:55%;left:50%;"></div>
+      <div class="map-pin" style="top:50%;left:55%;"></div>
+      <div class="map-pin" style="top:45%;left:60%;"></div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     T9: BOOKING FORM (process steps)
+     ========================================================= -->
+<main class="page" id="booking">
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#home" data-page="home">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">Online booking — Administrative Affairs</span>
+      </nav>
+      <h1 class="title-banner">Online booking — Administrative Affairs</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="steps">
+        <div class="step done"><a href="#" style="text-decoration:underline;">Subject of visit</a></div>
+        <div class="step active">Date &amp; time</div>
+        <div class="step">Personal details</div>
+      </div>
+
+      <h2 style="text-align:center;font-size:26px;font-weight:800;margin:32px 0 8px;">When suits you?</h2>
+      <p style="text-align:center;color:var(--gray-700);max-width:600px;margin:0 auto 12px;">Wheelchair users and hearing aid users: ID/PP application submission and PP issuance — internet</p>
+      <p style="text-align:center;color:var(--gray-700);max-width:600px;margin:0 auto 32px;font-size:14px;">Applications can also be processed without an appointment. Please check <a href="#">current desk availability</a>.</p>
+      <p style="text-align:center;color:var(--gray-500);font-size:13px;margin-bottom:24px;max-width:720px;margin-left:auto;margin-right:auto;">Below are available slots for the next 35 days. If no dates are listed, all booking slots have been used up.</p>
+
+      <ul class="radio-list">
+        <li class="radio-row" onclick="document.querySelectorAll('.radio-row').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')"><span class="radio-circle"></span> 28.04.2026, Tuesday</li>
+        <li class="radio-row" onclick="document.querySelectorAll('.radio-row').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')"><span class="radio-circle"></span> 29.04.2026, Wednesday</li>
+        <li class="radio-row selected" onclick="document.querySelectorAll('.radio-row').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')"><span class="radio-circle"></span> 30.04.2026, Thursday</li>
+        <li class="radio-row" onclick="document.querySelectorAll('.radio-row').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')"><span class="radio-circle"></span> 04.05.2026, Monday</li>
+        <li class="radio-row" onclick="document.querySelectorAll('.radio-row').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')"><span class="radio-circle"></span> 05.05.2026, Tuesday</li>
+        <li class="radio-row" onclick="document.querySelectorAll('.radio-row').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')"><span class="radio-circle"></span> 06.05.2026, Wednesday</li>
+        <li class="radio-row" onclick="document.querySelectorAll('.radio-row').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')"><span class="radio-circle"></span> 07.05.2026, Thursday</li>
+      </ul>
+
+      <div style="text-align:center;margin-top:32px;">
+        <button class="btn btn-primary">Continue →</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =========================================================
+     FOOTER (shared)
+     ========================================================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="#catalog" data-page="catalog">I need to handle</a></li>
+          <li><a href="#departments" data-page="departments">All departments</a></li>
+          <li><a href="#">Job openings</a></li>
+          <li><a href="#booking" data-page="booking">Online booking</a></li>
+          <li><a href="#contacts" data-page="contacts">Contacts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">Safety</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hash-based navigation
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    var page = document.getElementById(id);
+    if (page) {
+      page.classList.add('active');
+    } else {
+      document.getElementById('home').classList.add('active');
+    }
+    window.scrollTo(0, 0);
+  }
+
+  // Intercept all data-page links
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('[data-page]');
+    if (link) {
+      e.preventDefault();
+      var pageId = link.getAttribute('data-page');
+      window.location.hash = pageId;
+      showPage(pageId);
+    }
+  });
+
+  window.addEventListener('hashchange', function() {
+    var hash = window.location.hash.slice(1);
+    if (hash) showPage(hash);
+  });
+
+  // Initial load
+  var initial = window.location.hash.slice(1);
+  if (initial) showPage(initial);
+</script>
+
+</body>
+</html>

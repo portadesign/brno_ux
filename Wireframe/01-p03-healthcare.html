@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Healthcare (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="../src_img/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="01-p02-transport.html">Documents</a>
+        <a href="01-p02-transport.html">Visa &amp; residency</a>
+        <a href="01-p02-transport.html">Transport &amp; vehicles</a>
+        <a href="01-p02-transport.html">Fees, payments &amp; fines</a>
+        <a href="01-p02-transport.html">Document legalization &amp; vidimation</a>
+        <a href="01-p02-transport.html">Social services &amp; family</a>
+        <a href="01-p02-transport.html">Environment &amp; waste</a>
+        <a href="01-p02-transport.html">City hall services</a>
+        <a href="01-p02-transport.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
+        <a href="01-p02-transport.html">How to start</a>
+        <a href="01-p02-transport.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p02-transport.html">Social care</a>
+        <a href="01-p02-transport.html">Education</a>
+        <a href="01-p02-transport.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Working in Brno</a>
+        <a href="01-p02-transport.html">Right to work in Czechia</a>
+        <a href="01-p02-transport.html">Find a job</a>
+        <a href="01-p02-transport.html">Employment essentials</a>
+        <a href="01-p02-transport.html">Become self-employed</a>
+        <a href="01-p02-transport.html">Start a company</a>
+        <a href="01-p02-transport.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy Brno</a>
+        <a href="01-p02-transport.html">Leisure &amp; Sports</a>
+        <a href="01-p02-transport.html">Culture</a>
+        <a href="01-p02-transport.html">Sights &amp; architecture</a>
+        <a href="01-p02-transport.html">Events</a>
+        <a href="01-p02-transport.html">Maps &amp; Guides</a>
+        <a href="01-p02-transport.html">Food and Drink</a>
+        <a href="01-p02-transport.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="01-p02-transport.html">Study in Brno</a>
+        <a href="01-p02-transport.html">Brno for Business</a>
+        <a href="01-p02-transport.html">Science &amp; Innovation</a>
+        <a href="01-p02-transport.html">Mayor &amp; City Council</a>
+        <a href="01-p02-transport.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Healthcare topic detail page (level 3, T6-inspired) -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <a href="01-p01-live.html">Live</a>
+        <span class="sep">›</span>
+        <span class="current">Healthcare</span>
+      </nav>
+      <h1 class="title-banner">Healthcare (Detail tématu)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Czech public healthcare is universal for those with insurance. English-speaking doctors and international clinics are widely available in Brno. From emergencies to long-term care — here's how the system works for foreigners.</p>
+          </div>
+
+          <!-- H2 1: Healthcare availability for foreigners -->
+          <div class="detail-block">
+            <h2>Healthcare availability for foreigners</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">What care you can access in Brno depends on your residence status, employment situation and the type of insurance you hold. Here's how to get into the system as a foreigner — and what to do before you do.</p>
+            <div class="quick-links">
+              <a href="#" class="quick-link"><span class="quick-link-text">Who is entitled to public healthcare (by visa &amp; residence type)</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" class="quick-link"><span class="quick-link-text">How to register with a general practitioner (GP)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Health insurance — public vs. commercial</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" class="quick-link"><span class="quick-link-text">English-speaking doctors &amp; international clinics</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" class="quick-link"><span class="quick-link-text">Short stays &amp; EU visitors — EHIC, travel insurance, paying out of pocket</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" class="quick-link"><span class="quick-link-text">Healthcare for children &amp; dependents who join you later</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="#" style="font-weight:600;">All about Healthcare availability →</a></div>
+          </div>
+
+          <!-- H2 2: In case of emergency -->
+          <div class="detail-block">
+            <h2>In case of emergency</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Know what to do, who to call, and where to go. Czech emergency care is provided to anyone in a life-threatening situation, regardless of insurance.</p>
+
+            <h3 style="font-size:17px;font-weight:700;margin:24px 0 8px;">When to call an ambulance</h3>
+            <p style="margin-bottom:12px;">Life-threatening situations: chest pain, severe injuries, unconsciousness, breathing difficulties, severe bleeding.</p>
+
+            <h3 style="font-size:17px;font-weight:700;margin:24px 0 8px;">Emergency phone numbers</h3>
+            <ul style="margin:8px 0 16px;list-style:none;padding-left:0;">
+              <li style="padding:4px 0;"><strong>112</strong> — Universal emergency (EN-friendly)</li>
+              <li style="padding:4px 0;"><strong>155</strong> — Ambulance</li>
+              <li style="padding:4px 0;"><strong>150</strong> — Fire</li>
+              <li style="padding:4px 0;"><strong>158</strong> — Police</li>
+            </ul>
+
+            <h3 style="font-size:17px;font-weight:700;margin:24px 0 8px;">Emergency rooms in Brno</h3>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">University Hospital Brno (FN Brno)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Jihlavská 20<br>Adult ER: 24/7<br>+420 532 231 111</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">St. Anne's University Hospital</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Pekařská 53<br>Adult ER: 24/7<br>+420 543 181 111</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Children's Hospital Brno</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Černopolní 9<br>Paediatric ER: 24/7<br>+420 532 234 111</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Out-of-hours dental care</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Úrazová nemocnice, Ponávka 6<br>Weekends 8:00–18:00<br>+420 545 538 111</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;"><a href="#" style="font-weight:600;">Full emergency map →</a></div>
+          </div>
+
+          <!-- H2 3: Health insurance — links to article-level detail -->
+          <div class="detail-block">
+            <h2><a href="01-p04-health-insurance.html">Health insurance</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">The Czech system has two tracks: <strong>public</strong> (state-run, for residents with employment or family ties) and <strong>commercial</strong> (for long-term visa holders, dependents, etc.). Your residence permit determines which one applies.</p>
+            <ul>
+              <li><strong>Public</strong> — Employed, self-employed, EU family members, students with S1/E106, refugees with temporary protection</li>
+              <li><strong>Commercial</strong> — Long-term visa without employment, non-EU dependents, short-stay visitors</li>
+            </ul>
+            <div style="margin-top:28px;"><a href="01-p04-health-insurance.html" style="font-weight:600;">More about Health insurance →</a></div>
+          </div>
+
+          <!-- H2 4: Hospitals -->
+          <div class="detail-block">
+            <h2>Hospitals</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno has four major hospitals offering full inpatient care, specialised surgery and emergency departments.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">University Hospital Brno (FN Brno)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Jihlavská 20<br>+420 532 231 111</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">St. Anne's University Hospital (FNUSA)</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Pekařská 53<br>+420 543 181 111</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Children's Hospital Brno</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Černopolní 9<br>+420 532 234 111</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="#" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Masaryk Oncology Institute</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Žlutý kopec 7<br>+420 543 131 111</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;"><a href="#" style="font-weight:600;">Hospitals map →</a></div>
+          </div>
+
+          <!-- H2 5: Medical facilities -->
+          <div class="detail-block">
+            <h2>Medical facilities</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">All registered outpatient clinics, private practices and specialised centres in Brno — searchable directory.</p>
+            <div style="margin-top:28px;"><a href="#" style="font-weight:600;">Browse all medical facilities →</a></div>
+          </div>
+
+          <!-- H2 6: Outpatient clinics by specialty -->
+          <div class="detail-block">
+            <h2>Outpatient clinics by specialty</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Find the right specialist — from cardiology to dermatology to physiotherapy.</p>
+            <div style="margin-top:28px;"><a href="#" style="font-weight:600;">Browse by specialty →</a></div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Most searched</h4>
+            <ul style="list-style:none;padding:0;">
+              <li style="padding:6px 0;"><a href="#">Paediatricians</a></li>
+              <li style="padding:6px 0;"><a href="#">Gynaecologists</a></li>
+              <li style="padding:6px 0;"><a href="#">English-speaking GPs</a></li>
+              <li style="padding:6px 0;"><a href="#">Dentists accepting new patients</a></li>
+              <li style="padding:6px 0;"><a href="#">Out-of-hours pharmacies</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4 style="margin-bottom:8px;">In an emergency?</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Call <strong>112</strong> first. Hospitals must provide life-saving care regardless of insurance.</p>
+            <a href="#" class="btn btn-primary" style="color:var(--white);">Emergency contacts</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542171111">+420 542 171 111</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:expat@brno.cz">expat@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Free help finding doctors, navigating insurance, and interpretation support.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

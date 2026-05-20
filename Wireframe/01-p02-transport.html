@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Transport (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav + C11 Mega menu -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="../src_img/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="01-p02-transport.html">Documents</a>
+        <a href="01-p02-transport.html">Visa &amp; residency</a>
+        <a href="01-p02-transport.html">Transport &amp; vehicles</a>
+        <a href="01-p02-transport.html">Fees, payments &amp; fines</a>
+        <a href="01-p02-transport.html">Document legalization &amp; vidimation</a>
+        <a href="01-p02-transport.html">Social services &amp; family</a>
+        <a href="01-p02-transport.html">Environment &amp; waste</a>
+        <a href="01-p02-transport.html">City hall services</a>
+        <a href="01-p02-transport.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
+        <a href="01-p02-transport.html">How to start</a>
+        <a href="01-p02-transport.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p02-transport.html">Social care</a>
+        <a href="01-p02-transport.html">Education</a>
+        <a href="01-p02-transport.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Working in Brno</a>
+        <a href="01-p02-transport.html">Right to work in Czechia</a>
+        <a href="01-p02-transport.html">Find a job</a>
+        <a href="01-p02-transport.html">Employment essentials</a>
+        <a href="01-p02-transport.html">Become self-employed</a>
+        <a href="01-p02-transport.html">Start a company</a>
+        <a href="01-p02-transport.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy Brno</a>
+        <a href="01-p02-transport.html">Leisure &amp; Sports</a>
+        <a href="01-p02-transport.html">Culture</a>
+        <a href="01-p02-transport.html">Sights &amp; architecture</a>
+        <a href="01-p02-transport.html">Events</a>
+        <a href="01-p02-transport.html">Maps &amp; Guides</a>
+        <a href="01-p02-transport.html">Food and Drink</a>
+        <a href="01-p02-transport.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="01-p02-transport.html">Study in Brno</a>
+        <a href="01-p02-transport.html">Brno for Business</a>
+        <a href="01-p02-transport.html">Science &amp; Innovation</a>
+        <a href="01-p02-transport.html">Mayor &amp; City Council</a>
+        <a href="01-p02-transport.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Live > Transport (T6-inspired topic detail) -->
+<main>
+  <!-- C03 Page banner + breadcrumbs -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <a href="01-p01-live.html">Live</a>
+        <span class="sep">›</span>
+        <span class="current">Transport</span>
+      </nav>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- About / Overview -->
+          <div class="detail-block">
+            <h3>About transport in Brno</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Brno's integrated transport system (IDS JMK) connects the city and the South Moravian region with trams, buses, trolleybuses, regional trains and on-demand services. As a foreign resident you'll likely use the public network daily, register a vehicle, or apply for a resident parking permit.</p>
+            <ul>
+              <li>Operates and develops Brno's integrated transport system (IDS JMK).</li>
+              <li>Issues parking permits and disabled parking spaces.</li>
+              <li>Handles vehicle registration, change of owner, deregistration and import.</li>
+              <li>Maintains city roads, bridges, signage and bike infrastructure.</li>
+              <li>Coordinates road closures, major works and traffic regulations.</li>
+            </ul>
+          </div>
+
+          <!-- Featured services as C05 quick-links -->
+          <div class="detail-block">
+            <h3>Most-used services</h3>
+            <div class="quick-links">
+              <a href="https://idos.cz" target="_blank" rel="noopener" class="quick-link">
+                <span class="quick-link-text">IDOS — national journey planner</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="quick-link-text">IDS JMK — Brno integrated public transport</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="quick-link-text">Resident parking permit</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="quick-link-text">Vehicle registration &amp; change of owner</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="quick-link-text">Driver's licence replacement</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link">
+                <span class="quick-link-text">Vehicle import from abroad</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link more-extra">
+                <span class="quick-link-text">Vehicle export</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link more-extra">
+                <span class="quick-link-text">Vehicle deregistration</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link more-extra">
+                <span class="quick-link-text">License plates — request, replace, lost</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link more-extra">
+                <span class="quick-link-text">Custom &amp; electric vehicle plates</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link more-extra">
+                <span class="quick-link-text">Vehicle temporary withdrawal</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+              <a href="#" class="quick-link more-extra">
+                <span class="quick-link-text">Historical &amp; sports vehicle registration</span>
+                <span class="quick-link-arrow">›</span>
+              </a>
+            </div>
+            <div style="margin-top:16px;">
+              <a href="#" class="btn btn-secondary" onclick="event.preventDefault(); var extras=this.parentElement.previousElementSibling.querySelectorAll('.more-extra'); var wasShown=extras[0].classList.contains('shown'); extras.forEach(function(e){e.classList.toggle('shown');}); this.textContent=wasShown?'Show more ▾':'Show less ▴';">Show more ▾</a>
+            </div>
+          </div>
+
+          <!-- All sub-topics as C09 dept-grid -->
+          <div class="detail-block">
+            <h3>All transport topics</h3>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile"><a href="#">Public transport (trams, buses, trolleybuses)</a></div>
+              <div class="dept-tile"><a href="#">Tickets, fares &amp; passes</a></div>
+              <div class="dept-tile"><a href="#">Park &amp; Ride zones</a></div>
+              <div class="dept-tile"><a href="#">Visitor &amp; short-term parking</a></div>
+              <div class="dept-tile"><a href="#">Disabled parking spaces</a></div>
+              <div class="dept-tile"><a href="#">Cycling routes &amp; bike sharing</a></div>
+              <div class="dept-tile"><a href="#">Road closures &amp; traffic news</a></div>
+              <div class="dept-tile"><a href="#">Taxi licence &amp; ride-sharing</a></div>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: Related links -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="#">BrnoinMotion — city transport strategy</a></li>
+                  <li><a href="#">Map of traffic signage in Brno</a></li>
+                  <li><a href="#">DPMB — public transport operator</a></li>
+                  <li><a href="#">BKom — local road administration</a></li>
+                  <li><a href="#">Cycling map of Brno (PDF)</a></li>
+                  <li><a href="#">Transport grants for businesses</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar — T6 pattern -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>Transport Department (OD)</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542174201">+420 542 174 201</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:od@brno.cz">od@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">For administrative matters: parking permits, vehicle registration, road authority decisions.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Visit us</h4>
+            <div class="sidebar-row">
+              <span class="small">ADDRESS</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              Kounicova 67, 602 00 Brno (<a href="#">map</a>)
+            </div>
+            <div class="sidebar-row" style="margin-top:8px;">
+              <span class="small">TODAY OPEN</span>
+            </div>
+            <div class="sidebar-row" style="padding-left:24px;">
+              8:00–17:00 <a href="#" style="margin-left:6px;">(other days)</a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Contacts</h4>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div>
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Ing. Bc. Pavel Pospíšek</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">Head of department</div>
+                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
+                  <span class="icon">☎</span><a href="tel:+420542174200">+420 542 174 200</a>
+                </div>
+                <div class="sidebar-row" style="font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:pospisek.pavel@brno.cz">pospisek.pavel@brno.cz</a>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Dana Hercegová</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">Secretary</div>
+                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
+                  <span class="icon">☎</span><a href="tel:+420542174201">+420 542 174 201</a>
+                </div>
+                <div class="sidebar-row" style="font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:hercegova.dana@brno.cz">hercegova.dana@brno.cz</a>
+                </div>
+              </div>
+              <a href="#" style="font-size:14px;font-weight:700;">All staff →</a>
+            </div>
+          </div>
+          <div class="sidebar-card" style="background:var(--warning-bg);border-left:3px solid var(--warning);">
+            <h4 style="margin-bottom:8px;">Resident parking renewal</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Annual renewal window: June 1 – June 30. Apply online to avoid queues at the counter.</p>
+            <a href="#" class="btn btn-primary">Renew online</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

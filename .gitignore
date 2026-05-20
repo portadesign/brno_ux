@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Claude local settings
+.claude/
+
+# Local backup files
+*.bak
+
+# Node / package artifacts (in case of future tooling)
+node_modules/
+dist/
+.cache/

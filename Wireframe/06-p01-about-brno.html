@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — About Brno (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="../src_img/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="01-p02-transport.html">Documents</a>
+        <a href="01-p02-transport.html">Visa &amp; residency</a>
+        <a href="01-p02-transport.html">Transport &amp; vehicles</a>
+        <a href="01-p02-transport.html">Fees, payments &amp; fines</a>
+        <a href="01-p02-transport.html">Document legalization &amp; vidimation</a>
+        <a href="01-p02-transport.html">Social services &amp; family</a>
+        <a href="01-p02-transport.html">Environment &amp; waste</a>
+        <a href="01-p02-transport.html">City hall services</a>
+        <a href="01-p02-transport.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living in Brno</a>
+        <a href="01-p02-transport.html">How to start</a>
+        <a href="01-p02-transport.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p02-transport.html">Social care</a>
+        <a href="01-p02-transport.html">Education</a>
+        <a href="01-p02-transport.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Working in Brno</a>
+        <a href="01-p02-transport.html">Right to work in Czechia</a>
+        <a href="01-p02-transport.html">Find a job</a>
+        <a href="01-p02-transport.html">Employment essentials</a>
+        <a href="01-p02-transport.html">Become self-employed</a>
+        <a href="01-p02-transport.html">Start a company</a>
+        <a href="01-p02-transport.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy Brno</a>
+        <a href="01-p02-transport.html">Leisure &amp; Sports</a>
+        <a href="01-p02-transport.html">Culture</a>
+        <a href="01-p02-transport.html">Sights &amp; architecture</a>
+        <a href="01-p02-transport.html">Events</a>
+        <a href="01-p02-transport.html">Maps &amp; Guides</a>
+        <a href="01-p02-transport.html">Food and Drink</a>
+        <a href="01-p02-transport.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="01-p02-transport.html">Study in Brno</a>
+        <a href="01-p02-transport.html">Brno for Business</a>
+        <a href="01-p02-transport.html">Science &amp; Innovation</a>
+        <a href="01-p02-transport.html">Mayor &amp; City Council</a>
+        <a href="01-p02-transport.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- About Brno section landing (T2 + T6 detail-block pattern) -->
+<main>
+  <!-- C03 Page banner + breadcrumbs -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">About Brno</span>
+      </nav>
+      <h1 class="title-banner">About Brno</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Brno's story for newcomers, investors, researchers and curious visitors — what makes the city tick, what it offers, and how to plug into its ecosystem.</p>
+          </div>
+
+          <!-- Topic 1: Study in Brno (CSV labels this "Brno for Business" — but content is Study; fixing per content) -->
+          <div class="detail-block">
+            <h2><a href="#">Study in Brno</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno is one of Central Europe's biggest student cities — five universities, 80,000+ students, English-language programmes and a vibrant international community.</p>
+            <div class="quick-links">
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Study in Brno — official study portal</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Universities in Brno — MUNI, VUT, Mendelu, JAMU, VFU</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Why study in Brno — costs, quality, student community, location</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Internships, student jobs &amp; after-graduation work</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Study in Brno →</a></div>
+          </div>
+
+          <!-- Topic 2: Brno for Business -->
+          <div class="detail-block">
+            <h2><a href="#">Brno for Business</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno is a regional hub for IT, R&amp;D, automotive and life sciences. Discover why companies like Honeywell, Red Hat, Kyndryl and IBM call Brno home.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Why Brno for business (talent pool, location, costs)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Major employers &amp; sectors</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Investment incentives &amp; city support</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">JIC — Brno Innovation Centre</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">Brno Business Centre</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno for Business →</a></div>
+          </div>
+
+          <!-- Topic 3: Science & Innovation -->
+          <div class="detail-block">
+            <h2><a href="#">Science &amp; Innovation</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Brno is the second-largest research hub in the Czech Republic — five universities, world-class research institutes and an active innovation ecosystem.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Universities in Brno (MUNI, VUT, Mendelu, JAMU, VFU)</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">CEITEC — Central European Institute of Technology</span><span class="quick-link-arrow">›</span></a>
+              <a href="#" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">ICRC — International Clinical Research Center</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Innovation ecosystem (KUMST, accelerators)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">International conferences &amp; research events</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Science &amp; Innovation →</a></div>
+          </div>
+
+          <!-- Topic 4: Mayor & City Council -->
+          <div class="detail-block">
+            <h2><a href="#">Mayor &amp; City Council</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Who runs Brno — the elected mayor, deputy mayors, City Council and Assembly. Open meetings, decisions, voting records.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Mayor of Brno</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Deputy mayors &amp; their portfolios</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Council — 11 members</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">City Assembly — 55 members</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Council meetings, agendas &amp; minutes</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Mayor &amp; City Council →</a></div>
+          </div>
+
+          <!-- Topic 5: Brno facts & vision -->
+          <div class="detail-block">
+            <h2><a href="#">Brno facts &amp; vision</a></h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Key numbers, strategic priorities and Brno's place in the world — from #brno2050 to international partnerships.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno in numbers (population, economy, foreign workforce, students, R&amp;D)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">#brno2050 — strategic vision</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Smart city &amp; sustainability initiatives</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Sister cities &amp; international cooperation — partner cities, reciprocity principles, joint projects (Ann Arbor, Charlotte, Kharkiv, Leeds, Leipzig, Poznań, Rennes, St. Pölten, Stuttgart, Utrecht, Vienna…)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Brno region context (Jihomoravský kraj, RIS3 strategy)</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">EU programs &amp; funded projects</span><span class="quick-link-arrow">›</span></a>
+            </div>
+            <div style="margin-top:28px;"><a href="01-p02-transport.html" style="font-weight:600;">All about Brno facts &amp; vision →</a></div>
+          </div>
+
+          <!-- C16 Accordion: Useful external links -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Useful external links <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="https://gotobrno.cz" target="_blank" rel="noopener">gotobrno.cz — tourism portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">studyinbrno.cz — study portal</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">jic.cz — Brno Innovation Centre</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ris3jmk.cz — regional innovation strategy</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">ceitec.eu, icrc.cz, it4i.cz — research institutes</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">brno-international.eu — sister cities</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar (per CSV: International Relations · Press & media · Brno Expat Centre) -->
+        <aside>
+          <div class="sidebar-card">
+            <h4>International Relations Office (OZV)</h4>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div>
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Tereza Chrástová</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Projects Coordinator</div>
+                <div class="sidebar-row" style="margin-bottom:2px;font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:chrastova.tereza@brno.cz">chrastova.tereza@brno.cz</a>
+                </div>
+              </div>
+              <div style="border-top:1px solid var(--gray-200);padding-top:12px;">
+                <h5 style="font-size:14px;margin-bottom:4px;"><a href="#">Pavlína Sukupová</a></h5>
+                <div style="font-size:12px;color:var(--gray-700);margin-bottom:6px;">International Communication</div>
+                <div class="sidebar-row" style="font-size:13px;">
+                  <span class="icon">✉</span><a href="mailto:sukupova.pavlina@brno.cz">sukupova.pavlina@brno.cz</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Press &amp; media inquiries</h4>
+            <div class="sidebar-row">
+              <span class="icon">☎</span>
+              <a href="tel:+420542172000">+420 542 172 000</a>
+            </div>
+            <div class="sidebar-row">
+              <span class="icon">✉</span>
+              <a href="mailto:tisk@brno.cz">tisk@brno.cz</a>
+            </div>
+            <p style="font-size:13px;color:var(--gray-700);margin-top:12px;">City Marketing Office — press releases, interview requests, official statements.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <p style="font-size:13px;color:var(--gray-700);margin-bottom:12px;">Free service for newcomers — practical advice on living, working and studying in Brno.</p>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-secondary">Visit Brno Expat Centre</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
