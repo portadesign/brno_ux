@@ -88,17 +88,6 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
-        <div class="dropdown-menu">
-        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
-        <a href="03-p02-study-in-brno.html">Study in Brno</a>
-        <a href="01-p03-healthcare.html">Universities in Brno</a>
-        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
-        <a href="01-p03-healthcare.html">Research institutes</a>
-        <a href="01-p03-healthcare.html">Innovation ecosystem</a>
-        </div>
-      </div>
-      <div class="nav-item">
         <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
@@ -112,12 +101,23 @@
         </div>
       </div>
       <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="03-p02-study-in-brno.html">Study in Brno</a>
+        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        </div>
+      </div>
+      <div class="nav-item">
         <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
         <div class="dropdown-menu">
         <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
         <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
         <a href="06-p03-brno-facts-vision.html">Brno facts &amp; vision</a>
         </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="contact.html">Contact </a>
       </div>
     </nav>
   </div>
@@ -146,6 +146,13 @@
         <div class="article-body">
           <!-- Perex -->
           <p style="font-size:18px;line-height:1.6;color:var(--gray-700);">Health insurance is mandatory for everyone living in the Czech Republic. There are two systems — public (state-run) and commercial. Which one you need depends on your residence status, employment situation, and family ties.</p>
+
+          <!-- Video thumbnail card — YouTube embed is blocked by owner (error 153),
+               so this links out to YouTube. Uses official YouTube thumbnail as cover. -->
+          <a href="https://www.youtube.com/watch?v=XLxuOULOWr0" target="_blank" rel="noopener" class="video-thumbnail" aria-label="Watch video on YouTube">
+            <img src="https://img.youtube.com/vi/XLxuOULOWr0/maxresdefault.jpg" alt="Health insurance for foreigners — Brno (video on YouTube)">
+            <span class="play-btn" aria-hidden="true">▶</span>
+          </a>
 
           <h3>How does health insurance work for foreigners in CZ?</h3>
           <p>Czech health insurance covers most medical needs — from GP visits to hospital stays, prescriptions, and emergency care. There are two parallel systems:</p>
@@ -185,6 +192,8 @@
           </table>
 
           <h3>How to get covered</h3>
+
+          <!-- Simple numbered list (reference / overview, no links) -->
           <ol style="margin:16px 0;padding-left:24px;">
             <li style="padding:4px 0;">Choose a provider (see list below)</li>
             <li style="padding:4px 0;">Submit registration (employer handles for employees)</li>
@@ -192,43 +201,47 @@
             <li style="padding:4px 0;">Register with a GP near you</li>
           </ol>
 
-          <h3>Public vs Commercial — comparison</h3>
-          <p>The two systems differ in cost, coverage breadth, and bureaucratic flexibility.</p>
-          <table class="comparison-table">
-            <thead>
-              <tr><th>Parameter</th><th>Public</th><th>Commercial</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Monthly cost (employee)</td><td>~13.5 % of salary (split with employer)</td><td>500–3 000 CZK</td></tr>
-              <tr><td>Coverage scope</td><td>Comprehensive</td><td>Varies by package</td></tr>
-              <tr><td>Pre-existing conditions</td><td>Covered</td><td>Often excluded</td></tr>
-              <tr><td>Pregnancy &amp; birth</td><td>Fully covered</td><td>Limited (extra premium often needed)</td></tr>
-              <tr><td>Choice of doctor</td><td>Any provider in network</td><td>Often restricted</td></tr>
-              <tr><td>Switch provider</td><td>Twice a year (1 Jan or 1 Jul)</td><td>By contract terms</td></tr>
-            </tbody>
-          </table>
+          <h2 style="margin-top:32px;margin-bottom:16px;">How to get covered</h2>
 
-          <h3>Czech public insurers</h3>
-          <p>You can choose any of the seven state-recognized public health insurance funds:</p>
-          <ul>
-            <li><a href="#">VZP — Všeobecná zdravotní pojišťovna</a> (largest, default)</li>
-            <li><a href="#">VoZP — Vojenská zdravotní pojišťovna</a></li>
-            <li><a href="#">ČPZP — Česká průmyslová zdravotní pojišťovna</a></li>
-            <li><a href="#">OZP — Oborová zdravotní pojišťovna</a></li>
-            <li><a href="#">ZPMV — Zdravotní pojišťovna Ministerstva vnitra</a></li>
-            <li><a href="#">RBP — RBP zdravotní pojišťovna</a></li>
-            <li><a href="#">ZP Škoda — for Škoda employees</a></li>
-          </ul>
+          <!-- C13b: Step-by-step visual guide with numbered circles + vertical red line -->
+          <ol class="step-guide">
+            <li class="step-guide-item">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Choose a public insurance provider</h4>
+                <p>Pay attention to specific conditions for foreigners — some insurers have stronger English support, faster registration for new arrivals, or specialised packages for expat families.</p>
+                <a href="#" class="btn btn-secondary">Pick from the list of providers</a>
+              </div>
+            </li>
+            <li class="step-guide-item">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Submit your registration</h4>
+                <p>If you're employed, your employer handles this automatically when reporting your work start to your chosen insurer. Self-employed and unemployed need to register in person at the insurer's branch within 8 days of starting work or losing previous coverage.</p>
+                <div style="font-size:14px;"><a href="#" download="registration-prihlaska-pojistence.pdf">Insurance registration form (PDF, 220 KB)</a></div>
+              </div>
+            </li>
+            <li class="step-guide-item">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Get your insurance card</h4>
+                <p>Your insurer issues a green plastic card (or European Health Insurance Card for EU/EEA citizens). It usually arrives by post within 2–3 weeks of registration. Carry it to every medical appointment — doctors will not bill you directly if your card is valid.</p>
+              </div>
+            </li>
+            <li class="step-guide-item">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Register with a GP near you</h4>
+                <p>Once you have insurance, register with a general practitioner (and a paediatrician for children) in your area. They become your first contact for all non-emergency care and the gateway to specialists.</p>
+                <div class="quick-links" style="margin-top:8px;">
+                  <a href="https://www.nzip.cz/databaze-poskytovatelu-zdravotnich-sluzeb" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">List of general practitioners (GP) in Brno</span><span class="quick-link-arrow">›</span></a>
+                  <a href="https://www.nzip.cz/databaze-poskytovatelu-zdravotnich-sluzeb" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">List of pediatricians in Brno</span><span class="quick-link-arrow">›</span></a>
+                </div>
+              </div>
+            </li>
+          </ol>
 
-          <h3>Commercial health insurance</h3>
-          <p>Most commonly used by long-term visa holders and dependents who don't qualify for the public system. Compare offers carefully — coverage scope and exclusions vary significantly:</p>
-          <ul>
-            <li><a href="#">PVZP — Pojišťovna VZP</a> (foreigner-friendly, broad coverage)</li>
-            <li><a href="#">Maxima</a></li>
-            <li><a href="#">Slavia</a></li>
-            <li><a href="#">Uniqa</a></li>
-            <li><a href="#">Ergo</a></li>
-          </ul>
+          <h2 style="margin-top:32px;margin-bottom:16px;">Required documents</h2>
 
           <!-- C16 Accordion: Required documents -->
           <div class="accordion">
@@ -250,33 +263,177 @@
             </div>
           </div>
 
-          <!-- C16 Accordion: FAQ (open by default) -->
-          <div class="accordion open">
+          <h3>Public vs Commercial — comparison</h3>
+          <p>The two systems differ in cost, coverage breadth, and bureaucratic flexibility.</p>
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Parameter</th><th>Public</th><th>Commercial</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Monthly cost (employee)</td><td>~13.5 % of salary (split with employer)</td><td>500–3 000 CZK</td></tr>
+              <tr><td>Coverage scope</td><td>Comprehensive</td><td>Varies by package</td></tr>
+              <tr><td>Pre-existing conditions</td><td>Covered</td><td>Often excluded</td></tr>
+              <tr><td>Pregnancy &amp; birth</td><td>Fully covered</td><td>Limited (extra premium often needed)</td></tr>
+              <tr><td>Choice of doctor</td><td>Any provider in network</td><td>Often restricted</td></tr>
+              <tr><td>Switch provider</td><td>Twice a year (1 Jan or 1 Jul)</td><td>By contract terms</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Czech public insurers</h3>
+          <p style="margin-bottom:16px;">You can choose any of the seven state-recognized public health insurance funds:</p>
+          <div class="quick-links">
+            <a href="https://www.vzp.cz/" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">VZP — Všeobecná zdravotní pojišťovna (largest, default)</span><span class="quick-link-arrow">›</span></a>
+            <a href="https://www.vozp.cz/" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">VoZP — Vojenská zdravotní pojišťovna</span><span class="quick-link-arrow">›</span></a>
+            <a href="https://www.cpzp.cz/" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">ČPZP — Česká průmyslová zdravotní pojišťovna</span><span class="quick-link-arrow">›</span></a>
+            <a href="https://www.ozp.cz/" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">OZP — Oborová zdravotní pojišťovna</span><span class="quick-link-arrow">›</span></a>
+            <a href="https://www.zpmvcr.cz/" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">ZPMV — Zdravotní pojišťovna Ministerstva vnitra</span><span class="quick-link-arrow">›</span></a>
+            <a href="https://www.rbp213.cz/" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">RBP — RBP zdravotní pojišťovna</span><span class="quick-link-arrow">›</span></a>
+            <a href="https://www.zpskoda.cz/" target="_blank" rel="noopener" class="quick-link"><span class="quick-link-text">ZP Škoda — for Škoda employees</span><span class="quick-link-arrow">›</span></a>
+          </div>
+
+          <h3>Commercial health insurance</h3>
+          <p>Most commonly used by long-term visa holders and dependents who don't qualify for the public system. Compare offers carefully — coverage scope and exclusions vary significantly:</p>
+          <ul>
+            <li><a href="#">PVZP — Pojišťovna VZP</a> (foreigner-friendly, broad coverage)</li>
+            <li><a href="#">Maxima</a></li>
+            <li><a href="#">Slavia</a></li>
+            <li><a href="#">Uniqa</a></li>
+            <li><a href="#">Ergo</a></li>
+          </ul>
+
+          <!-- FAQ section: one accordion per question, all collapsed by default -->
+          <h2 style="margin-top:32px;margin-bottom:16px;">Frequently asked questions</h2>
+
+          <div class="accordion">
             <div class="accordion-item">
               <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
-                Frequently asked questions <span class="chevron">▾</span>
+                I lost my job — what happens to my insurance? <span class="chevron">▾</span>
               </div>
               <div class="accordion-body">
-                <p style="margin-bottom:12px;font-weight:700;">I lost my job — what happens to my insurance?</p>
-                <p style="margin-bottom:16px;">You have a grace period to register with a new employer or as a job seeker (Úřad práce). Without this, you must pay public insurance yourself or risk being uninsured.</p>
+                <p>You have a grace period to register with a new employer or as a job seeker (Úřad práce). Without this, you must pay public insurance yourself or risk being uninsured.</p>
+              </div>
+            </div>
+          </div>
 
-                <p style="margin-bottom:12px;font-weight:700;">Can I keep my home country insurance?</p>
-                <p style="margin-bottom:16px;">Generally no — Czech residents must have Czech-recognized insurance. EU citizens can use EHIC for temporary coverage, but long-term stay requires switching.</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Can I keep my home country insurance? <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <p>Generally no — Czech residents must have Czech-recognized insurance. EU citizens can use EHIC for temporary coverage, but long-term stay requires switching.</p>
+              </div>
+            </div>
+          </div>
 
-                <p style="margin-bottom:12px;font-weight:700;">My partner has Czech insurance, am I covered?</p>
-                <p style="margin-bottom:16px;">Only if you're an EU family member, dependent child, or in specific protected categories. Otherwise, you need your own insurance.</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                My partner has Czech insurance, am I covered? <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <p>Only if you're an EU family member, dependent child, or in specific protected categories. Otherwise, you need your own insurance.</p>
+              </div>
+            </div>
+          </div>
 
-                <p style="margin-bottom:12px;font-weight:700;">I'm pregnant — does my insurance cover birth?</p>
-                <p style="margin-bottom:16px;">Public insurance: fully. Commercial: depends on package — many treat pregnancy as add-on or exclude it. Check before pregnancy if possible.</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                I'm pregnant — does my insurance cover birth? <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <p>Public insurance: fully. Commercial: depends on package — many treat pregnancy as add-on or exclude it. Check before pregnancy if possible.</p>
+              </div>
+            </div>
+          </div>
 
-                <p style="margin-bottom:12px;font-weight:700;">I came on a tourist visa and got injured — what now?</p>
-                <p style="margin-bottom:16px;">Emergency care is provided regardless. You'll receive a bill. Your travel insurance should cover it; check with your provider.</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                I came on a tourist visa and got injured — what now? <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <p>Emergency care is provided regardless. You'll receive a bill. Your travel insurance should cover it; check with your provider.</p>
+              </div>
+            </div>
+          </div>
 
-                <p style="margin-bottom:12px;font-weight:700;">Can I switch insurance providers? When?</p>
-                <p style="margin-bottom:16px;">Yes — public insurance allows switches twice a year (1 January or 1 July), with 3 months notice.</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Can I switch insurance providers? When? <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <p>Yes — public insurance allows switches twice a year (1 January or 1 July), with 3 months notice.</p>
+              </div>
+            </div>
+          </div>
 
-                <p style="margin-bottom:12px;font-weight:700;">Why is my dental work not fully covered?</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Why is my dental work not fully covered? <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
                 <p>Public insurance covers basic dental (extractions, basic restorations) but not aesthetic or advanced procedures. Many people add commercial dental insurance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Relevant offices &amp; help points -->
+          <div class="detail-block">
+            <h3>Who handles this in Brno</h3>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Offices and services that can help you with health insurance — registration, switches, disputes and foreigner-specific guidance.</p>
+            <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Brno Expat Centre</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Radnická 8, 602 00 Brno<br>Open today: 8:00–17:00 · EN, UK, RU, VI</div>
+              </div>
+              <div class="dept-tile" style="display:block;align-items:initial;">
+                <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">VZP Brno — public health insurer</a>
+                <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">Benešova 10, 602 00 Brno<br>Open today: 8:00–17:00 · CZ, partial EN</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personal contacts — Na koho se obrátit -->
+          <div class="detail-block">
+            <h3>Na koho se obrátit</h3>
+            <p style="color:var(--gray-700);margin-bottom:24px;line-height:1.6;">Konkrétní osoby, které řeší zdravotní pojištění a registraci cizinců — můžete se na ně obrátit přímo telefonicky nebo e-mailem.</p>
+            <div class="staff-grid" style="grid-template-columns:repeat(3, 1fr);">
+              <div class="staff-card">
+                <div class="avatar" style="width:64px;height:64px;font-size:18px;">AH</div>
+                <div>
+                  <a href="detail-osoby.html" class="staff-name">Bc. Anna Horáková</a>
+                  <span class="staff-title">OSP MMB · Foreigner outreach &amp; integration</span>
+                  <div class="staff-contact">
+                    <a href="tel:+420542173123">+420 542 173 123</a><br>
+                    <a href="mailto:horakova.anna@brno.cz">horakova.anna@brno.cz</a>
+                  </div>
+                </div>
+              </div>
+              <div class="staff-card">
+                <div class="avatar" style="width:64px;height:64px;font-size:18px;">JK</div>
+                <div>
+                  <a href="detail-osoby.html" class="staff-name">Mgr. Jana Kratochvílová</a>
+                  <span class="staff-title">Brno Expat Centre · Health &amp; insurance counsellor</span>
+                  <div class="staff-contact">
+                    <a href="tel:+420542171115">+420 542 171 115</a><br>
+                    <a href="mailto:kratochvilova.jana@brno.cz">kratochvilova.jana@brno.cz</a>
+                  </div>
+                </div>
+              </div>
+              <div class="staff-card">
+                <div class="avatar" style="width:64px;height:64px;font-size:18px;">TD</div>
+                <div>
+                  <a href="detail-osoby.html" class="staff-name">Tomáš Dvořák</a>
+                  <span class="staff-title">VZP Brno · Foreign clients desk</span>
+                  <div class="staff-contact">
+                    <a href="tel:+420952221310">+420 952 221 310</a><br>
+                    <a href="mailto:tomas.dvorak@vzp.cz">tomas.dvorak@vzp.cz</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -327,9 +484,10 @@
           <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
           <li><a href="01-p01-live.html">Live</a></li>
           <li><a href="02-p01-work.html">Work</a></li>
+<li><a href="04-p01-enjoy.html">Enjoy</a></li>
           <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
-          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
           <li><a href="06-p01-about-brno.html">About Brno</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
