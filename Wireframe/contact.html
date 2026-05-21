@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Contact (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="05-p02-documents.html">Documents</a>
+        <a href="05-p03-visa-residency.html">Visa &amp; residency</a>
+        <a href="05-p04-transport-vehicles.html">Transport &amp; vehicles</a>
+        <a href="05-p05-fees-payments.html">Fees, payments &amp; fines</a>
+        <a href="05-p06-document-legalization.html">Document legalization &amp; vidimation</a>
+        <a href="05-p07-social-services-family.html">Social services &amp; family</a>
+        <a href="05-p08-environment-waste.html">Environment &amp; waste</a>
+        <a href="05-p09-city-hall-services.html">City hall services</a>
+        <a href="05-p10-construction-property.html">Construction &amp; city property</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
+        <a href="01-p05-how-to-start.html">How to start</a>
+        <a href="01-p06-accommodation.html">Accommodation</a>
+        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p07-social-care.html">Social care</a>
+        <a href="01-p08-education.html">Education</a>
+        <a href="01-p09-speak-czech.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Work</a>
+        <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
+        <a href="02-p03-find-a-job.html">Find a job</a>
+        <a href="02-p04-employment-essentials.html">Employment essentials</a>
+        <a href="02-p05-become-self-employed.html">Become self-employed</a>
+        <a href="02-p06-start-a-company.html">Start a company</a>
+        <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
+        <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
+        <a href="04-p03-culture.html">Culture</a>
+        <a href="04-p04-sights-architecture.html">Sights &amp; architecture</a>
+        <a href="04-p05-events.html">Events</a>
+        <a href="04-p06-maps-guides.html">Maps &amp; Guides</a>
+        <a href="04-p07-food-drink.html">Food and Drink</a>
+        <a href="04-p08-communities.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="03-p02-study-in-brno.html">Study in Brno</a>
+        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
+        <a href="06-p03-brno-facts-vision.html">Brno facts &amp; vision</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="contact.html">Contact </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Contact page -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <span class="current">Contact</span>
+      </nav>
+      <h1 class="title-banner">Contact</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Perex -->
+      <p style="font-size:18px;line-height:1.7;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Who to contact in Brno — city departments most relevant to foreigners, named people from Social Services (OSP) and International Relations (OZV), plus the central Brno Expat Centre. For crisis lines see the <a href="sos.html" style="color:var(--red);font-weight:600;">SOS page</a>.</p>
+
+      <!-- H2: Brno City Hall — primary contact block -->
+      <div class="detail-block" id="city-hall">
+        <h2>Statutární město Brno — Brno City Hall</h2>
+        <p style="color:var(--gray-700);margin-bottom:20px;line-height:1.6;">Canonical contact for the city. Use these channels for general inquiries, official filings, foreign-relations matters and legal/billing information about the Magistrát.</p>
+        <div style="background:var(--gray-100);border-left:4px solid var(--red);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+          <div>
+            <h4 style="font-size:18px;margin-bottom:14px;">Get in touch</h4>
+            <div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420542171111" style="font-size:15px;font-weight:600;">+420 542 171 111</a> <span style="color:var(--gray-700);font-size:13px;margin-left:6px;">(switchboard)</span></div>
+            <div class="sidebar-row"><span class="icon">📠</span><span style="font-size:14px;color:var(--gray-700);">Fax: +420 542 173 530</span></div>
+            <div class="sidebar-row" style="margin-top:10px;"><span class="icon">✉</span><a href="mailto:posta@brno.cz" style="font-size:14px;font-weight:600;">posta@brno.cz</a> <span style="color:var(--gray-700);font-size:13px;margin-left:6px;">(official filings)</span></div>
+            <div class="sidebar-row"><span class="icon">✉</span><a href="mailto:informace@brno.cz" style="font-size:14px;font-weight:600;">informace@brno.cz</a> <span style="color:var(--gray-700);font-size:13px;margin-left:6px;">(general inquiries)</span></div>
+            <div class="sidebar-row"><span class="icon">✉</span><a href="mailto:ozv@brno.cz" style="font-size:14px;font-weight:600;">ozv@brno.cz</a> <span style="color:var(--gray-700);font-size:13px;margin-left:6px;">(foreign relations)</span></div>
+          </div>
+          <div>
+            <h4 style="font-size:18px;margin-bottom:14px;">Visit us &amp; legal</h4>
+            <p style="color:var(--gray-700);line-height:1.6;margin-bottom:12px;"><strong>Dominikánské nám. 196/1</strong><br>601 67 Brno, Czech Republic</p>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.7;border-top:1px solid var(--gray-200);padding-top:12px;">
+              <div><strong>IČO (Tax ID):</strong> <span style="font-family:monospace;">44992785</span></div>
+              <div><strong>DIČ (VAT):</strong> <span style="font-family:monospace;">CZ44992785</span></div>
+              <div><strong>Data box ID:</strong> <span style="font-family:monospace;">a7kbrrn</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- H2: City departments for foreigners -->
+      <div class="detail-block" id="departments">
+        <h2>City departments for foreigners</h2>
+        <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Specific Magistrát departments most foreigners interact with. Click any tile for the detail page with opening hours, agenda and contact persons.</p>
+        <div class="dept-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Zahraniční oddělení (OZV)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Foreign relations, international cooperation, sister cities, EU projects, cultural exchange.</em><br>Dominikánské nám. 196/1 · EN, CZ<br>Open today: 8:00–17:00 · ✉ <a href="mailto:ozv@brno.cz">ozv@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Brno Expat Centre</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Free English-speaking help for foreigners — paperwork, visas, work permits, housing, healthcare, integration.</em><br>Radnická 8 · EN, UK, RU, VI<br>Open today: 8:00–17:00 · ✉ <a href="mailto:expat@brno.cz">expat@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Odbor sociální péče (OSP)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Social services — families, seniors, disability, crisis intervention, foreigner outreach.</em><br>Koliště 19 · EN, UK, RU<br>Open today: 8:00–17:00 · ✉ <a href="mailto:osp@brno.cz">osp@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Civil Registry (Matrika)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Birth, marriage and death certificates, higher verification (apostille) for use abroad.</em><br>Husova 3 · EN, CZ<br>Open today: 8:00–17:00 · ✉ <a href="mailto:matrika@brno.cz">matrika@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Trade Office (Živnostenský úřad)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Trade licences for self-employed (OSVČ), small businesses and freelancers.</em><br>Malinovského nám. 3 · EN, UK<br>Mon &amp; Wed 8:00–17:00 · ✉ <a href="mailto:zu@brno.cz">zu@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Vehicle &amp; Drivers Register (ORVR)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Driving licences (replacement, exchange), vehicle registration, change of owner, import from abroad.</em><br>Kounicova 67 · EN, CZ<br>Mon/Wed 8–17, Tue/Thu/Fri 8–12 · ✉ <a href="mailto:orvr@brno.cz">orvr@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Odbor správních činností (OSČ)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Identity cards, passports, travel documents, residence agendas — for Czech citizens.</em><br>Husova 3 / Husova 5 · CZ<br>Mon/Wed 8–17, Tue/Thu/Fri 8–12 · ✉ <a href="mailto:osc@brno.cz">osc@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Odbor školství a mládeže</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>School enrollment coordination, school registry, youth policy and family programmes.</em><br>Dominikánské nám. 3 · EN, CZ<br>Open today: 8:00–17:00 · ✉ <a href="mailto:oskolm@brno.cz">oskolm@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Lost &amp; Found (Odbor vnitřních věcí)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>City-administered Lost &amp; Found office for items found in public spaces.</em><br>Malinovského nám. 3 · CZ<br>Mon/Wed 8–17, Tue/Thu 8–14, Fri 8–13 · ✉ <a href="mailto:informace@brno.cz">informace@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="detail-organizacni-jednotky.html" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Waste fee &amp; environment (OŽP)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;"><em>Annual waste fee collection, sorted-waste services, environmental permits.</em><br>Šumavská 35, 3rd fl., bldg C · CZ<br>Mon &amp; Wed 8–17, Fri 8–12 · ✉ <a href="mailto:odpady@brno.cz">odpady@brno.cz</a></div>
+          </div>
+          <div class="dept-tile" style="display:block;align-items:initial;">
+            <a href="https://www.czechpoint.cz/" target="_blank" rel="noopener" style="display:block;font-weight:700;font-size:15px;margin-bottom:6px;">Czech POINT (national service)</a>
+            <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">External nationwide service operated by the Ministry of Interior.<br>Available at post offices, Magistrát desks, notaries and Czech POINT@home (online with electronic ID).</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="#" style="font-weight:600;">Browse all City Hall departments →</a>
+        </div>
+      </div>
+
+      <!-- H2: Social services (OSP) -->
+      <div class="detail-block" id="osp">
+        <h2>Social services — OSP MMB</h2>
+        <p style="color:var(--gray-700);margin-bottom:24px;line-height:1.6;">Koliště 19, 602 00 Brno · Mo–We 8:00–17:00 · Fr 8:00–12:00. Named contacts for foreigners, families, seniors and crisis situations.</p>
+        <div class="staff-grid" style="grid-template-columns:repeat(3, 1fr);">
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">LS</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Mgr. Lenka Svobodová</a>
+              <span class="staff-title">Head of OSP MMB</span>
+              <div class="staff-contact">
+                <a href="tel:+420542173121">+420 542 173 121</a><br>
+                <a href="mailto:svobodova.lenka@brno.cz">svobodova.lenka@brno.cz</a>
+              </div>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">PN</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Mgr. Petra Nováková</a>
+              <span class="staff-title">Family social work</span>
+              <div class="staff-contact">
+                <a href="tel:+420542173122">+420 542 173 122</a><br>
+                <a href="mailto:novakova.petra@brno.cz">novakova.petra@brno.cz</a>
+              </div>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">AH</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Bc. Anna Horáková</a>
+              <span class="staff-title">Foreigner outreach &amp; integration</span>
+              <div class="staff-contact">
+                <a href="tel:+420542173123">+420 542 173 123</a><br>
+                <a href="mailto:horakova.anna@brno.cz">horakova.anna@brno.cz</a>
+              </div>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">JP</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Mgr. Jan Procházka</a>
+              <span class="staff-title">Senior &amp; disability services</span>
+              <div class="staff-contact">
+                <a href="tel:+420542173124">+420 542 173 124</a><br>
+                <a href="mailto:prochazka.jan@brno.cz">prochazka.jan@brno.cz</a>
+              </div>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">EK</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Mgr. Eva Kopecká</a>
+              <span class="staff-title">Crisis intervention &amp; housing</span>
+              <div class="staff-contact">
+                <a href="tel:+420542173125">+420 542 173 125</a><br>
+                <a href="mailto:kopecka.eva@brno.cz">kopecka.eva@brno.cz</a>
+              </div>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">MV</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Bc. Markéta Veselá</a>
+              <span class="staff-title">Youth &amp; young adults aid</span>
+              <div class="staff-contact">
+                <a href="tel:+420542173126">+420 542 173 126</a><br>
+                <a href="mailto:vesela.marketa@brno.cz">vesela.marketa@brno.cz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- H2: International relations (OZV) -->
+      <div class="detail-block" id="ozv">
+        <h2>International relations — OZV</h2>
+        <p style="color:var(--gray-700);margin-bottom:24px;line-height:1.6;">Dominikánské nám. 196/1 · Department of Foreign Affairs coordinates international cooperation, sister-city programmes, EU projects and cultural exchange with Brno.</p>
+        <div class="staff-grid" style="grid-template-columns:repeat(3, 1fr);">
+          <div class="staff-card staff-card--lead">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">LP</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Mgr. Lukáš Pavlica</a>
+              <span class="staff-title">Head of OZV · International cooperation</span>
+              <div class="staff-contact">
+                <a href="tel:+420542172101">+420 542 172 101</a><br>
+                <a href="mailto:pavlica.lukas@brno.cz">pavlica.lukas@brno.cz</a>
+              </div>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">VM</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Mgr. Veronika Majíčková</a>
+              <span class="staff-title">International programs &amp; culture</span>
+              <div class="staff-contact">
+                <a href="tel:+420542172102">+420 542 172 102</a><br>
+                <a href="mailto:majickova.veronika@brno.cz">majickova.veronika@brno.cz</a>
+              </div>
+            </div>
+          </div>
+          <div class="staff-card">
+            <div class="avatar" style="width:64px;height:64px;font-size:18px;">MK</div>
+            <div>
+              <a href="detail-osoby.html" class="staff-name">Ing. Martin Kratochvíl</a>
+              <span class="staff-title">Foreign delegations &amp; sister cities</span>
+              <div class="staff-contact">
+                <a href="tel:+420542172103">+420 542 172 103</a><br>
+                <a href="mailto:kratochvil.martin@brno.cz">kratochvil.martin@brno.cz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- H2: Brno Expat Centre (general only, no specific people) -->
+      <div class="detail-block" id="bec">
+        <h2>Brno Expat Centre</h2>
+        <p style="color:var(--gray-700);margin-bottom:24px;line-height:1.6;">The central point of contact for foreigners living in Brno. Free, English-speaking help with paperwork, work permits, housing, healthcare, language courses and community integration. Run by the city.</p>
+        <div style="background:var(--gray-100);border-left:4px solid var(--red);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+          <div>
+            <h4 style="font-size:18px;margin-bottom:14px;">Get in touch</h4>
+            <div class="sidebar-row"><span class="icon">☎</span><a href="tel:+420542171111" style="font-size:15px;font-weight:600;">+420 542 171 111</a></div>
+            <div class="sidebar-row"><span class="icon">✉</span><a href="mailto:expat@brno.cz" style="font-size:15px;font-weight:600;">expat@brno.cz</a></div>
+            <div class="sidebar-row"><span class="icon">🌐</span><a href="https://www.brnoexpatcentre.eu/" target="_blank" rel="noopener" style="font-size:15px;font-weight:600;">brnoexpatcentre.eu</a></div>
+          </div>
+          <div>
+            <h4 style="font-size:18px;margin-bottom:14px;">Visit us</h4>
+            <p style="color:var(--gray-700);line-height:1.6;margin-bottom:8px;"><strong>Radnická 8</strong>, 602 00 Brno</p>
+            <p style="color:var(--gray-700);line-height:1.6;margin-bottom:8px;">Mo–Fr 8:00–17:00 · walk-in welcome</p>
+            <p style="color:var(--gray-700);line-height:1.6;font-size:13px;">Languages: <strong>EN · UK · RU · VI · CZ</strong></p>
+          </div>
+        </div>
+        <p style="margin-top:20px;color:var(--gray-700);font-size:14px;">For specific topics — visas, contracts, housing, healthcare — the team will route you to the right specialist. Most consultations are free and don't require an appointment.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
+          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="02-p01-work.html">Work</a></li>
+          <li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="sos.html">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
