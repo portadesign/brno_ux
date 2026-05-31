@@ -1139,3 +1139,196 @@ a[download]::after {
   .main-nav { flex-wrap: wrap; }
   .title-banner { font-size: 28px; }
 }
+
+/* Print styles — hide wireframe debug widget in PDF export */
+@media print {
+  .wf-toggle-btn, .wf-sidepanel, .wf-overlay { display: none !important; }
+  body { background: var(--white); }
+}
+
+/* =========================================================
+   I need to arrange — drill-down browser
+   ========================================================= */
+
+.lifeadm-search {
+  background: var(--gray-100);
+  padding: 24px 0;
+  margin-bottom: 32px;
+}
+.lifeadm-search-inner {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  max-width: 100%;
+}
+.lifeadm-search-input {
+  flex: 1;
+  border: 1px solid var(--gray-300);
+  border-right: none;
+  background: var(--white);
+  padding: 14px 18px 14px 44px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--gray-700);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'><circle cx='11' cy='11' r='7'/><path d='m20 20-4-4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 14px center;
+}
+.lifeadm-search-input:focus {
+  outline: none;
+  border-color: var(--red);
+}
+.lifeadm-search-btn {
+  background: var(--white);
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+.lifeadm-search-btn:hover { background: var(--red); color: var(--white); }
+
+.lifeadm-browser {
+  display: grid;
+  grid-template-columns: 280px 320px 1fr;
+  gap: 0;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+}
+
+.lifeadm-cats {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--gray-300);
+}
+.lifeadm-cat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-900);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-200);
+  transition: background-color 0.12s;
+}
+.lifeadm-cat:last-child { border-bottom: none; }
+.lifeadm-cat::after {
+  content: "›";
+  color: var(--gray-500);
+  font-size: 20px;
+  line-height: 1;
+}
+.lifeadm-cat:hover { background: var(--gray-100); }
+.lifeadm-cat.active {
+  background: var(--red);
+  color: var(--white);
+}
+.lifeadm-cat.active::after { color: var(--white); }
+
+.lifeadm-subs {
+  padding: 24px;
+  border-right: 1px solid var(--gray-300);
+}
+.lifeadm-sub-group { display: none; }
+.lifeadm-sub-group.active { display: block; }
+.lifeadm-sub-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  color: var(--gray-900);
+}
+.lifeadm-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-200);
+  transition: background-color 0.12s;
+}
+.lifeadm-sub:last-child { border-bottom: none; }
+.lifeadm-sub:hover { background: var(--gray-100); }
+.lifeadm-sub.active {
+  background: var(--red);
+  color: var(--white);
+}
+.lifeadm-sub.active::after {
+  content: "›";
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lifeadm-tasks { padding: 24px 32px; }
+.lifeadm-task-group { display: none; }
+.lifeadm-task-group.active { display: block; }
+.lifeadm-task-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  color: var(--gray-900);
+}
+.lifeadm-task {
+  display: block;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--red);
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+}
+.lifeadm-task:hover { text-decoration: underline; }
+
+.lifeadm-back { display: none; }
+
+/* Mobile sequential views */
+@media (max-width: 767px) {
+  .lifeadm-browser {
+    display: block;
+    border: none;
+  }
+  .lifeadm-cats,
+  .lifeadm-subs,
+  .lifeadm-tasks {
+    border: none;
+    padding: 0;
+  }
+  .lifeadm-back {
+    display: block;
+    padding: 14px 0;
+    margin-bottom: 8px;
+    color: var(--red);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .lifeadm-back::before { content: "‹ "; }
+
+  .lifeadm-browser[data-mobile-view="categories"] .lifeadm-subs,
+  .lifeadm-browser[data-mobile-view="categories"] .lifeadm-tasks { display: none; }
+
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-cats,
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-tasks { display: none; }
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-back-cats { display: block; }
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-back-subs { display: none; }
+
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-cats,
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-subs { display: none; }
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-back-subs { display: block; }
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-back-cats { display: none; }
+}
+
+/* Desktop always shows all 3 columns. !important defeats mobile-state selectors
+   above that set .lifeadm-back to display: block. */
+@media (min-width: 768px) {
+  .lifeadm-back { display: none !important; }
+}

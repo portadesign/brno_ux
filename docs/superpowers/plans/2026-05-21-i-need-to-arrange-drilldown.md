@@ -1,117 +1,281 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — I need to arrange (Wireframe POC)</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="wireframe.css">
-<script src="wireframe.js" defer></script>
-</head>
-<body>
+# "I need to arrange" drill-down browser — Implementation Plan
 
-<!-- Wireframe nav widget — floating button + tree side panel (auto-populated by wireframe.js) -->
-<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <line x1="3" y1="6" x2="21" y2="6"/>
-    <line x1="3" y1="12" x2="21" y2="12"/>
-    <line x1="3" y1="18" x2="21" y2="18"/>
-  </svg>
-</button>
-<div class="wf-overlay"></div>
-<aside class="wf-sidepanel">
-  <header class="wf-sidepanel-header">
-    <strong>Wireframe</strong>
-    <span class="wf-poc-tag">PHASE 1 POC</span>
-    <button class="wf-close" aria-label="Close">×</button>
-  </header>
-  <div class="wf-tree"></div>
-  <footer class="wf-sidepanel-footer">
-    <span class="wf-count">— of 24 pages built</span>
-  </footer>
-</aside>
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-<!-- C01 Header + C02 Main nav + C11 Mega menu -->
-<div class="top-bar"></div>
-<header class="header">
-  <div class="container">
-    <div class="header-top">
-      <a href="index.html" class="logo">
-        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
-      </a>
-      <div class="header-actions">
-        <button class="icon-btn" aria-label="Search">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-        </button>
-        <a href="#" class="lang-switch">CZ</a>
+**Goal:** Replace the L2 `I need to arrange` page + 9 L3 topic pages with a single-page 3-column drill-down browser (categories → sub-topics → tasks), modelled on `brno.cz/potrebuji-vyridit`.
+
+**Architecture:** Pre-rendered HTML in `05-p01-life-admin.html` holds the entire dataset (10 categories × ~3 sub-topics × ~4 tasks). Page-local JS toggles `.active` classes and `data-mobile-view` attribute — no innerHTML manipulation, no data fetching, no framework. All leaf tasks link to `01-p04-health-insurance.html` (existing T4 sample) and the title text is injected as H1 label via the existing `wireframe.js` sessionStorage mechanism.
+
+**Tech Stack:** Vanilla HTML5 / CSS3 / JS (no build step). Existing wireframe.css uses CSS custom properties (`var(--red)`, `var(--gray-700)` etc.). No tests — verification is visual inspection in browser (file://).
+
+**Commit policy:** Per user's global rule, do NOT auto-commit between tasks. Final task asks user to commit the whole feature as one logical changeset.
+
+---
+
+## File structure
+
+| File | Action | Notes |
+|------|--------|-------|
+| `Wireframe/05-p01-life-admin.html` | Rewrite | Single source of truth for browser DOM, dataset, and page-local JS |
+| `Wireframe/wireframe.css` | Append | ~180 lines under `/* I need to arrange — drill-down browser */` |
+| `Wireframe/wireframe.js` | Modify | Remove 9 L3 entries from TREE array |
+| `Wireframe/sitemap.html` | Modify | Remove 9 L3 entries |
+| `Wireframe/index.html` | Modify | Replace any L3 fragment links with `05-p01-life-admin.html#category` |
+| `Wireframe/01-p01-live.html` … (all other wireframe pages with header nav, ~26 files) | Modify | Strip 9 L3 sub-items from `<div class="dropdown-menu">` under "I need to arrange" |
+| `Wireframe/05-p02-documents.html` … `05-p10-construction-property.html` | Delete | Backup already at `Wireframe/_backup/i-need-to-arrange-2026-05-21/` |
+| `/tmp/export_wireframe_pdf.py` | Modify | Drop 9 entries from PAGES list |
+
+---
+
+## Task 1: Add browser CSS
+
+**Files:**
+- Modify: `Wireframe/wireframe.css` (append at end of file)
+
+- [ ] **Step 1: Append the CSS block**
+
+Append to the end of `Wireframe/wireframe.css`:
+
+```css
+/* =========================================================
+   I need to arrange — drill-down browser
+   ========================================================= */
+
+.lifeadm-search {
+  background: var(--gray-100, #f4f4f4);
+  padding: 24px 0;
+  margin-bottom: 32px;
+}
+.lifeadm-search-inner {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  max-width: 100%;
+}
+.lifeadm-search-input {
+  flex: 1;
+  border: 1px solid var(--gray-300, #d6d6d6);
+  border-right: none;
+  background: var(--white);
+  padding: 14px 18px 14px 44px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--gray-700, #333);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'><circle cx='11' cy='11' r='7'/><path d='m20 20-4-4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 14px center;
+}
+.lifeadm-search-input:focus {
+  outline: none;
+  border-color: var(--red);
+}
+.lifeadm-search-btn {
+  background: var(--white);
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+.lifeadm-search-btn:hover { background: var(--red); color: var(--white); }
+
+.lifeadm-grid {
+  display: grid;
+  grid-template-columns: 280px 320px 1fr;
+  gap: 0;
+  border: 1px solid var(--gray-300, #d6d6d6);
+  background: var(--white);
+}
+
+.lifeadm-cats {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--gray-300, #d6d6d6);
+}
+.lifeadm-cat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-900, #1a1a1a);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-200, #ebebeb);
+  transition: background-color 0.12s;
+}
+.lifeadm-cat:last-child { border-bottom: none; }
+.lifeadm-cat::after {
+  content: "›";
+  color: var(--gray-500, #999);
+  font-size: 20px;
+  line-height: 1;
+}
+.lifeadm-cat:hover { background: var(--gray-100, #f7f7f7); }
+.lifeadm-cat.active {
+  background: var(--red);
+  color: var(--white);
+}
+.lifeadm-cat.active::after { color: var(--white); }
+
+.lifeadm-subs {
+  padding: 24px 24px;
+  border-right: 1px solid var(--gray-300, #d6d6d6);
+}
+.lifeadm-sub-group { display: none; }
+.lifeadm-sub-group.active { display: block; }
+.lifeadm-sub-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  color: var(--gray-900, #1a1a1a);
+}
+.lifeadm-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-200, #ebebeb);
+  transition: background-color 0.12s;
+}
+.lifeadm-sub:last-child { border-bottom: none; }
+.lifeadm-sub:hover { background: var(--gray-100, #f7f7f7); }
+.lifeadm-sub.active {
+  background: var(--red);
+  color: var(--white);
+}
+.lifeadm-sub.active::after {
+  content: "›";
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lifeadm-tasks { padding: 24px 32px; }
+.lifeadm-task-group { display: none; }
+.lifeadm-task-group.active { display: block; }
+.lifeadm-task-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  color: var(--gray-900, #1a1a1a);
+}
+.lifeadm-task {
+  display: block;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--red);
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+}
+.lifeadm-task:hover { text-decoration: underline; }
+
+.lifeadm-back { display: none; }
+
+/* Mobile sequential views */
+@media (max-width: 767px) {
+  .lifeadm-grid {
+    display: block;
+    border: none;
+  }
+  .lifeadm-cats,
+  .lifeadm-subs,
+  .lifeadm-tasks {
+    border: none;
+    padding: 0;
+  }
+  .lifeadm-back {
+    display: block;
+    padding: 14px 0;
+    margin-bottom: 8px;
+    color: var(--red);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray-200, #ebebeb);
+  }
+  .lifeadm-back::before { content: "‹ "; }
+
+  .lifeadm-browser[data-mobile-view="categories"] .lifeadm-subs,
+  .lifeadm-browser[data-mobile-view="categories"] .lifeadm-tasks { display: none; }
+
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-cats,
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-tasks { display: none; }
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-back-cats { display: block; }
+  .lifeadm-browser[data-mobile-view="subs"] .lifeadm-back-subs { display: none; }
+
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-cats,
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-subs { display: none; }
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-back-subs { display: block; }
+  .lifeadm-browser[data-mobile-view="tasks"] .lifeadm-back-cats { display: none; }
+}
+
+/* Desktop always shows all 3 columns */
+@media (min-width: 768px) {
+  .lifeadm-back { display: none !important; }
+}
+```
+
+- [ ] **Step 2: Visual sanity check**
+
+This step has no visible effect on its own — the HTML it styles doesn't exist yet. Move on to Task 2.
+
+---
+
+## Task 2: Rewrite L2 page HTML
+
+**Files:**
+- Modify: `Wireframe/05-p01-life-admin.html` (full rewrite)
+
+The new page keeps the existing nav/header/footer scaffolding but replaces `<main>` content with the search bar + 3-column browser. All 10 categories' DOM is pre-rendered.
+
+- [ ] **Step 1: Open existing file and replace `<main>` … `</main>` block**
+
+Open `Wireframe/05-p01-life-admin.html`. Find the `<main>` block (lines ~127–279). Replace the entire `<main>` … `</main>` block with the content below.
+
+Keep everything ABOVE `<main>` (DOCTYPE, head, body open, wireframe widget, top-bar, header nav) as-is. Keep everything BELOW `</main>` (footer + body/html close) as-is.
+
+**However**, in the header nav block, also remove the 9 L3 sub-links from the "I need to arrange" dropdown — replace the contents of `<div class="dropdown-menu">` (the one under "I need to arrange") with just the single self-link, AND remove the `<span class="caret"></span>` from the active nav-link. The same cleanup happens in Task 5 across all other pages.
+
+Find:
+```html
+      <div class="nav-item">
+        <a class="nav-link active" href="05-p01-life-admin.html">I need to arrange <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All you need to handle</a>
+        <a href="05-p02-documents.html">Documents</a>
+        <a href="05-p03-visa-residency.html">Visa &amp; residency</a>
+        <a href="05-p04-transport-vehicles.html">Transport &amp; vehicles</a>
+        <a href="05-p05-fees-payments.html">Fees, payments &amp; fines</a>
+        <a href="05-p06-document-legalization.html">Document legalization &amp; vidimation</a>
+        <a href="05-p07-social-services-family.html">Social services &amp; family</a>
+        <a href="05-p08-environment-waste.html">Environment &amp; waste</a>
+        <a href="05-p09-city-hall-services.html">City hall services</a>
+        <a href="05-p10-construction-property.html">Construction &amp; city property</a>
+        </div>
       </div>
-    </div>
-    <nav class="main-nav">
+```
+
+Replace with:
+```html
       <div class="nav-item">
         <a class="nav-link active" href="05-p01-life-admin.html">I need to arrange</a>
       </div>
-      <div class="nav-item">
-        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
-        <div class="dropdown-menu">
-        <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
-        <a href="01-p05-how-to-start.html">How to start</a>
-        <a href="01-p06-accommodation.html">Accommodation</a>
-        <a href="01-p02-transport.html">Transport</a>
-        <a href="01-p03-healthcare.html">Healthcare</a>
-        <a href="01-p07-social-care.html">Social care</a>
-        <a href="01-p08-education.html">Education</a>
-        <a href="01-p09-speak-czech.html">Speak Czech</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a class="nav-link" href="02-p01-work.html">Work <span class="caret"></span></a>
-        <div class="dropdown-menu">
-        <a href="02-p01-work.html" style="font-weight:600;">All about Work</a>
-        <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
-        <a href="02-p03-find-a-job.html">Find a job</a>
-        <a href="02-p04-employment-essentials.html">Employment essentials</a>
-        <a href="02-p05-become-self-employed.html">Become self-employed</a>
-        <a href="02-p06-start-a-company.html">Start a company</a>
-        <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
-        <div class="dropdown-menu">
-        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
-        <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
-        <a href="04-p03-culture.html">Culture</a>
-        <a href="04-p04-sights-architecture.html">Sights &amp; architecture</a>
-        <a href="04-p05-events.html">Events</a>
-        <a href="04-p06-maps-guides.html">Maps &amp; Guides</a>
-        <a href="04-p07-food-drink.html">Food and Drink</a>
-        <a href="04-p08-communities.html">Communities &amp; meeting people</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
-        <div class="dropdown-menu">
-        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
-        <a href="03-p02-study-in-brno.html">Study in Brno</a>
-        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
-        <div class="dropdown-menu">
-        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
-        <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
-        <a href="06-p03-brno-facts-vision.html">Brno facts &amp; vision</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a class="nav-link" href="contact.html">Contact </a>
-      </div>
-    </nav>
-  </div>
-</header>
+```
 
-<!-- I need to arrange (T3-inspired catalog page, Plan B minimalistic) -->
+- [ ] **Step 2: Write the new `<main>` block**
+
+Replace the existing `<main>`…`</main>` with this:
+
+```html
 <main>
   <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
@@ -129,7 +293,7 @@
   <div class="lifeadm-search">
     <div class="container">
       <form class="lifeadm-search-inner" onsubmit="event.preventDefault();">
-        <input class="lifeadm-search-input" type="search" placeholder="What do you need? Try 'visa' or 'waste fee'…" aria-label="Search city services">
+        <input class="lifeadm-search-input" type="search" placeholder="Search across all admin tasks — e.g. driver's licence, waste fee, residence permit…" aria-label="Search admin tasks">
         <button class="lifeadm-search-btn" type="submit">Search</button>
       </form>
     </div>
@@ -537,53 +701,45 @@
     </div>
   </section>
 </main>
+```
 
-<!-- C17 Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <ul>
-          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
-          <li><a href="01-p01-live.html">Live</a></li>
-          <li><a href="02-p01-work.html">Work</a></li>
-<li><a href="04-p01-enjoy.html">Enjoy</a></li>
-          <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
-          <li><a href="06-p01-about-brno.html">About Brno</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <ul>
-          <li><a href="sos.html">SOS — I need help right now</a></li>
-          <li><a href="#">Personal data protection (GDPR)</a></li>
-          <li><a href="#">Accessibility statement</a></li>
-          <li><a href="#">Equal opportunities</a></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-address">
-        <strong>Brno City Hall</strong>
-        Dominikánské nám. 196/1<br>
-        601 67 Brno
-      </div>
-      <div class="footer-col footer-social">
-        <a href="#" class="social-icon">f</a>
-        <a href="#" class="social-icon">𝕏</a>
-        <a href="#" class="social-icon">▶</a>
-        <a href="#" class="social-icon">📷</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      2026 © Statutory City of Brno<br>
-      All rights reserved — content may be used only with prior consent of Brno City Hall.
-    </div>
-  </div>
-</footer>
+- [ ] **Step 3: Visual verification (desktop)**
 
+Open `Wireframe/05-p01-life-admin.html` in a browser (e.g. `open Wireframe/05-p01-life-admin.html` on macOS, or via a local server).
+
+Expected:
+- Page banner red, breadcrumbs visible.
+- Gray search bar below banner.
+- 3-column browser:
+  - Col 1: 10 category links, first one ("Most popular") highlighted in red with white text.
+  - Col 2: H3 "Most popular" + 4 sub-topic links, first one ("Driver's licence") highlighted in red.
+  - Col 3: H3 "Driver's licence" + 5 task links in red typography.
+
+If only col 1 appears or columns look stacked: check viewport (must be ≥ 768px) and re-check the CSS file was saved.
+
+- [ ] **Step 4: Visual verification (mobile)**
+
+Resize browser to < 768px width (or use device emulator).
+
+Expected:
+- Only col 1 visible (full-width list of 10 categories).
+- "‹ Categories" back link is NOT visible (we're at the root view).
+- Clicking a category does nothing yet (no JS attached) — this is expected; move to Task 3.
+
+---
+
+## Task 3: Add browser JS (clicks + hash + mobile views)
+
+**Files:**
+- Modify: `Wireframe/05-p01-life-admin.html` (append `<script>` block just before `</body>`)
+
+- [ ] **Step 1: Insert the script block**
+
+Find the closing `</body>` tag near the bottom of `05-p01-life-admin.html`. Insert the following BEFORE it (after `</footer>` and any existing script references):
+
+```html
 <script>
 (function () {
-  'use strict';
-
   var browser = document.querySelector('.lifeadm-browser');
   if (!browser) return;
 
@@ -637,17 +793,11 @@
     history.replaceState(null, '', h);
   }
 
-  function safe(s) {
-    return (s || '').replace(/[^a-z0-9_-]/gi, '');
-  }
-
   function parseHash() {
     var h = (window.location.hash || '').replace(/^#/, '');
     if (!h) return { cat: 'popular', sub: null };
     var parts = h.split('/');
-    var cat = safe(parts[0]) || 'popular';
-    var sub = safe(parts[1]) || null;
-    return { cat: cat, sub: sub };
+    return { cat: parts[0] || 'popular', sub: parts[1] || null };
   }
 
   // Init from hash
@@ -708,6 +858,330 @@
   }
 })();
 </script>
-
 </body>
-</html>
+```
+
+(Note: the closing `</body>` tag is shown above to mark where the script block goes — it was already there; don't add a second one.)
+
+- [ ] **Step 2: Verify desktop click behavior**
+
+Reload `05-p01-life-admin.html` in browser.
+
+- Click "Documents" in col 1 → col 1 highlight moves to Documents (red), col 2 shows H3 "Documents" with 3 sub-topics, col 3 shows H3 "Driver's licence" with 5 tasks. URL becomes `…/05-p01-life-admin.html#documents/driver-licence`.
+- Click "Czech POINT extracts" in col 2 → col 2 highlight moves, col 3 shows H3 "Czech POINT extracts" with 5 tasks. URL becomes `…#documents/czechpoint`.
+- Click "Visa & residency" in col 1 → col 2 swaps to that category's 3 subs, col 3 shows first sub's tasks. URL updates.
+
+If clicks do nothing: open browser DevTools console, look for JS errors. Likely cause: missing `data-cat` or `data-sub` attribute typo in HTML.
+
+- [ ] **Step 3: Verify deep-link**
+
+Manually visit `…/05-p01-life-admin.html#construction/property` in the URL bar.
+
+Expected: page loads with "Construction & city property" active in col 1, "City property & spaces" active in col 2, and its 4 tasks in col 3.
+
+Try `…#nonsense/whatever`: should fall back to default (`popular` + `driver-licence`).
+
+- [ ] **Step 4: Verify mobile click flow**
+
+Resize to < 768px width (or use device emulator). Reload page without a hash (or after clearing the hash).
+
+- Initial view: only col 1 visible (10 categories), no back link.
+- Click "Documents" → col 1 hidden, col 2 shows with "‹ Categories" back link on top + H3 "Documents" + 3 subs.
+- Click "Czech POINT extracts" → col 2 hidden, col 3 shows with "‹ Documents" back link on top + H3 + 5 tasks.
+- Click "‹ Documents" → returns to col 2 (subs).
+- Click "‹ Categories" → returns to col 1.
+- URL hash updates as on desktop.
+
+- [ ] **Step 5: Verify task click navigates to T4 with label injection**
+
+In any view, click any task link (e.g., "Replace lost, stolen or damaged driver's licence").
+
+Expected: browser navigates to `01-p04-health-insurance.html`. The H1 banner on that page shows the original wireframe title + injected label "— Replace lost, stolen or damaged driver's licence" (this is existing wireframe.js behavior — no new code needed).
+
+If the label doesn't appear: confirm `<script src="wireframe.js" defer></script>` is still in the head of `05-p01-life-admin.html` (it should be untouched from the original page).
+
+---
+
+## Task 4: Sidepanel TREE cleanup in wireframe.js
+
+**Files:**
+- Modify: `Wireframe/wireframe.js:23-32` (the 9 L3 entries within the TREE array)
+
+- [ ] **Step 1: Remove 9 L3 entries from TREE**
+
+Open `Wireframe/wireframe.js`. Find the TREE array (starts around line 17). Locate this block:
+
+```js
+    { divider: 'Main sections' },
+    { label: 'I need to arrange', href: '05-p01-life-admin.html', level: 2, tag: 'T3' },
+    { label: 'Documents', href: '05-p02-documents.html', level: 3, tag: 'T6' },
+    { label: 'Visa & residency', href: '05-p03-visa-residency.html', level: 3, tag: 'T6' },
+    { label: 'Transport & vehicles', href: '05-p04-transport-vehicles.html', level: 3, tag: 'T6' },
+    { label: 'Fees, payments & fines', href: '05-p05-fees-payments.html', level: 3, tag: 'T6' },
+    { label: 'Document legalization & vidimation', href: '05-p06-document-legalization.html', level: 3, tag: 'T6' },
+    { label: 'Social services & family', href: '05-p07-social-services-family.html', level: 3, tag: 'T6' },
+    { label: 'Environment & waste', href: '05-p08-environment-waste.html', level: 3, tag: 'T6' },
+    { label: 'City hall services', href: '05-p09-city-hall-services.html', level: 3, tag: 'T6' },
+    { label: 'Construction & city property', href: '05-p10-construction-property.html', level: 3, tag: 'T6' },
+    { label: 'Live', href: '01-p01-live.html', level: 2, tag: 'T2' },
+```
+
+Replace with:
+
+```js
+    { divider: 'Main sections' },
+    { label: 'I need to arrange', href: '05-p01-life-admin.html', level: 2, tag: 'T3' },
+    { label: 'Live', href: '01-p01-live.html', level: 2, tag: 'T2' },
+```
+
+- [ ] **Step 2: Verify sidepanel**
+
+Open any wireframe page in a browser. Click the floating wireframe widget button (top-left or wherever the toggle is).
+
+Expected: sidepanel TREE shows "I need to arrange" as a single entry (no more 9 L3 sub-rows under it). All other sections (Live, Work, etc.) unchanged.
+
+---
+
+## Task 5: Header nav cleanup across all wireframe pages
+
+**Files:**
+- Modify: ~26 files in `Wireframe/` that contain `<a class="nav-link... href="05-p01-life-admin.html">I need to arrange`
+
+The dropdown under "I need to arrange" in EVERY page's header nav needs the 9 L3 sub-links stripped, leaving just the parent self-link, and the `<span class="caret"></span>` removed from the parent. The previous task already did this for `05-p01-life-admin.html` itself. This task does it for the rest.
+
+- [ ] **Step 1: List affected files**
+
+Run from project root:
+```bash
+grep -l 'href="05-p02-documents.html"' Wireframe/*.html
+```
+
+Expected: a list of ~26 .html files (everything except `05-p01-life-admin.html` and the 9 L3 files already in backup).
+
+- [ ] **Step 2: Run a single Python script to do the substitution**
+
+Save this as `/tmp/clean_nav.py` and run `python3 /tmp/clean_nav.py`:
+
+```python
+#!/usr/bin/env python3
+"""Strip 9 L3 sub-links and caret from 'I need to arrange' header nav across all wireframe pages."""
+import glob
+import re
+
+OLD_BLOCK_PATTERN = re.compile(
+    r'<div class="nav-item">\s*'
+    r'<a class="nav-link( active)?" href="05-p01-life-admin\.html">I need to arrange\s*<span class="caret"></span></a>\s*'
+    r'<div class="dropdown-menu">\s*'
+    r'<a href="05-p01-life-admin\.html"[^>]*>All you need to handle</a>\s*'
+    r'<a href="05-p02-documents\.html">Documents</a>\s*'
+    r'<a href="05-p03-visa-residency\.html">Visa &amp; residency</a>\s*'
+    r'<a href="05-p04-transport-vehicles\.html">Transport &amp; vehicles</a>\s*'
+    r'<a href="05-p05-fees-payments\.html">Fees, payments &amp; fines</a>\s*'
+    r'<a href="05-p06-document-legalization\.html">Document legalization &amp; vidimation</a>\s*'
+    r'<a href="05-p07-social-services-family\.html">Social services &amp; family</a>\s*'
+    r'<a href="05-p08-environment-waste\.html">Environment &amp; waste</a>\s*'
+    r'<a href="05-p09-city-hall-services\.html">City hall services</a>\s*'
+    r'<a href="05-p10-construction-property\.html">Construction &amp; city property</a>\s*'
+    r'</div>\s*'
+    r'</div>',
+    re.DOTALL,
+)
+
+def replacement(m):
+    active = m.group(1) or ''
+    return (
+        '<div class="nav-item">\n'
+        f'        <a class="nav-link{active}" href="05-p01-life-admin.html">I need to arrange</a>\n'
+        '      </div>'
+    )
+
+count = 0
+for path in glob.glob('Wireframe/*.html'):
+    with open(path, 'r', encoding='utf-8') as f:
+        src = f.read()
+    new = OLD_BLOCK_PATTERN.sub(replacement, src)
+    if new != src:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(new)
+        count += 1
+        print(f'  cleaned: {path}')
+print(f'\nDone — {count} files modified.')
+```
+
+Expected output:
+```
+  cleaned: Wireframe/01-p01-live.html
+  cleaned: Wireframe/01-p02-transport.html
+  ... (~26 lines) ...
+
+Done — 26 files modified.
+```
+
+If the count is 0 or very low: the regex didn't match. Check by hand whether the block format in the wireframe pages differs (whitespace, attribute order). Adjust regex and re-run.
+
+- [ ] **Step 3: Verify header nav visually**
+
+Open any page (e.g., `Wireframe/01-p01-live.html`) in browser. Hover "I need to arrange" in the main nav.
+
+Expected: NO dropdown appears (the link is now flat). Clicking navigates to `05-p01-life-admin.html`.
+
+Also hover other nav items (Live, Work, Enjoy, etc.) — their dropdowns should still work unchanged.
+
+- [ ] **Step 4: Delete the helper script**
+
+```bash
+rm /tmp/clean_nav.py
+```
+
+---
+
+## Task 6: Delete 9 L3 source files
+
+**Files:**
+- Delete: `Wireframe/05-p02-documents.html` … `Wireframe/05-p10-construction-property.html` (9 files)
+
+- [ ] **Step 1: Confirm backup intact**
+
+```bash
+ls Wireframe/_backup/i-need-to-arrange-2026-05-21/
+```
+
+Expected: 10 files listed (`05-p01-life-admin.html` through `05-p10-construction-property.html`).
+
+If missing or short: STOP. Re-create the backup before deleting:
+```bash
+mkdir -p Wireframe/_backup/i-need-to-arrange-2026-05-21
+cp Wireframe/05-*.html Wireframe/_backup/i-need-to-arrange-2026-05-21/
+```
+
+- [ ] **Step 2: Delete the 9 L3 files**
+
+```bash
+rm Wireframe/05-p02-documents.html \
+   Wireframe/05-p03-visa-residency.html \
+   Wireframe/05-p04-transport-vehicles.html \
+   Wireframe/05-p05-fees-payments.html \
+   Wireframe/05-p06-document-legalization.html \
+   Wireframe/05-p07-social-services-family.html \
+   Wireframe/05-p08-environment-waste.html \
+   Wireframe/05-p09-city-hall-services.html \
+   Wireframe/05-p10-construction-property.html
+```
+
+- [ ] **Step 3: Verify**
+
+```bash
+ls Wireframe/05-*.html
+```
+
+Expected: only `Wireframe/05-p01-life-admin.html` remains.
+
+---
+
+## Task 7: Sitemap + index + export script cleanup
+
+**Files:**
+- Modify: `Wireframe/sitemap.html`
+- Modify: `Wireframe/index.html`
+- Modify: `/tmp/export_wireframe_pdf.py`
+
+- [ ] **Step 1: Sitemap cleanup**
+
+Open `Wireframe/sitemap.html` and search for references to any of the 9 deleted L3 page filenames (e.g., `05-p02-documents.html`). Remove the entries — typically each is a `<li><a href="...">...</a></li>` row. Keep the parent `<li>` for "I need to arrange" pointing to `05-p01-life-admin.html`.
+
+After edit, open `sitemap.html` in browser. The "I need to arrange" entry should appear without 9 children.
+
+- [ ] **Step 2: Index.html cleanup**
+
+Run:
+```bash
+grep -n '05-p0[2-9]\|05-p10' Wireframe/index.html
+```
+
+For each match, decide:
+- If the link targets a specific L3 page that's now deleted, replace with a fragment link to the corresponding category in the browser. Mapping:
+
+| Old href | New href |
+|----------|----------|
+| `05-p02-documents.html` | `05-p01-life-admin.html#documents` |
+| `05-p03-visa-residency.html` | `05-p01-life-admin.html#visa` |
+| `05-p04-transport-vehicles.html` | `05-p01-life-admin.html#transport` |
+| `05-p05-fees-payments.html` | `05-p01-life-admin.html#fees` |
+| `05-p06-document-legalization.html` | `05-p01-life-admin.html#legalization` |
+| `05-p07-social-services-family.html` | `05-p01-life-admin.html#social` |
+| `05-p08-environment-waste.html` | `05-p01-life-admin.html#environment` |
+| `05-p09-city-hall-services.html` | `05-p01-life-admin.html#cityhall` |
+| `05-p10-construction-property.html` | `05-p01-life-admin.html#construction` |
+
+If grep returns no matches: nothing to update. Move on.
+
+- [ ] **Step 3: Same check across all other Wireframe pages**
+
+```bash
+grep -rn '05-p0[2-9]\|05-p10' Wireframe/*.html | grep -v _backup
+```
+
+(The `_backup` filter excludes the backup files — those should keep their references intact.)
+
+For any remaining matches, apply the same fragment-link mapping as Step 2. Most likely candidates: `sos.html`, contact pages, sidebar cards across various pages.
+
+- [ ] **Step 4: PDF export script cleanup**
+
+Open `/tmp/export_wireframe_pdf.py`. Find the PAGES list (lines ~14–75) and remove the 9 lines from `('05-p02-documents.html', 'L3'),` through `('05-p10-construction-property.html', 'L3'),` — keep `('05-p01-life-admin.html', 'L2'),`.
+
+The PAGES list after edit should drop from 51 to 42 entries.
+
+- [ ] **Step 5: Run a final broken-link grep**
+
+```bash
+grep -rn '05-p0[2-9]\|05-p10' Wireframe/ /tmp/export_wireframe_pdf.py | grep -v _backup
+```
+
+Expected: no output (clean).
+
+---
+
+## Task 8: Final verification + commit prep
+
+- [ ] **Step 1: Full visual walkthrough**
+
+Open `Wireframe/05-p01-life-admin.html` in browser, then run through this checklist:
+
+1. Default state: "Most popular" + "Driver's licence" active. ✓
+2. Click each of 10 categories in col 1 — col 2 + col 3 update each time. ✓
+3. In a few categories, click each sub-topic — col 3 updates. ✓
+4. Click 2-3 task links — navigate to `01-p04-health-insurance.html`, H1 banner shows injected task title. ✓
+5. Back-button in browser: returns to the wireframe (not unwinding state, because we use replaceState). ✓
+6. Deep-link test: paste `…/05-p01-life-admin.html#cityhall/honors` in URL → page loads with City hall + City honors active. ✓
+7. Mobile test (< 768px): sequential drill-down, back links work. ✓
+8. Open `sitemap.html` — no broken links. ✓
+9. Open `Wireframe/01-p01-live.html` — header nav shows "I need to arrange" as flat link (no dropdown), all other section dropdowns still work. ✓
+10. Floating wireframe widget on any page — TREE shows "I need to arrange" as single entry. ✓
+
+- [ ] **Step 2: Git status review**
+
+```bash
+git status --short
+git diff --stat
+```
+
+Expected: 
+- ~28 modified files (1 L2 page + wireframe.css + wireframe.js + sitemap + index + ~24 other wireframe pages with nav cleanup)
+- 9 deleted files (the L3 source pages)
+- backup directory + spec/plan as untracked or added depending on git history
+
+- [ ] **Step 3: Ask user to commit**
+
+Show the user:
+
+```
+Implementation complete. Summary:
+- New 3-column drill-down browser on 'I need to arrange' L2 page (10 categories × ~30 sub-topics × ~120 task links).
+- 9 L3 pages removed (backup at Wireframe/_backup/i-need-to-arrange-2026-05-21/).
+- Header nav, sidepanel TREE, sitemap, and PDF export script all updated.
+
+Would you like to commit this as one feature commit? Suggested message:
+  feat(wireframe): replace I-need-to-arrange L3 pages with 3-column drill-down browser
+```
+
+DO NOT auto-commit. Wait for user's explicit yes.
