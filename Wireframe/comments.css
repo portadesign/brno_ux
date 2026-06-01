@@ -1,0 +1,293 @@
+/* =========================================================
+   Wireframe pin-comments — bubble button, pins, popover, modal
+   All classes prefixed wf-cmt- to avoid collisions.
+   ========================================================= */
+
+/* --- Z-index layering ---
+   Existing wireframe widgets (.wf-toggle-btn / .wf-sidepanel / .wf-overlay) use 1000-1001.
+   Our comments layer sits ABOVE so popovers/modals don't get covered by the side panel.
+   100  = pin markers (inside overlay, can be covered by sidepanel — fine)
+   1050 = bubble toggle button (alongside .wf-toggle-btn)
+   1100 = popovers (above sidepanel)
+   1200 = name modal overlay (above everything)
+*/
+
+/* Bubble toggle button (top-right corner) */
+.wf-cmt-bubble {
+  position: fixed;
+  top: 16px;
+  right: 76px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--red);
+  color: var(--red);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.12s, background 0.12s, color 0.12s;
+  padding: 0;
+}
+.wf-cmt-bubble:hover { transform: scale(1.05); }
+.wf-cmt-bubble.active {
+  background: var(--red);
+  color: var(--white);
+}
+.wf-cmt-bubble svg { width: 22px; height: 22px; }
+
+/* Badge inside bubble showing open-pin count for current page */
+.wf-cmt-bubble-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border: 2px solid var(--white);
+}
+.wf-cmt-bubble.active .wf-cmt-bubble-badge { background: var(--white); color: var(--red); }
+.wf-cmt-bubble-badge.hidden { display: none; }
+
+/* Comment mode — crosshair cursor everywhere */
+body.wf-cmt-mode { cursor: crosshair !important; }
+
+/* Overlay container holds all pins, absolutely positioned over document */
+.wf-cmt-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+.wf-cmt-overlay > * { pointer-events: auto; }
+
+/* Body must be position: relative for the overlay to anchor correctly */
+body { position: relative; }
+
+/* Pin marker */
+.wf-cmt-pin {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  border: 2px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.12s;
+}
+.wf-cmt-pin:hover { transform: translate(-50%, -50%) scale(1.15); }
+.wf-cmt-pin.resolved {
+  background: var(--gray-500);
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+.wf-cmt-pin.draft {
+  background: var(--white);
+  color: var(--red);
+  border: 2px dashed var(--red);
+}
+
+/* Popover */
+.wf-cmt-popover {
+  position: absolute;
+  width: 320px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  z-index: 1100;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--gray-900);
+  display: flex;
+  flex-direction: column;
+  max-height: 480px;
+}
+.wf-cmt-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--gray-100);
+  border-radius: 6px 6px 0 0;
+}
+.wf-cmt-popover-title {
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wf-cmt-popover-resolved-badge {
+  background: var(--gray-500);
+  color: var(--white);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.wf-cmt-popover-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--gray-700);
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+}
+.wf-cmt-popover-close:hover { color: var(--gray-900); }
+
+.wf-cmt-popover-thread {
+  overflow-y: auto;
+  padding: 10px 14px;
+  flex: 1;
+}
+.wf-cmt-message {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.wf-cmt-message:last-child { border-bottom: none; }
+.wf-cmt-message-author {
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-right: 8px;
+}
+.wf-cmt-message-time {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+.wf-cmt-message-body {
+  white-space: pre-wrap;
+  margin-top: 4px;
+  color: var(--gray-700);
+}
+
+.wf-cmt-popover-footer {
+  border-top: 1px solid var(--gray-200);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.wf-cmt-textarea {
+  width: 100%;
+  min-height: 60px;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.wf-cmt-textarea:focus { outline: none; border-color: var(--red); }
+.wf-cmt-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+.wf-cmt-actions-right { display: flex; gap: 8px; }
+.wf-cmt-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+.wf-cmt-btn-primary {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+.wf-cmt-btn-primary:hover { background: var(--red-dark); }
+.wf-cmt-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.wf-cmt-btn-secondary {
+  background: var(--white);
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+.wf-cmt-btn-secondary:hover { background: var(--gray-100); }
+.wf-cmt-btn-resolve { font-size: 12px; padding: 4px 10px; }
+.wf-cmt-error {
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Name modal (full-screen overlay) */
+.wf-cmt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wf-cmt-modal {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 28px;
+  width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.wf-cmt-modal h3 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+.wf-cmt-modal p {
+  margin: 0 0 18px 0;
+  color: var(--gray-700);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.wf-cmt-modal input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.wf-cmt-modal input:focus { outline: none; border-color: var(--red); }
+.wf-cmt-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
