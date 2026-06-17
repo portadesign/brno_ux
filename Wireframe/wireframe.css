@@ -1197,6 +1197,15 @@ a[download]::after {
   background: var(--white);
 }
 
+/* Direct-mode categories — sub-group flagged --direct means the category
+   has no sub-topics; middle column is hidden and tasks column expands. */
+.lifeadm-browser:has(.lifeadm-sub-group--direct.active) {
+  grid-template-columns: 280px 1fr;
+}
+.lifeadm-browser:has(.lifeadm-sub-group--direct.active) .lifeadm-subs {
+  display: none;
+}
+
 .lifeadm-cats {
   display: flex;
   flex-direction: column;
