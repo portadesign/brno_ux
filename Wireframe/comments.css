@@ -97,6 +97,11 @@ body { position: relative; }
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.12s;
 }
+/* Pin color variants — base .wf-cmt-pin is red (default).
+   .resolved and .draft declarations come AFTER these so they override the colour. */
+.wf-cmt-pin.color-green  { background: #2D9D4B; }
+.wf-cmt-pin.color-orange { background: #E67E22; }
+.wf-cmt-pin.color-blue   { background: #2980B9; }
 .wf-cmt-pin:hover { transform: translate(-50%, -50%) scale(1.15); }
 .wf-cmt-pin.resolved {
   background: var(--gray-500);
@@ -291,3 +296,26 @@ body { position: relative; }
   justify-content: flex-end;
   gap: 8px;
 }
+
+/* Color picker (inside .wf-cmt-popover-title) */
+.wf-cmt-color-picker {
+  display: flex;
+  gap: 4px;
+  margin-left: 4px;
+}
+.wf-cmt-color-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--gray-300);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.wf-cmt-color-swatch:hover { transform: scale(1.15); }
+.wf-cmt-color-swatch.active { box-shadow: 0 0 0 2px var(--gray-900); }
+.wf-cmt-color-swatch.color-red    { background: var(--red); }
+.wf-cmt-color-swatch.color-green  { background: #2D9D4B; }
+.wf-cmt-color-swatch.color-orange { background: #E67E22; }
+.wf-cmt-color-swatch.color-blue   { background: #2980B9; }

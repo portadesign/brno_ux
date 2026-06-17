@@ -144,15 +144,18 @@
         <!-- Column 1: Categories -->
         <nav class="lifeadm-cats" aria-label="Topic categories">
           <a href="#popular"      class="lifeadm-cat active" data-cat="popular">Most popular</a>
-          <a href="#documents"    class="lifeadm-cat" data-cat="documents">Documents</a>
           <a href="#visa"         class="lifeadm-cat" data-cat="visa">Visa &amp; residency</a>
           <a href="#transport"    class="lifeadm-cat" data-cat="transport">Transport &amp; vehicles</a>
-          <a href="#fees"         class="lifeadm-cat" data-cat="fees">Fees, payments &amp; fines</a>
+          <a href="#fees"         class="lifeadm-cat" data-cat="fees">Local taxes</a>
+          <a href="#fines"        class="lifeadm-cat" data-cat="fines">Fines &amp; penalties</a>
+          <a href="#suggestions"  class="lifeadm-cat" data-cat="suggestions">Suggestions and complaints</a>
           <a href="#legalization" class="lifeadm-cat" data-cat="legalization">Document legalization &amp; vidimation</a>
           <a href="#social"       class="lifeadm-cat" data-cat="social">Social services &amp; family</a>
           <a href="#environment"  class="lifeadm-cat" data-cat="environment">Environment &amp; waste</a>
-          <a href="#cityhall"     class="lifeadm-cat" data-cat="cityhall">City hall services</a>
-          <a href="#construction" class="lifeadm-cat" data-cat="construction">Construction &amp; city property</a>
+          <a href="#construction" class="lifeadm-cat" data-cat="construction">Housing and Renting from the City</a>
+          <a href="#business"     class="lifeadm-cat" data-cat="business">Getting a business licence</a>
+          <a href="#participation" class="lifeadm-cat" data-cat="participation">Public participation</a>
+          <a href="#cityhall"     class="lifeadm-cat" data-cat="cityhall">Other city hall services</a>
         </nav>
 
         <!-- Column 2: Sub-topic groups (one per category, only one .active at a time) -->
@@ -166,14 +169,6 @@
             <a href="#popular/waste-fee"      class="lifeadm-sub" data-sub="waste-fee">Pay waste fee</a>
             <a href="#popular/vehicle-reg"    class="lifeadm-sub" data-sub="vehicle-reg">Vehicle registration</a>
             <a href="#popular/czechpoint"     class="lifeadm-sub" data-sub="czechpoint">Czech POINT extracts</a>
-          </div>
-
-          <!-- DOCUMENTS -->
-          <div class="lifeadm-sub-group" data-cat="documents">
-            <h3 class="lifeadm-sub-title">Documents</h3>
-            <a href="#documents/driver-licence" class="lifeadm-sub" data-sub="driver-licence">Driver's licence</a>
-            <a href="#documents/czechpoint"     class="lifeadm-sub" data-sub="czechpoint">Czech POINT extracts</a>
-            <a href="#documents/updates"        class="lifeadm-sub" data-sub="updates">Document changes &amp; updates</a>
           </div>
 
           <!-- VISA -->
@@ -194,10 +189,24 @@
 
           <!-- FEES -->
           <div class="lifeadm-sub-group" data-cat="fees">
-            <h3 class="lifeadm-sub-title">Fees, payments &amp; fines</h3>
+            <h3 class="lifeadm-sub-title">Local taxes</h3>
             <a href="#fees/waste"   class="lifeadm-sub" data-sub="waste">Pay your waste fee</a>
-            <a href="#fees/fines"   class="lifeadm-sub" data-sub="fines">Fines &amp; penalties</a>
             <a href="#fees/other"   class="lifeadm-sub" data-sub="other">Other fees &amp; appeals</a>
+          </div>
+
+          <!-- FINES (direct — no sub-topics, single hidden routing sub) -->
+          <div class="lifeadm-sub-group lifeadm-sub-group--direct" data-cat="fines">
+            <a href="#fines/all" class="lifeadm-sub" data-sub="all" hidden aria-hidden="true">All</a>
+          </div>
+
+          <!-- SUGGESTIONS (direct) -->
+          <div class="lifeadm-sub-group lifeadm-sub-group--direct" data-cat="suggestions">
+            <a href="#suggestions/all" class="lifeadm-sub" data-sub="all" hidden aria-hidden="true">All</a>
+          </div>
+
+          <!-- PARTICIPATION (direct) -->
+          <div class="lifeadm-sub-group lifeadm-sub-group--direct" data-cat="participation">
+            <a href="#participation/all" class="lifeadm-sub" data-sub="all" hidden aria-hidden="true">All</a>
           </div>
 
           <!-- LEGALIZATION -->
@@ -224,9 +233,14 @@
             <a href="#environment/services"  class="lifeadm-sub" data-sub="services">Environment services</a>
           </div>
 
+          <!-- BUSINESS (direct) -->
+          <div class="lifeadm-sub-group lifeadm-sub-group--direct" data-cat="business">
+            <a href="#business/all" class="lifeadm-sub" data-sub="all" hidden aria-hidden="true">All</a>
+          </div>
+
           <!-- CITYHALL -->
           <div class="lifeadm-sub-group" data-cat="cityhall">
-            <h3 class="lifeadm-sub-title">City hall services</h3>
+            <h3 class="lifeadm-sub-title">Other city hall services</h3>
             <a href="#cityhall/formal"  class="lifeadm-sub" data-sub="formal">Submit a formal request</a>
             <a href="#cityhall/honors"  class="lifeadm-sub" data-sub="honors">City honors &amp; ceremonies</a>
             <a href="#cityhall/career"  class="lifeadm-sub" data-sub="career">Career &amp; administration</a>
@@ -234,7 +248,10 @@
 
           <!-- CONSTRUCTION -->
           <div class="lifeadm-sub-group" data-cat="construction">
-            <h3 class="lifeadm-sub-title">Construction &amp; city property</h3>
+            <h3 class="lifeadm-sub-title">Housing and Renting from the City</h3>
+            <a href="#construction/apartments"  class="lifeadm-sub" data-sub="apartments">City apartments</a>
+            <a href="#construction/commercial"  class="lifeadm-sub" data-sub="commercial">Commercial rentals</a>
+            <a href="#construction/publicspace" class="lifeadm-sub" data-sub="publicspace">Public space occupation</a>
             <a href="#construction/permits"  class="lifeadm-sub" data-sub="permits">Building permits</a>
             <a href="#construction/property" class="lifeadm-sub" data-sub="property">City property &amp; spaces</a>
             <a href="#construction/networks" class="lifeadm-sub" data-sub="networks">Engineering networks &amp; utilities</a>
@@ -280,35 +297,6 @@
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Trade Register extract (živnostenský rejstřík)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Cadastre extract (katastr nemovitostí)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Criminal record extract (rejstřík trestů)</a>
-          </div>
-
-          <!-- DOCUMENTS / Driver's licence -->
-          <div class="lifeadm-task-group" data-cat="documents" data-sub="driver-licence">
-            <h3 class="lifeadm-task-title">Driver's licence</h3>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Driver's licence — lost, stolen, damaged</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Replace expired licence (validity end)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Apply for international driver's licence</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Driver record extract (body)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Conditional driving (glasses, contacts)</a>
-          </div>
-
-          <!-- DOCUMENTS / Czech POINT -->
-          <div class="lifeadm-task-group" data-cat="documents" data-sub="czechpoint">
-            <h3 class="lifeadm-task-title">Czech POINT extracts</h3>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Find your nearest Czech POINT</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Trade Register extract (živnostenský rejstřík)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Cadastre extract (katastr nemovitostí)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Criminal record extract (rejstřík trestů)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Driver record extract</a>
-          </div>
-
-          <!-- DOCUMENTS / Updates -->
-          <div class="lifeadm-task-group" data-cat="documents" data-sub="updates">
-            <h3 class="lifeadm-task-title">Document changes &amp; updates</h3>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Name/surname change (after marriage etc.)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Professional driver licence (PIC)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Driver licence upgrade (B → C, etc.)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Document recovery (lost original)</a>
           </div>
 
           <!-- VISA / Permits -->
@@ -377,13 +365,25 @@
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Late payment &amp; surcharges</a>
           </div>
 
-          <!-- FEES / Fines -->
-          <div class="lifeadm-task-group" data-cat="fees" data-sub="fines">
+          <!-- FINES (direct) -->
+          <div class="lifeadm-task-group" data-cat="fines" data-sub="all">
             <h3 class="lifeadm-task-title">Fines &amp; penalties</h3>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Pay a fine (Municipal Police)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Pay a fine (Magistrát departments)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Apply for instalment plan or postponement</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Dispute or appeal a fine</a>
+          </div>
+
+          <!-- SUGGESTIONS (direct) -->
+          <div class="lifeadm-task-group" data-cat="suggestions" data-sub="all">
+            <h3 class="lifeadm-task-title">Suggestions and complaints</h3>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Submit a formal request</a>
+          </div>
+
+          <!-- PARTICIPATION (direct) -->
+          <div class="lifeadm-task-group" data-cat="participation" data-sub="all">
+            <h3 class="lifeadm-task-title">Public participation</h3>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Join 'Dáme na vás' — Brno participatory budget</a>
           </div>
 
           <!-- FEES / Other -->
@@ -392,6 +392,9 @@
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Trade licence fees</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Parking permit fees</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Building permit fees</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Pet fees</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Radio and TV fees</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Property tax</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Local fee appeal (Odbor rozpočtu)</a>
           </div>
 
@@ -477,6 +480,12 @@
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Brownfield &amp; contamination reports</a>
           </div>
 
+          <!-- BUSINESS (direct) -->
+          <div class="lifeadm-task-group" data-cat="business" data-sub="all">
+            <h3 class="lifeadm-task-title">Getting a business licence</h3>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Apply for a business licence</a>
+          </div>
+
           <!-- CITYHALL / Formal -->
           <div class="lifeadm-task-group" data-cat="cityhall" data-sub="formal">
             <h3 class="lifeadm-task-title">Submit a formal request</h3>
@@ -503,6 +512,30 @@
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Confirmation of employment from closed organisation</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Street/building numbering</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Induction loops for hearing-impaired</a>
+          </div>
+
+          <!-- CONSTRUCTION / Apartments -->
+          <div class="lifeadm-task-group" data-cat="construction" data-sub="apartments">
+            <h3 class="lifeadm-task-title">City apartments</h3>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Apply for a city-owned apartment</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Renew tenancy of a city apartment</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Report repairs &amp; maintenance</a>
+          </div>
+
+          <!-- CONSTRUCTION / Commercial rentals -->
+          <div class="lifeadm-task-group" data-cat="construction" data-sub="commercial">
+            <h3 class="lifeadm-task-title">Commercial rentals</h3>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Rent city-owned commercial space</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Modify a commercial lease</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">End a commercial lease</a>
+          </div>
+
+          <!-- CONSTRUCTION / Public space -->
+          <div class="lifeadm-task-group" data-cat="construction" data-sub="publicspace">
+            <h3 class="lifeadm-task-title">Public space occupation</h3>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Apply for public space occupation permit</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Outdoor seating (restaurace, kavárny)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Markets &amp; pop-up events</a>
           </div>
 
           <!-- CONSTRUCTION / Permits -->
@@ -608,6 +641,11 @@
     return first ? first.getAttribute('data-sub') : null;
   }
 
+  function isDirectCat(catKey) {
+    var grp = browser.querySelector('.lifeadm-sub-group[data-cat="' + catKey + '"]');
+    return !!(grp && grp.classList.contains('lifeadm-sub-group--direct'));
+  }
+
   function categoryLabel(catKey) {
     var a = browser.querySelector('.lifeadm-cat[data-cat="' + catKey + '"]');
     return a ? a.textContent.trim() : '';
@@ -657,7 +695,9 @@
   applyState(initial.cat, initial.sub);
   // On initial load: if there's a hash with a sub, jump to mobile view 3; if just cat, view 2; if no hash, view 1
   if (window.location.hash) {
-    var v = initial.sub ? 'tasks' : 'subs';
+    var v;
+    if (isDirectCat(initial.cat)) { v = 'tasks'; }
+    else { v = initial.sub ? 'tasks' : 'subs'; }
     if (window.matchMedia('(max-width: 767px)').matches) {
       browser.setAttribute('data-mobile-view', v);
     }
@@ -672,7 +712,7 @@
       applyState(catKey, subKey);
       writeHash(catKey, subKey);
       if (window.matchMedia('(max-width: 767px)').matches) {
-        browser.setAttribute('data-mobile-view', 'subs');
+        browser.setAttribute('data-mobile-view', isDirectCat(catKey) ? 'tasks' : 'subs');
         window.scrollTo(0, 0);
       }
     });
@@ -704,7 +744,9 @@
   if (backToSubs) {
     backToSubs.addEventListener('click', function (e) {
       e.preventDefault();
-      browser.setAttribute('data-mobile-view', 'subs');
+      var activeCat = browser.querySelector('.lifeadm-cat.active');
+      var catKey = activeCat ? activeCat.getAttribute('data-cat') : null;
+      browser.setAttribute('data-mobile-view', isDirectCat(catKey) ? 'categories' : 'subs');
       window.scrollTo(0, 0);
     });
   }
