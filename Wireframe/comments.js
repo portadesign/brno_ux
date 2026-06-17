@@ -219,7 +219,8 @@
 
   function createPinEl(comment, displayNumber) {
     var pinEl = document.createElement('button');
-    pinEl.className = 'wf-cmt-pin' + (comment.resolved ? ' resolved' : '');
+    pinEl.className = 'wf-cmt-pin color-' + pinColorOf(comment)
+      + (comment.resolved ? ' resolved' : '');
     pinEl.type = 'button';
     pinEl.style.left = comment.x_pct + '%';
     pinEl.style.top = comment.y_pct_px + 'px';
@@ -273,6 +274,36 @@
 
     popoverEl.style.left = left + 'px';
     popoverEl.style.top = top + 'px';
+  }
+
+  // ===== Color picker =====
+  var COLORS = ['red', 'green', 'orange', 'blue'];
+
+  function pinColorOf(comment) {
+    var c = comment && comment.color;
+    return COLORS.indexOf(c) === -1 ? 'red' : c;
+  }
+
+  function buildColorPicker(currentColor, onChange) {
+    var picker = document.createElement('div');
+    picker.className = 'wf-cmt-color-picker';
+    COLORS.forEach(function (color) {
+      var sw = document.createElement('button');
+      sw.type = 'button';
+      sw.className = 'wf-cmt-color-swatch color-' + color
+        + (color === currentColor ? ' active' : '');
+      sw.setAttribute('aria-label', 'Set color: ' + color);
+      sw.setAttribute('data-color', color);
+      sw.addEventListener('click', function (e) {
+        e.stopPropagation();
+        picker.querySelectorAll('.wf-cmt-color-swatch').forEach(function (s) {
+          s.classList.toggle('active', s.getAttribute('data-color') === color);
+        });
+        onChange(color);
+      });
+      picker.appendChild(sw);
+    });
+    return picker;
   }
 
   function buildPopoverShell(title) {
@@ -376,6 +407,24 @@
     document.body.appendChild(pop);
     positionPopover(pop, pinEl);
     openPopover = { el: pop, comment: rootComment };
+
+    // Color picker — appended to popover title. Changes persist immediately.
+    var colorPicker = buildColorPicker(pinColorOf(rootComment), function (newColor) {
+      var prevColor = pinColorOf(rootComment);
+      updateComment(rootComment.id, { color: newColor }).then(function (updated) {
+        var idx = comments.findIndex(function (c) { return c.id === rootComment.id; });
+        if (idx >= 0) comments[idx] = updated;
+        rootComment.color = updated.color;
+        renderPins();
+      }).catch(function (err) {
+        colorPicker.querySelectorAll('.wf-cmt-color-swatch').forEach(function (s) {
+          s.classList.toggle('active', s.getAttribute('data-color') === prevColor);
+        });
+        errEl.textContent = 'Failed: ' + err.message;
+        errEl.style.display = 'block';
+      });
+    });
+    shell.titleEl.appendChild(colorPicker);
 
     sendBtn.addEventListener('click', function () {
       var body = textarea.value.trim();
@@ -481,6 +530,13 @@
     openPopover = { el: pop, draft: true };
     textarea.focus();
 
+    // Color picker — selected color is included in the insertComment payload below.
+    var selectedColor = 'red';
+    var colorPicker = buildColorPicker(selectedColor, function (newColor) {
+      selectedColor = newColor;
+    });
+    shell.titleEl.appendChild(colorPicker);
+
     cancelBtn.addEventListener('click', function () { cancelDraftPin(); });
 
     saveBtn.addEventListener('click', function () {
@@ -498,6 +554,7 @@
           body: body,
           x_pct: x_pct,
           y_pct_px: y_pct_px,
+          color: selectedColor,
         }).then(function (saved) {
           comments.push(saved);
           // Remove draft pin
