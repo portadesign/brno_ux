@@ -162,13 +162,59 @@
 
   function updateBadge() {
     var n = getOpenRootCount();
-    if (!badgeEl) return;
-    if (n === 0) {
-      badgeEl.classList.add('hidden');
-    } else {
-      badgeEl.classList.remove('hidden');
-      badgeEl.textContent = String(n);
+    if (badgeEl) {
+      if (n === 0) { badgeEl.classList.add('hidden'); }
+      else { badgeEl.classList.remove('hidden'); badgeEl.textContent = String(n); }
     }
+    setSidepanelBadgeForCurrentPage(n);
+  }
+
+  // ===== Sidepanel comment-count badges =====
+  function pageFromHref(href) {
+    if (!href) return null;
+    var name = href.split('#')[0].split('?')[0];
+    name = name.split('/').pop();
+    return name || 'index.html';
+  }
+
+  function setTreeBadge(anchor, n) {
+    var existing = anchor.querySelector('.wf-cmt-tree-badge');
+    if (n <= 0) { if (existing) existing.remove(); return; }
+    if (existing) { existing.textContent = String(n); return; }
+    var badge = document.createElement('span');
+    badge.className = 'wf-cmt-tree-badge';
+    badge.textContent = String(n);
+    // Insert BEFORE the level tag (.wf-tag), so badge sits next to it on the right.
+    var tag = anchor.querySelector('.wf-tag');
+    if (tag) anchor.insertBefore(badge, tag); else anchor.appendChild(badge);
+  }
+
+  function setSidepanelBadgeForCurrentPage(n) {
+    document.querySelectorAll('.wf-tree-item').forEach(function (a) {
+      if (pageFromHref(a.getAttribute('href')) === PAGE_ID) setTreeBadge(a, n);
+    });
+  }
+
+  function fetchOpenCountsPerPage() {
+    var url = SUPABASE_URL + '/rest/v1/comments?select=page&parent_id=is.null&resolved=eq.false';
+    return fetch(url, { headers: SUPABASE_HEADERS })
+      .then(function (r) {
+        if (!r.ok) throw new Error('Counts fetch: ' + r.status);
+        return r.json();
+      })
+      .then(function (rows) {
+        var counts = {};
+        rows.forEach(function (r) { counts[r.page] = (counts[r.page] || 0) + 1; });
+        return counts;
+      });
+  }
+
+  function annotateSidepanel(counts) {
+    document.querySelectorAll('.wf-tree-item').forEach(function (a) {
+      var page = pageFromHref(a.getAttribute('href'));
+      if (!page) return;
+      setTreeBadge(a, counts[page] || 0);
+    });
   }
 
   function setCommentMode(on) {
@@ -226,11 +272,88 @@
     pinEl.style.top = comment.y_pct_px + 'px';
     pinEl.textContent = String(displayNumber);
     pinEl.setAttribute('aria-label', 'Comment #' + displayNumber);
-    pinEl.addEventListener('click', function (e) {
+    pinEl.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return; // left button only
+      e.preventDefault();
       e.stopPropagation();
-      openCommentPopover(comment, pinEl);
+      startPinDrag(e, comment, pinEl);
     });
     return pinEl;
+  }
+
+  // ===== Pin drag-and-drop =====
+  var DRAG_THRESHOLD_PX = 5;
+  var dragState = null;
+
+  function startPinDrag(e, comment, pinEl) {
+    dragState = {
+      dragging: false,
+      comment: comment,
+      pinEl: pinEl,
+      startX: e.clientX,
+      startY: e.clientY,
+      origLeft: pinEl.style.left,
+      origTop: pinEl.style.top,
+    };
+    document.addEventListener('mousemove', onPinDragMove);
+    document.addEventListener('mouseup', onPinDragEnd);
+  }
+
+  function pinPositionFromEvent(e) {
+    var width = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth);
+    var docX = e.clientX + window.scrollX;
+    var docY = e.clientY + window.scrollY;
+    return {
+      x_pct: parseFloat((docX / width * 100).toFixed(2)),
+      y_pct_px: Math.round(docY),
+    };
+  }
+
+  function onPinDragMove(e) {
+    if (!dragState) return;
+    var dx = e.clientX - dragState.startX;
+    var dy = e.clientY - dragState.startY;
+    if (!dragState.dragging) {
+      if (Math.abs(dx) < DRAG_THRESHOLD_PX && Math.abs(dy) < DRAG_THRESHOLD_PX) return;
+      // Threshold crossed → enter drag mode
+      dragState.dragging = true;
+      dragState.pinEl.classList.add('dragging');
+      document.body.style.userSelect = 'none';
+      closePopover(); // any open popover loses anchor when pin moves
+    }
+    var pos = pinPositionFromEvent(e);
+    dragState.pinEl.style.left = pos.x_pct + '%';
+    dragState.pinEl.style.top = pos.y_pct_px + 'px';
+  }
+
+  function onPinDragEnd(e) {
+    if (!dragState) return;
+    document.removeEventListener('mousemove', onPinDragMove);
+    document.removeEventListener('mouseup', onPinDragEnd);
+    var state = dragState;
+    dragState = null;
+
+    if (!state.dragging) {
+      // No move → treat as a click, open popover
+      openCommentPopover(state.comment, state.pinEl);
+      return;
+    }
+
+    state.pinEl.classList.remove('dragging');
+    document.body.style.userSelect = '';
+    var pos = pinPositionFromEvent(e);
+    var comment = state.comment;
+    updateComment(comment.id, { x_pct: pos.x_pct, y_pct_px: pos.y_pct_px }).then(function (updated) {
+      var idx = comments.findIndex(function (c) { return c.id === comment.id; });
+      if (idx >= 0) comments[idx] = updated;
+      comment.x_pct = updated.x_pct;
+      comment.y_pct_px = updated.y_pct_px;
+    }).catch(function (err) {
+      // Revert visual position; server state unchanged
+      state.pinEl.style.left = state.origLeft;
+      state.pinEl.style.top = state.origTop;
+      console.warn('[wf-cmt] Failed to save pin position:', err);
+    });
   }
 
   function createDraftPinEl(x_pct, y_pct_px) {
@@ -618,6 +741,10 @@
       renderPins();
     }).catch(function (err) {
       console.warn('[wf-cmt] Failed to load comments:', err);
+    });
+    // Sidepanel: annotate each page row with its open-comment count
+    fetchOpenCountsPerPage().then(annotateSidepanel).catch(function (err) {
+      console.warn('[wf-cmt] Failed to load sidepanel counts:', err);
     });
     document.addEventListener('click', onDocumentClick, true);
     // Click outside popover closes it (skips if in comment mode — onDocumentClick
