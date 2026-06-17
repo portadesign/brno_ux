@@ -620,6 +620,17 @@
       console.warn('[wf-cmt] Failed to load comments:', err);
     });
     document.addEventListener('click', onDocumentClick, true);
+    // Click outside popover closes it (skips if in comment mode — onDocumentClick
+    // handles that case by opening a new draft popover at the click point).
+    document.addEventListener('click', function (e) {
+      if (!openPopover) return;
+      if (commentMode) return;
+      if (openPopover.el.contains(e.target)) return;
+      if (e.target.closest && e.target.closest('.wf-cmt-pin')) return;
+      if (e.target.closest && e.target.closest('.wf-cmt-modal-backdrop')) return;
+      closePopover();
+      cancelDraftPin();
+    });
     // Esc closes popover or exits comment mode
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
