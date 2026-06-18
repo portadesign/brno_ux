@@ -30,7 +30,7 @@
     { label: 'Social care', href: '01-p07-social-care.html', level: 3, tag: 'T6' },
     { label: 'Education', href: '01-p08-education.html', level: 3, tag: 'T6' },
     { label: 'Speak Czech', href: '01-p09-speak-czech.html', level: 3, tag: 'T6' },
-    { label: 'Work', href: '02-p01-work.html', level: 2, tag: 'T2' },
+    { label: 'Work & Business', href: '02-p01-work.html', level: 2, tag: 'T2' },
     { label: 'Right to work in Czechia', href: '02-p02-right-to-work.html', level: 3, tag: 'T6' },
     { label: 'Find a job', href: '02-p03-find-a-job.html', level: 3, tag: 'T6' },
     { label: 'Employment essentials', href: '02-p04-employment-essentials.html', level: 3, tag: 'T6' },
