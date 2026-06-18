@@ -92,7 +92,7 @@ body { position: relative; }
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: grab;
   transform: translate(-50%, -50%);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.12s;
@@ -103,6 +103,13 @@ body { position: relative; }
 .wf-cmt-pin.color-orange { background: #E67E22; }
 .wf-cmt-pin.color-blue   { background: #2980B9; }
 .wf-cmt-pin:hover { transform: translate(-50%, -50%) scale(1.15); }
+.wf-cmt-pin.dragging {
+  cursor: grabbing;
+  z-index: 110;
+  opacity: 0.85;
+  transform: translate(-50%, -50%) scale(1.1);
+  transition: none;
+}
 .wf-cmt-pin.resolved {
   background: var(--gray-500);
   width: 22px;
@@ -319,3 +326,20 @@ body { position: relative; }
 .wf-cmt-color-swatch.color-green  { background: #2D9D4B; }
 .wf-cmt-color-swatch.color-orange { background: #E67E22; }
 .wf-cmt-color-swatch.color-blue   { background: #2980B9; }
+
+/* Comment count badge in sidepanel TREE (mirrors .wf-cmt-bubble-badge) */
+.wf-cmt-tree-badge {
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  flex-shrink: 0;
+}
+.wf-tree-item.wf-active .wf-cmt-tree-badge { background: var(--white); color: var(--red); }
