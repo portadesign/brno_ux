@@ -140,11 +140,22 @@
     showNameModal(callback);
   }
 
-  // ===== Bubble button =====
+  // ===== Bubble button (nebo odkaz v horní WF liště) =====
   var bubbleEl = null;
   var badgeEl = null;
+  var usingBar = false;
 
   function renderBubble() {
+    // Preferuj odkaz „Comments“ v horní WF liště (přesunutý floating button)
+    var barLink = document.querySelector('[data-wfbar-comments]');
+    if (barLink) {
+      usingBar = true;
+      bubbleEl = barLink;
+      badgeEl = barLink.querySelector('[data-wfbar-cmt-count]');
+      barLink.addEventListener('click', function (e) { e.preventDefault(); setCommentMode(!commentMode); });
+      return;
+    }
+    // Fallback: plovoucí bublina (stránky bez WF lišty)
     bubbleEl = document.createElement('button');
     bubbleEl.className = 'wf-cmt-bubble';
     bubbleEl.type = 'button';
@@ -160,11 +171,28 @@
     document.body.appendChild(bubbleEl);
   }
 
+  // ===== Sjednocený stav „Comments“ v horní WF liště =====
+  // Jeden ovladač = jeden stav: zobrazuje/skrývá piny A zapíná režim přidávání (crosshair
+  // + klik do obsahu = nový pin). Persistuje v localStorage, takže přežije navigaci mezi
+  // stránkami — respondent/designer jednou zapne a pracuje napříč celým wireframem.
+  var CMT_STATE_KEY = 'wf-cmt-mode';
+  function persistedCmtOn() {
+    try { return localStorage.getItem(CMT_STATE_KEY) === '1'; } catch (e) { return false; }
+  }
+  function persistCmtOn(on) {
+    try { localStorage.setItem(CMT_STATE_KEY, on ? '1' : '0'); } catch (e) {}
+  }
+
   function updateBadge() {
     var n = getOpenRootCount();
     if (badgeEl) {
-      if (n === 0) { badgeEl.classList.add('hidden'); }
-      else { badgeEl.classList.remove('hidden'); badgeEl.textContent = String(n); }
+      if (usingBar) {
+        badgeEl.textContent = '(' + n + ')';   // v liště ukazuj počet vždy, i (0)
+      } else if (n === 0) {
+        badgeEl.classList.add('hidden');
+      } else {
+        badgeEl.classList.remove('hidden'); badgeEl.textContent = String(n);
+      }
     }
     setSidepanelBadgeForCurrentPage(n);
   }
@@ -219,14 +247,13 @@
 
   function setCommentMode(on) {
     commentMode = on;
-    if (on) {
-      document.body.classList.add('wf-cmt-mode');
-      bubbleEl.classList.add('active');
-    } else {
-      document.body.classList.remove('wf-cmt-mode');
-      bubbleEl.classList.remove('active');
-      cancelDraftPin();
+    document.body.classList.toggle('wf-cmt-mode', on);
+    if (bubbleEl) {
+      bubbleEl.classList.toggle('active', on);
+      if (usingBar) bubbleEl.setAttribute('aria-pressed', on ? 'true' : 'false');
     }
+    if (!on) cancelDraftPin();
+    persistCmtOn(on);
   }
 
   // ===== Overlay (holds pins) =====
@@ -715,7 +742,7 @@
     if (!target.closest) return false;
     return !!target.closest(
       '.wf-cmt-bubble, .wf-cmt-popover, .wf-cmt-modal-backdrop, .wf-cmt-pin,'
-      + ' .wf-sidepanel, .wf-toggle-btn, .wf-overlay'
+      + ' .wf-sidepanel, .wf-toggle-btn, .wf-overlay, .wfbar'
     );
   }
 
@@ -736,6 +763,10 @@
   function init() {
     renderBubble();
     renderOverlay();
+    // Obnovit sjednocený stav (viditelnost pinů + režim přidávání) z localStorage.
+    // Na stránkách bez WF lišty (fallback bubble) nezapínáme automaticky, aby si respondent
+    // spustil režim vědomě klikem na plovoucí bublinu.
+    if (usingBar && persistedCmtOn()) setCommentMode(true);
     fetchComments().then(function (data) {
       comments = data;
       renderPins();

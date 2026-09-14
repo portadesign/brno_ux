@@ -75,6 +75,26 @@ body.wf-cmt-mode { cursor: crosshair !important; }
 }
 .wf-cmt-overlay > * { pointer-events: auto; }
 
+/* Komentářové piny jsou DEFAULTNĚ SKRYTÉ (aby při testování nerušily respondenty).
+   Zobrazí je aktivní režim komentářů (body.wf-cmt-mode) — jeden ovladač = jeden stav:
+   zapnutí zároveň zobrazí piny A umožní klikem přidat nový pin. */
+.wf-cmt-overlay { display: none; }
+body.wf-cmt-mode .wf-cmt-overlay { display: block; }
+
+/* Switch uvnitř odkazu „Comments“ v horní WF liště (indikátor sjednoceného stavu) */
+.wfbar__switch {
+  position: relative; display: inline-block; flex: none;
+  width: 22px; height: 12px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28); transition: background 0.15s;
+}
+.wfbar__switch::after {
+  content: ''; position: absolute; top: 1px; left: 1px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #fff; transition: transform 0.15s;
+}
+[data-wfbar-comments][aria-pressed="true"] .wfbar__switch { background: #2D9D4B; }
+[data-wfbar-comments][aria-pressed="true"] .wfbar__switch::after { transform: translateX(10px); }
+
 /* Body must be position: relative for the overlay to anchor correctly */
 body { position: relative; }
 
