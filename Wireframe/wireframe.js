@@ -209,9 +209,42 @@
     h1.appendChild(span);
   }
 
+  // ----- Horní WF lišta (nástroje wireframu: sitemap + komentáře + hotspoty) -----
+  // Injektována JS-em, aby nebylo nutné upravovat každou HTML stránku.
+  // Levá strana = název wireframu, pravá = Sitemap + Komentáře (napojí comments.js) + Hotspoty toggle.
+  function injectWfbar() {
+    if (window.self !== window.top) return;              // nevkládat do iframů
+    if (!document.body) return;
+    if (document.querySelector('.wfbar')) return;        // idempotentní
+    var html =
+      '<div class="wfbar" role="region" aria-label="Wireframe tools">' +
+      '  <span class="wfbar__brand">WF Brno EN</span>' +
+      '  <nav class="wfbar__links" aria-label="Wireframe tools">' +
+      '    <a class="wfbar__link" href="#" data-wfbar-sitemap>Sitemap</a>' +
+      '    <a class="wfbar__link" href="#" data-wfbar-comments aria-pressed="false" title="Show/hide comments &amp; enable commenting">' +
+      '      <span class="wfbar__switch" aria-hidden="true"></span>' +
+      '      Comments <span class="wfbar__count" data-wfbar-cmt-count>(0)</span>' +
+      '    </a>' +
+      '  </nav>' +
+      '</div>';
+    document.body.insertAdjacentHTML('afterbegin', html);
+  }
+
+  function initWfbar() {
+    var smLink = document.querySelector('[data-wfbar-sitemap]');
+    if (!smLink) return;
+    smLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      var t = document.querySelector('.wf-toggle-btn');
+      if (t) t.click();
+    });
+  }
+
   function init() {
+    injectWfbar();
     renderTree();
     setupToggle();
+    initWfbar();
     trackLastLinkClick();
     injectLastLinkLabel();
   }
