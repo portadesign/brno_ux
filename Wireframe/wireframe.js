@@ -38,7 +38,7 @@
     { label: 'Become self-employed', href: '02-p05-become-self-employed.html', level: 3, tag: 'T6' },
     { label: 'Start a company', href: '02-p06-start-a-company.html', level: 3, tag: 'T6' },
     { label: 'Brno business ecosystem', href: '02-p07-brno-business-ecosystem.html', level: 3, tag: 'T6' },
-    { label: 'Enjoy', href: '04-p01-enjoy.html', level: 2, tag: 'T2' },
+    { label: 'Leisure', href: '04-p01-enjoy.html', level: 2, tag: 'T2' },
     { label: 'Leisure & Sports', href: '04-p02-leisure-sports.html', level: 3, tag: 'T6' },
     { label: 'Culture', href: '04-p03-culture.html', level: 3, tag: 'T6' },
     { label: 'Sights & architecture', href: '04-p04-sights-architecture.html', level: 3, tag: 'T6' },
@@ -60,7 +60,7 @@
     { label: 'Living · V1', href: '01-p01-live-v1.html', level: 2, tag: 'T2' },
     { label: 'Work · V1', href: '02-p01-work-v1.html', level: 2, tag: 'T2' },
     { label: 'Research & Study · V1', href: '03-p01-research-study-v1.html', level: 2, tag: 'T2' },
-    { label: 'Enjoy · V1', href: '04-p01-enjoy-v1.html', level: 2, tag: 'T2' },
+    { label: 'Leisure · V1', href: '04-p01-enjoy-v1.html', level: 2, tag: 'T2' },
     { label: 'About Brno · V1', href: '06-p01-about-brno-v1.html', level: 2, tag: 'T2' }
   ];
 
