@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brno EN — Fees &amp; obligations (Wireframe POC)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="wireframe.css">
+<script src="wireframe.js" defer></script>
+<link rel="stylesheet" href="comments.css">
+<script src="comments.js" defer></script>
+</head>
+<body>
+
+<!-- Wireframe nav widget -->
+<button class="wf-toggle-btn" aria-label="Toggle wireframe pages">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+<div class="wf-overlay"></div>
+<aside class="wf-sidepanel">
+  <header class="wf-sidepanel-header">
+    <strong>Wireframe</strong>
+    <span class="wf-poc-tag">PHASE 1 POC</span>
+    <button class="wf-close" aria-label="Close">×</button>
+  </header>
+  <div class="wf-tree"></div>
+  <footer class="wf-sidepanel-footer">
+    <span class="wf-count">— of 24 pages built</span>
+  </footer>
+</aside>
+
+<!-- C01 Header + C02 Main nav -->
+<div class="top-bar"></div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <a href="index.html" class="logo">
+        <img src="assets/Logo_Brno_RED_RGB.png" alt="Brno">
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <a href="#" class="lang-switch">CZ</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="05-p01-life-admin.html">Official matters <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All official matters</a>
+        <a href="05-p01-life-admin.html#visa">Visa &amp; residency</a>
+        <a href="05-p01-life-admin.html#transport">Transport &amp; vehicles</a>
+        <a href="05-p01-life-admin.html#fees">Local taxes</a>
+        <a href="05-p01-life-admin.html#fines">Fines &amp; penalties</a>
+        <a href="05-p01-life-admin.html#suggestions">Suggestions and complaints</a>
+        <a href="05-p01-life-admin.html#legalization">Certified copies &amp; signatures (vidimation)</a>
+        <a href="05-p01-life-admin.html#social">Social services &amp; family</a>
+        <a href="05-p01-life-admin.html#environment">Environment &amp; waste</a>
+        <a href="05-p01-life-admin.html#construction">Housing and Renting from the City</a>
+        <a href="05-p01-life-admin.html#business">Getting a business licence</a>
+        <a href="05-p01-life-admin.html#participation">Public participation</a>
+        <a href="05-p01-life-admin.html#cityhall">Other city hall services</a>
+        </div>
+
+      </div>
+      <div class="nav-item">
+        <a class="nav-link active" href="01-p01-live.html">Living <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living</a>
+        <a href="01-p05-how-to-start.html">How to start</a>
+        <a href="01-p06-accommodation.html">Accommodation</a>
+        <a href="01-p10-fees-obligations.html">Fees &amp; obligations</a>
+        <a href="01-p02-transport.html">Transportation</a>
+        <a href="01-p03-healthcare.html">Healthcare</a>
+        <a href="01-p07-social-care.html">Social care</a>
+        <a href="01-p08-education.html">Schools &amp; kindergartens</a>
+        <a href="01-p09-speak-czech.html">Speak Czech</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="02-p01-work.html">Work &amp; Business <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="02-p01-work.html" style="font-weight:600;">All about Work and Business</a>
+        <a href="02-p02-right-to-work.html">Right to work in Czechia</a>
+        <a href="02-p03-find-a-job.html">Find a job</a>
+        <a href="02-p04-employment-essentials.html">Employment essentials</a>
+        <a href="02-p05-become-self-employed.html">Become self-employed</a>
+        <a href="02-p06-start-a-company.html">Start a company</a>
+        <a href="02-p07-brno-business-ecosystem.html">Brno business ecosystem</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="04-p01-enjoy.html">Enjoy <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="04-p01-enjoy.html" style="font-weight:600;">All ways to Enjoy</a>
+        <a href="https://gotobrno.cz" target="_blank" rel="noopener">Events</a>
+        <a href="04-p02-leisure-sports.html">Leisure &amp; Sports</a>
+        <a href="04-p03-culture.html">Culture</a>
+        <a href="04-p04-sights-architecture.html">Sights &amp; architecture</a>
+        <a href="04-p06-maps-guides.html">Maps &amp; Guides</a>
+        <a href="04-p07-food-drink.html">Food and Drink</a>
+        <a href="04-p08-communities.html">Communities &amp; meeting people</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="03-p01-research-study.html">Research &amp; Study <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
+        <a href="03-p02-study-in-brno.html">Study in Brno</a>
+        <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        <a href="01-p08-education.html" style="margin-top:8px;padding-top:14px;border-top:1px solid var(--gray-200);color:var(--gray-700);">Looking for a school for your child? →</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="06-p01-about-brno.html">About Brno <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="06-p01-about-brno.html" style="font-weight:600;">All about Brno</a>
+        <a href="06-p02-mayor-council.html">Mayor &amp; City Council</a>
+        <a href="06-p05-brno-story.html">Brno story</a>
+        <a href="06-p03-brno-facts-vision.html">Brno facts &amp; vision</a>
+        <a href="06-p04-international-relations.html">International relations</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="contact.html">Contact </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- L3 Topic detail (T6) — Living > Fees & obligations -->
+<main>
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="index.html">Homepage</a>
+        <span class="sep">›</span>
+        <a href="01-p01-live.html">Living</a>
+        <span class="sep">›</span>
+        <span class="current">Fees &amp; obligations</span>
+      </nav>
+      <h1 class="title-banner">Detail tématu (L3)</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="layout-with-sidebar">
+        <div>
+          <!-- Perex -->
+          <div class="detail-block">
+            <p style="font-size:18px;line-height:1.7;color:var(--gray-700);">Once you've settled in, some official matters keep coming back — local fees, permit renewals, reporting changes and annual tax. This page lists everything you need to keep up with as a foreign resident of Brno, in one place.</p>
+          </div>
+
+          <!-- Overview / At a glance -->
+          <div class="detail-block">
+            <h3>Your regular obligations at a glance</h3>
+            <p style="font-size:16px;line-height:1.7;color:var(--gray-700);margin-bottom:16px;">Missing a deadline can mean a surcharge, a fine or problems with your residence permit. Keep these dates in mind:</p>
+            <ul style="line-height:1.7;color:var(--gray-700);">
+              <li><strong>Waste fee</strong> — paid once a year, by 30 June.</li>
+              <li><strong>Residence permit</strong> — apply for an extension before your current permit expires.</li>
+              <li><strong>Change of address</strong> — report it to the Foreign Police within 30 working days of moving.</li>
+              <li><strong>Income tax return</strong> — by 1 April (paper) or 1 May (online), unless your employer files it for you.</li>
+              <li><strong>Health insurance</strong> — must stay valid for your whole stay; self-employed people pay it monthly.</li>
+            </ul>
+          </div>
+
+          <!-- Thematic H2 sections -->
+          <div class="detail-block">
+            <h2>Local fees</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Fees you pay to the City of Brno every year.</p>
+            <div class="quick-links">
+              <a href="05-p01-life-admin.html#fees/waste" class="quick-link"><span class="quick-link-text">Pay your waste fee online</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#fees/waste" class="quick-link"><span class="quick-link-text">Who has to pay the waste fee</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#environment/waste-fee" class="quick-link"><span class="quick-link-text">Reduced rate &amp; exemptions</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#fees/other" class="quick-link"><span class="quick-link-text">Dog fee</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Keep your residence status valid</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Renewals and changes you must report to the authorities.</p>
+            <div class="quick-links">
+              <a href="05-p01-life-admin.html#visa/permits" class="quick-link"><span class="quick-link-text">Extend your residence permit</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#visa/registration" class="quick-link"><span class="quick-link-text">Report a change of address</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#visa/permits" class="quick-link"><span class="quick-link-text">Report a new passport, name or family status</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#visa/registration" class="quick-link"><span class="quick-link-text">Leaving Brno — what to cancel</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>Taxes &amp; insurance</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Annual tax and the payments that must not lapse.</p>
+            <div class="quick-links">
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Annual income tax return</span><span class="quick-link-arrow">›</span></a>
+              <a href="01-p04-health-insurance.html" class="quick-link"><span class="quick-link-text">Keep your health insurance valid</span><span class="quick-link-arrow">›</span></a>
+              <a href="02-p05-become-self-employed.html" class="quick-link"><span class="quick-link-text">Insurance payments for the self-employed</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#fees/other" class="quick-link"><span class="quick-link-text">Radio and TV fees</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <div class="detail-block">
+            <h2>If you have a car</h2>
+            <p style="color:var(--gray-700);margin-bottom:16px;line-height:1.6;">Registration, driving licence and fines.</p>
+            <div class="quick-links">
+              <a href="05-p01-life-admin.html#popular/driver-licence" class="quick-link"><span class="quick-link-text">Exchange your foreign driving licence</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#transport/register" class="quick-link"><span class="quick-link-text">Register your vehicle or change its owner</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#transport/parking" class="quick-link"><span class="quick-link-text">Parking permits</span><span class="quick-link-arrow">›</span></a>
+              <a href="05-p01-life-admin.html#fines" class="quick-link"><span class="quick-link-text">Pay or appeal a fine</span><span class="quick-link-arrow">›</span></a>
+            </div>
+          </div>
+
+          <!-- C16 Accordion: External resources -->
+          <div class="accordion open">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+                Related links &amp; external resources <span class="chevron">▾</span>
+              </div>
+              <div class="accordion-body">
+                <ul class="link-list">
+                  <li><a href="05-p01-life-admin.html">Official matters — all city services</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">mvcr.cz — Ministry of Interior &amp; Foreign Police</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">financnisprava.cz — Tax Administration</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">brno.cz — local fees</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C14 Sidebar -->
+        <aside>
+          <div class="sidebar-card" style="background:var(--gray-100);">
+            <h4>Waste fee</h4>
+            <p style="font-size:13px;margin-bottom:12px;">Every resident of Brno pays the annual waste fee. Pay online by 30 June.</p><a href="05-p01-life-admin.html#fees/waste" class="btn btn-secondary" style="font-size:13px;">Pay your waste fee</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>Foreign Police Brno</h4>
+            <div class="sidebar-row"><span class="small">ADDRESS</span></div><div class="sidebar-row" style="padding-left:24px;">Cejl 62b, 602 00 Brno</div><div class="sidebar-row" style="margin-top:8px;"><span class="small">TODAY OPEN</span></div><div class="sidebar-row" style="padding-left:24px;">7:30–11:00, 12:00–14:30 <a href="#" style="margin-left:6px;">(other days)</a></div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Brno Expat Centre</h4>
+            <div class="sidebar-row"><span class="icon icon-phone"></span><a href="tel:+420542171111">+420 542 171 111</a></div><div class="sidebar-row"><span class="icon icon-mail"></span><a href="mailto:expat@brno.cz">expat@brno.cz</a></div><p style="font-size:13px;color:var(--gray-700);margin-top:12px;">Free help with forms, deadlines and paperwork in English.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- C17 Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <ul>
+          <li><a href="05-p01-life-admin.html">Official matters</a></li>
+          <li><a href="01-p01-live.html">Living</a></li>
+          <li><a href="02-p01-work.html">Work &amp; Business</a></li>
+<li><a href="04-p01-enjoy.html">Enjoy</a></li>
+          <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
+          <li><a href="06-p01-about-brno.html">About Brno</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="sos.html">SOS — I need help right now</a></li>
+          <li><a href="#">Personal data protection (GDPR)</a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Equal opportunities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <strong>Brno City Hall</strong>
+        Dominikánské nám. 196/1<br>
+        601 67 Brno
+      </div>
+      <div class="footer-col footer-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">📷</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      2026 © Statutory City of Brno<br>
+      All rights reserved — content may be used only with prior consent of Brno City Hall.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

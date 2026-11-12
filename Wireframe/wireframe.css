@@ -757,6 +757,34 @@ a[download]::after {
   margin-bottom: 12px;
 }
 
+/* C21: "Before you go: documents to bring" — visible checklist, placed before the step guide (UX test P8) */
+.docs-checklist {
+  margin: 32px 0;
+  padding: 24px 28px;
+  border: 1px solid var(--gray-300);
+  border-top: 3px solid var(--red);
+  background: var(--white);
+}
+.docs-checklist.docs-checklist h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.docs-checklist-intro { color: var(--gray-700); font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+.docs-checklist.docs-checklist h3 {
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;
+  color: var(--gray-700); margin: 20px 0 10px;
+}
+.docs-checklist.docs-checklist ul { list-style: none; margin: 0; padding: 0; }
+.docs-checklist.docs-checklist li {
+  position: relative; padding: 6px 0 6px 32px; line-height: 1.5; font-size: 15px;
+}
+.docs-checklist.docs-checklist li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 18px; height: 18px; border: 2px solid var(--red); border-radius: 3px; box-sizing: border-box;
+}
+.docs-checklist.docs-checklist li small { display: block; color: var(--gray-700); font-size: 13px; }
+.docs-checklist-note {
+  margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--gray-200);
+  font-size: 14px; color: var(--gray-700); line-height: 1.6;
+}
+
 /* C13: Process steps */
 .steps {
   display: flex;
