@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — I need to arrange (Wireframe POC)</title>
+<title>Brno EN — Official matters (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
@@ -50,18 +50,35 @@
     </div>
     <nav class="main-nav">
       <div class="nav-item">
-        <a class="nav-link active" href="05-p01-life-admin.html">I need to arrange</a>
+        <a class="nav-link active" href="05-p01-life-admin.html">Official matters <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All official matters</a>
+        <a href="05-p01-life-admin.html#visa">Visa &amp; residency</a>
+        <a href="05-p01-life-admin.html#transport">Transport &amp; vehicles</a>
+        <a href="05-p01-life-admin.html#fees">Local taxes</a>
+        <a href="05-p01-life-admin.html#fines">Fines &amp; penalties</a>
+        <a href="05-p01-life-admin.html#suggestions">Suggestions and complaints</a>
+        <a href="05-p01-life-admin.html#legalization">Certified copies &amp; signatures (vidimation)</a>
+        <a href="05-p01-life-admin.html#social">Social services &amp; family</a>
+        <a href="05-p01-life-admin.html#environment">Environment &amp; waste</a>
+        <a href="05-p01-life-admin.html#construction">Housing and Renting from the City</a>
+        <a href="05-p01-life-admin.html#business">Getting a business licence</a>
+        <a href="05-p01-life-admin.html#participation">Public participation</a>
+        <a href="05-p01-life-admin.html#cityhall">Other city hall services</a>
+        </div>
+
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <a class="nav-link" href="01-p01-live.html">Living <span class="caret"></span></a>
         <div class="dropdown-menu">
-        <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living</a>
         <a href="01-p05-how-to-start.html">How to start</a>
         <a href="01-p06-accommodation.html">Accommodation</a>
-        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p10-fees-obligations.html">Fees &amp; obligations</a>
+        <a href="01-p02-transport.html">Transportation</a>
         <a href="01-p03-healthcare.html">Healthcare</a>
         <a href="01-p07-social-care.html">Social care</a>
-        <a href="01-p08-education.html">Education</a>
+        <a href="01-p08-education.html">Schools &amp; kindergartens</a>
         <a href="01-p09-speak-czech.html">Speak Czech</a>
         </div>
       </div>
@@ -96,6 +113,7 @@
         <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
         <a href="03-p02-study-in-brno.html">Study in Brno</a>
         <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        <a href="01-p08-education.html" style="margin-top:8px;padding-top:14px;border-top:1px solid var(--gray-200);color:var(--gray-700);">Looking for a school for your child? →</a>
         </div>
       </div>
       <div class="nav-item">
@@ -115,7 +133,7 @@
   </div>
 </header>
 
-<!-- I need to arrange (T3-inspired catalog page, Plan B minimalistic) -->
+<!-- Official matters (T3-inspired catalog page, Plan B minimalistic) -->
 <main>
   <!-- C03 Page banner + breadcrumbs -->
   <section class="page-header">
@@ -123,9 +141,9 @@
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">I need to arrange</span>
+        <span class="current">Official matters</span>
       </nav>
-      <h1 class="title-banner">I need to arrange</h1>
+      <h1 class="title-banner">Official matters</h1>
     </div>
   </section>
 
@@ -151,7 +169,7 @@
           <a href="#fees"         class="lifeadm-cat" data-cat="fees">Local taxes</a>
           <a href="#fines"        class="lifeadm-cat" data-cat="fines">Fines &amp; penalties</a>
           <a href="#suggestions"  class="lifeadm-cat" data-cat="suggestions">Suggestions and complaints</a>
-          <a href="#legalization" class="lifeadm-cat" data-cat="legalization">Document legalization &amp; vidimation</a>
+          <a href="#legalization" class="lifeadm-cat" data-cat="legalization">Certified copies &amp; signatures (vidimation)</a>
           <a href="#social"       class="lifeadm-cat" data-cat="social">Social services &amp; family</a>
           <a href="#environment"  class="lifeadm-cat" data-cat="environment">Environment &amp; waste</a>
           <a href="#construction" class="lifeadm-cat" data-cat="construction">Housing and Renting from the City</a>
@@ -213,7 +231,7 @@
 
           <!-- LEGALIZATION -->
           <div class="lifeadm-sub-group" data-cat="legalization">
-            <h3 class="lifeadm-sub-title">Document legalization &amp; vidimation</h3>
+            <h3 class="lifeadm-sub-title">Certified copies &amp; signatures (vidimation)</h3>
             <a href="#legalization/czechpoint"   class="lifeadm-sub" data-sub="czechpoint">Czech POINT services</a>
             <a href="#legalization/verification" class="lifeadm-sub" data-sub="verification">Verification of documents</a>
             <a href="#legalization/international" class="lifeadm-sub" data-sub="international">International document use</a>
@@ -223,6 +241,7 @@
           <div class="lifeadm-sub-group" data-cat="social">
             <h3 class="lifeadm-sub-title">Social services &amp; family</h3>
             <a href="#social/family"     class="lifeadm-sub" data-sub="family">Family &amp; children</a>
+            <a href="#social/schools"    class="lifeadm-sub" data-sub="schools">Schools &amp; kindergartens</a>
             <a href="#social/disability" class="lifeadm-sub" data-sub="disability">Disability &amp; senior support</a>
             <a href="#social/crisis"     class="lifeadm-sub" data-sub="crisis">Family crisis &amp; vulnerable groups</a>
           </div>
@@ -280,7 +299,7 @@
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Pay your annual waste fee online</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Who owes — residents vs visitors</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Apply for instalment plan</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Reduced rate (senior, ZTP, low income)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Reduced rate (seniors, disability card holders, low income)</a>
           </div>
 
           <!-- POPULAR / Vehicle registration -->
@@ -288,7 +307,7 @@
             <h3 class="lifeadm-task-title">Vehicle registration</h3>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Register a new vehicle</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Change of vehicle owner</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Vehicle import from abroad (COC, homologation)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Vehicle import from abroad (certificate of conformity, homologation)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">License plates — request, replace, lost</a>
           </div>
 
@@ -334,9 +353,9 @@
             <h3 class="lifeadm-task-title">Register your vehicle</h3>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Register a new vehicle</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Change of vehicle owner</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Vehicle import from abroad (COC, homologation)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Vehicle import from abroad (certificate of conformity, homologation)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">License plates — request, replace, lost</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Custom plates (RZP) &amp; electric plates</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Personalised &amp; electric licence plates</a>
           </div>
 
           <!-- TRANSPORT / Dereg -->
@@ -430,8 +449,6 @@
           <!-- SOCIAL / Family -->
           <div class="lifeadm-task-group" data-cat="social" data-sub="family">
             <h3 class="lifeadm-task-title">Family &amp; children</h3>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">School enrollment (MŠ &amp; ZŠ)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Compulsory schooling abroad (special agenda)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Foster care (náhradní rodinná péče)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Single-parent housing (samoživitelé)</a>
           </div>
@@ -441,7 +458,7 @@
             <h3 class="lifeadm-task-title">Disability &amp; senior support</h3>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Disability parking permit</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Euroklíč (universal access key)</a>
-            <a href="01-p04-health-insurance.html" class="lifeadm-task">Senior &amp; disability help (OSP referral)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Senior &amp; disability help (referral by the city's Social Services Department)</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">SOS emergency button — 24/7 monitoring</a>
           </div>
 
@@ -452,6 +469,15 @@
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Youth &amp; young adults social aid</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Crisis life situations — housing</a>
             <a href="01-p04-health-insurance.html" class="lifeadm-task">Social aid grants for organisations</a>
+          </div>
+
+          <!-- SOCIAL / Schools & kindergartens -->
+          <div class="lifeadm-task-group" data-cat="social" data-sub="schools">
+            <h3 class="lifeadm-task-title">Schools &amp; kindergartens</h3>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Kindergarten enrollment (zápis do MŠ)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Primary school enrollment (zápis do ZŠ)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Find your catchment school (spádová škola)</a>
+            <a href="01-p04-health-insurance.html" class="lifeadm-task">Compulsory schooling abroad (special agenda)</a>
           </div>
 
           <!-- ENVIRONMENT / Waste fee -->
@@ -581,8 +607,8 @@
     <div class="footer-grid">
       <div class="footer-col">
         <ul>
-          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
-          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="05-p01-life-admin.html">Official matters</a></li>
+          <li><a href="01-p01-live.html">Living</a></li>
           <li><a href="02-p01-work.html">Work &amp; Business</a></li>
 <li><a href="04-p01-enjoy.html">Enjoy</a></li>
           <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
@@ -704,6 +730,15 @@
       browser.setAttribute('data-mobile-view', v);
     }
   }
+
+  // Hash change (e.g. main-nav dropdown link clicked while already on this page)
+  window.addEventListener('hashchange', function () {
+    var s = parseHash();
+    applyState(s.cat, s.sub);
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      browser.setAttribute('data-mobile-view', (isDirectCat(s.cat) || s.sub) ? 'tasks' : 'subs');
+    }
+  });
 
   // Category click
   cats.forEach(function (a) {

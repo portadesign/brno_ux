@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brno EN — Live (Wireframe POC)</title>
+<title>Brno EN — Living (Wireframe POC)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="wireframe.css">
 <script src="wireframe.js" defer></script>
@@ -50,18 +50,35 @@
     </div>
     <nav class="main-nav">
       <div class="nav-item">
-        <a class="nav-link" href="05-p01-life-admin.html">I need to arrange</a>
+        <a class="nav-link" href="05-p01-life-admin.html">Official matters <span class="caret"></span></a>
+        <div class="dropdown-menu">
+        <a href="05-p01-life-admin.html" style="font-weight:600;">All official matters</a>
+        <a href="05-p01-life-admin.html#visa">Visa &amp; residency</a>
+        <a href="05-p01-life-admin.html#transport">Transport &amp; vehicles</a>
+        <a href="05-p01-life-admin.html#fees">Local taxes</a>
+        <a href="05-p01-life-admin.html#fines">Fines &amp; penalties</a>
+        <a href="05-p01-life-admin.html#suggestions">Suggestions and complaints</a>
+        <a href="05-p01-life-admin.html#legalization">Certified copies &amp; signatures (vidimation)</a>
+        <a href="05-p01-life-admin.html#social">Social services &amp; family</a>
+        <a href="05-p01-life-admin.html#environment">Environment &amp; waste</a>
+        <a href="05-p01-life-admin.html#construction">Housing and Renting from the City</a>
+        <a href="05-p01-life-admin.html#business">Getting a business licence</a>
+        <a href="05-p01-life-admin.html#participation">Public participation</a>
+        <a href="05-p01-life-admin.html#cityhall">Other city hall services</a>
+        </div>
+
       </div>
       <div class="nav-item">
-        <a class="nav-link active" href="01-p01-live.html">Live <span class="caret"></span></a>
+        <a class="nav-link active" href="01-p01-live.html">Living <span class="caret"></span></a>
         <div class="dropdown-menu">
-        <a href="01-p01-live.html" style="font-weight:600;">All about Live</a>
+        <a href="01-p01-live.html" style="font-weight:600;">All about Living</a>
         <a href="01-p05-how-to-start.html">How to start</a>
         <a href="01-p06-accommodation.html">Accommodation</a>
-        <a href="01-p02-transport.html">Transport</a>
+        <a href="01-p10-fees-obligations.html">Fees &amp; obligations</a>
+        <a href="01-p02-transport.html">Transportation</a>
         <a href="01-p03-healthcare.html">Healthcare</a>
         <a href="01-p07-social-care.html">Social care</a>
-        <a href="01-p08-education.html">Education</a>
+        <a href="01-p08-education.html">Schools &amp; kindergartens</a>
         <a href="01-p09-speak-czech.html">Speak Czech</a>
         </div>
       </div>
@@ -96,6 +113,7 @@
         <a href="03-p01-research-study.html" style="font-weight:600;">All about Research &amp; Study</a>
         <a href="03-p02-study-in-brno.html">Study in Brno</a>
         <a href="03-p03-science-innovation.html">Science &amp; Innovation</a>
+        <a href="01-p08-education.html" style="margin-top:8px;padding-top:14px;border-top:1px solid var(--gray-200);color:var(--gray-700);">Looking for a school for your child? →</a>
         </div>
       </div>
       <div class="nav-item">
@@ -123,9 +141,9 @@
       <nav class="breadcrumbs">
         <a href="index.html">Homepage</a>
         <span class="sep">›</span>
-        <span class="current">Live</span>
+        <span class="current">Living</span>
       </nav>
-      <h1 class="title-banner">Live in Brno</h1>
+      <h1 class="title-banner">Living in Brno</h1>
     </div>
   </section>
 
@@ -134,7 +152,7 @@
       <!-- Perex -->
       <p style="font-size:18px;line-height:1.6;color:var(--gray-700);max-width:760px;margin-bottom:40px;">Practical guides for foreigners on first steps, accommodation, transport, healthcare, social care, schools and learning Czech. Whether you've just arrived or you've been here for years, this section covers the everyday topics that matter most.</p>
 
-      <!-- C09b Dept-tile card grid: 7 topics in a 3-column rozcestník -->
+      <!-- C09b Dept-tile card grid: 8 topics in a 3-column rozcestník -->
       <div class="dept-grid" style="grid-template-columns:repeat(3, 1fr);">
         <div class="dept-tile dept-tile--card">
           <a href="01-p05-how-to-start.html">How to start</a>
@@ -145,7 +163,11 @@
           <div class="dept-tile__desc">Renting a flat, signing contracts, deposits and tenant rights — what you need to know to find a place in Brno.</div>
         </div>
         <div class="dept-tile dept-tile--card">
-          <a href="01-p02-transport.html">Transport</a>
+          <a href="01-p10-fees-obligations.html">Fees &amp; obligations</a>
+          <div class="dept-tile__desc">Waste fee, permit renewals, reporting changes and annual tax — everything you need to keep up with once you live here.</div>
+        </div>
+        <div class="dept-tile dept-tile--card">
+          <a href="01-p02-transport.html">Transportation</a>
           <div class="dept-tile__desc">Brno's integrated transport system (IDS JMK) — trams, buses, trolleybuses and regional trains. Tickets and timetables online.</div>
         </div>
         <div class="dept-tile dept-tile--card">
@@ -157,7 +179,7 @@
           <div class="dept-tile__desc">Czech social system supports families, seniors and people in material need — state benefits, allowances and assistance programmes.</div>
         </div>
         <div class="dept-tile dept-tile--card">
-          <a href="01-p08-education.html">Education</a>
+          <a href="01-p08-education.html">Schools &amp; kindergartens</a>
           <div class="dept-tile__desc">Compulsory schooling for children aged 6–15. Brno has 70+ public nurseries, 80+ primary schools and English-language alternatives.</div>
         </div>
         <div class="dept-tile dept-tile--card">
@@ -184,8 +206,8 @@
     <div class="footer-grid">
       <div class="footer-col">
         <ul>
-          <li><a href="05-p01-life-admin.html">I need to arrange</a></li>
-          <li><a href="01-p01-live.html">Live</a></li>
+          <li><a href="05-p01-life-admin.html">Official matters</a></li>
+          <li><a href="01-p01-live.html">Living</a></li>
           <li><a href="02-p01-work.html">Work &amp; Business</a></li>
 <li><a href="04-p01-enjoy.html">Enjoy</a></li>
           <li><a href="03-p01-research-study.html">Research &amp; Study</a></li>
